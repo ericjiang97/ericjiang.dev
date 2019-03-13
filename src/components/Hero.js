@@ -31,6 +31,7 @@ export default function Hero() {
             max-width: 150px;
             border-radius: 100%;
           `}
+          alt="Eric"
         />
         <h1
           css={css`
@@ -42,7 +43,10 @@ export default function Hero() {
             font-weight: 300;
           `}
         >
-          👋, Hi I'm Eric, I'm a final year IT student at Monash University and
+          <span role="img" aria-label="wave">
+            👋
+          </span>
+          , Hi I'm Eric, I'm a final year IT student at Monash University and
           I'm currently building MonPlan.
         </h1>
       </Container>

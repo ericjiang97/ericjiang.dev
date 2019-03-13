@@ -34,6 +34,7 @@ export default function SmallHero() {
             max-height: 150px;
             border-radius: 100%;
           `}
+          alt="Eric"
         />
         <h3
           css={css`
