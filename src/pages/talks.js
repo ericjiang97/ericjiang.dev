@@ -40,6 +40,15 @@ export default function Index({ data: { site, allMdx } }) {
         `}
       >
         <h1>Talks</h1>
+        <p
+          css={css`
+            font-size: 16px;
+          `}
+        >
+          I do quite a few talks - from Google Cloud all the way to Student
+          Innovation. So check them out below
+        </p>
+        <hr />
         {talks.map((talk, index) => {
           const { title, description, delivery, links } = talk
           return (

@@ -56,4 +56,45 @@ export const talks = [
       date: '30 Apr 2018',
     },
   },
+  {
+    title: 'Gitting Started at Hackathons', // Talk title
+    links: {
+      slides:
+        'https://speakerdeck.com/lorderikir/getting-started-at-hackathons-track-1-gitting-started', // Link to Slides,
+      code: null, // code repo link
+    },
+    description:
+      'This talk is about using Git and Version Control, with basics as well as some complex ideas such as merging.', // talk description
+    photo: null,
+    delivery: {
+      location: 'Monash University, Melbourne, Victoria AU', // Location of Talk
+      // Organiser of Talk (if applicable)
+      organiser: {
+        name: 'Monash University - eSolutions (Hackamon)',
+        link: 'https://monash.edu/students/hackamon',
+      },
+      date: '18 Apr 2018',
+    },
+  },
+  {
+    title:
+      'Getting Started at Hackathons - Building MVPs using ReactJS and Firebase', // Talk title
+    links: {
+      slides:
+        'https://speakerdeck.com/lorderikir/getting-started-at-hackathons-track-2-building-mvps-using-reactjs-and-firebase', // Link to Slides,
+      code: null, // code repo link
+    },
+    description:
+      'This talk is about building Minimal Viable Products (MVPs) quickly using ReactJS as a frontend framework and Google Firebase for backend', // talk description
+    photo: null,
+    delivery: {
+      location: 'Monash University, Melbourne, Victoria AU', // Location of Talk
+      // Organiser of Talk (if applicable)
+      organiser: {
+        name: 'Monash University - eSolutions (Hackamon)',
+        link: 'https://monash.edu/students/hackamon',
+      },
+      date: '18 Apr 2018',
+    },
+  },
 ]
