@@ -46,7 +46,10 @@ export default function SmallHero() {
             margin-left: 20px;
           `}
         >
-          👋, Hi I'm Eric, I'm a final year IT student at Monash University and
+          <span role="img" aria-label="wave">
+            👋
+          </span>
+          , Hi I'm Eric, I'm a final year IT student at Monash University and
           I'm currently building MonPlan.
         </h3>
       </Container>
