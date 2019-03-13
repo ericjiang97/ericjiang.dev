@@ -5,6 +5,8 @@ import Layout from '../components/Layout'
 import Container from 'components/Container'
 import theme from '../../config/theme'
 import SmallHero from '../components/SmallHero'
+import { projects } from '../data/projects'
+import Remark from 'react-markdown'
 
 export default function Index({ data: { site, allMdx } }) {
   return (
@@ -21,6 +23,18 @@ export default function Index({ data: { site, allMdx } }) {
         `}
       >
         <h1>Projects</h1>
+        <hr />
+        {projects.map((project, index) => {
+          const { title, dates, description } = project
+          return (
+            <div key={index}>
+              <h3>{title}</h3>
+              <span>{`${dates.from} - ${dates.to || 'Present'}`}</span>
+              <Remark source={description} />
+              <hr />
+            </div>
+          )
+        })}
       </Container>
     </Layout>
   )
