@@ -33,7 +33,27 @@ export const talks = [
         link: 'https://juniordev.io',
       },
 
-      date: '19 Sep 2019',
+      date: '19 Sep 2018',
+    },
+  },
+  {
+    title: 'Student Innovation and Cloud Practices at Monash', // Talk title
+    links: {
+      slides:
+        'https://speakerdeck.com/lorderikir/student-innovation-and-cloud-practices-at-monash', // Link to Slides,
+      code: null, // code repo link
+    },
+    description:
+      'This talk is about how we do Student Innovation as well as our Cloud Practices using Google Cloud Platform and demonstrates how it ties into our Service Delivery catering over 70,000 users at Monash University.', // talk description
+    photo: null,
+    delivery: {
+      location: 'Monash University, Clayton, Victoria AU', // Location of Talk
+      // Organiser of Talk (if applicable)
+      organiser: {
+        name: 'Monash University - Faculty of Information Technology',
+        link: 'https://monash.edu/it',
+      },
+      date: '30 Apr 2018',
     },
   },
 ]
