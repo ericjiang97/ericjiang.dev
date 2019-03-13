@@ -12,15 +12,13 @@ module.exports = {
     title: config.siteTitle,
     twitterHandle: config.twitterHandle,
     description: config.siteDescription,
-    keywords: ['Video Blogger'],
+    keywords: ['Eric Jiang', 'monplan'],
     canonicalUrl: config.siteUrl,
     image: config.siteLogo,
     author: {
       name: config.author,
       minibio: `
-        <strong>egghead</strong> is the premier place on the internet for 
-        experienced developers to enhance their skills and stay current
-        in the fast-faced field of web development.
+        Eric Jiang is a founder of MonPlan and is currently a final year IT student at Monash University
       `,
     },
     organization: {
@@ -55,6 +53,7 @@ module.exports = {
             },
           },
         ],
+        decks: [],
       },
     },
     'gatsby-plugin-sharp',
