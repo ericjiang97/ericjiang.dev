@@ -1,7 +1,6 @@
 import React from 'react'
 import css from '@emotion/css'
 import theme from '../../config/theme'
-import styled from '@emotion/styled'
 import GeneralUtils from '../utils/GeneralUtils'
 
 class LinkButton extends React.Component {
@@ -59,7 +58,7 @@ class LinkButton extends React.Component {
               {subheading}
             </p>
           </div>
-          {backgroundImg && <img src={backgroundImg} />}
+          {backgroundImg && <img src={backgroundImg} alt="" />}
         </div>
       </a>
     )

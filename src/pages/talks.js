@@ -7,15 +7,9 @@ import Link from '../components/Link'
 import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
 import theme from '../../config/theme'
-import Hero from '../components/Hero'
-import ProfilePic from '../images/profile.png'
 import { talks } from '../data/talks'
 import SmallHero from '../components/SmallHero'
 
-const Description = styled.p`
-  margin-bottom: 10px;
-  display: inline-block;
-`
 const PostTitle = styled.h2`
   margin-bottom: ${rhythm(0.3)};
   transition: ${theme.transition.ease};

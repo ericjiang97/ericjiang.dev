@@ -27,9 +27,6 @@ const Description = styled.p`
   margin-bottom: 10px;
   display: inline-block;
 `
-const Action = link => {
-  return <a href={link} />
-}
 export default function Index({ data: { site, allMdx } }) {
   return (
     <Layout

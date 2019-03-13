@@ -2,7 +2,7 @@ export default class GeneralUtils {
   static colorLightenDarken(color, percentageAmount) {
     var usePound = false
 
-    if (color[0] == '#') {
+    if (color[0] === '#') {
       color = color.slice(1)
       usePound = true
     }
