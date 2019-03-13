@@ -61,7 +61,7 @@ export const talks = [
     links: {
       slides:
         'https://speakerdeck.com/lorderikir/getting-started-at-hackathons-track-1-gitting-started', // Link to Slides,
-      code: null, // code repo link
+      code: 'https://github.com/lorderikir/hackamon2018-techtalk', // code repo link
     },
     description:
       'This talk is about using Git and Version Control, with basics as well as some complex ideas such as merging.', // talk description
@@ -82,7 +82,7 @@ export const talks = [
     links: {
       slides:
         'https://speakerdeck.com/lorderikir/getting-started-at-hackathons-track-2-building-mvps-using-reactjs-and-firebase', // Link to Slides,
-      code: null, // code repo link
+      code: 'https://github.com/lorderikir/hackamon2018-techtalk', // code repo link
     },
     description:
       'This talk is about building Minimal Viable Products (MVPs) quickly using ReactJS as a frontend framework and Google Firebase for backend', // talk description

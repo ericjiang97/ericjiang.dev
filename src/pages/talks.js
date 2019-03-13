@@ -10,6 +10,8 @@ import theme from '../../config/theme'
 import { talks } from '../data/talks'
 import SmallHero from '../components/SmallHero'
 
+import JuniorDevTalk from '../images/gcp-juniordev-talk.jpg'
+
 const PostTitle = styled.h2`
   margin-bottom: ${rhythm(0.3)};
   transition: ${theme.transition.ease};
@@ -34,6 +36,7 @@ export default function Index({ data: { site, allMdx } }) {
         `}
       >
         <h1>Talks</h1>
+        <img src={JuniorDevTalk} width="100%" alt="JuniorDev tech talk" />
         <p
           css={css`
             font-size: 16px;
