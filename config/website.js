@@ -14,7 +14,7 @@ module.exports = {
   // siteFBAppID: '123456789', // Facebook App ID - Optional
   userTwitter: '@lorderikir', // Twitter Username
   ogSiteName: 'Eric Jiang', // Facebook Site Name
-  ogLanguage: 'en_US',
+  ogLanguage: 'en_AU',
   googleAnalyticsID: '',
 
   // Manifest and Progress color
