@@ -65,7 +65,7 @@ export default function Index({ data: { site, allMdx } }) {
           />
           <LinkButton
             to="/projects"
-            heading="Project"
+            heading="Projects"
             backgroundColor={theme.colors.red}
             backgroundImg={SWEImg}
           />

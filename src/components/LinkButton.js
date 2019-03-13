@@ -42,7 +42,7 @@ class LinkButton extends React.Component {
             <h1
               css={css`
                 color: ${textColor};
-                font-weight: 500;
+                font-weight: 300;
                 margin-top: 5px;
               `}
             >
