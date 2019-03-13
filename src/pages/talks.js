@@ -8,7 +8,13 @@ import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
 import theme from '../../config/theme'
 import Hero from '../components/Hero'
+import ProfilePic from '../images/profile.png'
+import { talks } from '../data/talks'
 
+const Description = styled.p`
+  margin-bottom: 10px;
+  display: inline-block;
+`
 const PostTitle = styled.h2`
   margin-bottom: ${rhythm(0.3)};
   transition: ${theme.transition.ease};
@@ -16,11 +22,6 @@ const PostTitle = styled.h2`
     color: ${theme.brand.primary};
     transition: ${theme.transition.ease};
   }
-`
-
-const Description = styled.p`
-  margin-bottom: 10px;
-  display: inline-block;
 `
 
 export default function Index({ data: { site, allMdx } }) {
@@ -37,72 +38,39 @@ export default function Index({ data: { site, allMdx } }) {
           background-color: #fff;
         `}
       >
-        <div>Actions go here</div>
-        <hr />
-        <h2>Latest Posts</h2>
-        {allMdx.edges.map(({ node: post }) => (
-          <div
-            key={post.id}
-            css={css`
-              margin-bottom: 40px;
-            `}
-          >
-            <Link
-              to={post.frontmatter.slug}
-              aria-label={`View ${post.frontmatter.title}`}
-            >
-              <PostTitle>{post.frontmatter.title}</PostTitle>
-            </Link>
-            <div
-              css={css`
-                margin-bottom: 10px;
-              `}
-            >
-              <b>{post.frontmatter.date}</b>
-            </div>
-            {post.frontmatter.keywords && (
-              <div
+        <h1>Talks</h1>
+        {talks.map((talk, index) => {
+          const { title, description, delivery, links } = talk
+          return (
+            <div>
+              <Link to={links.slides} aria-label={title}>
+                <PostTitle>{title}</PostTitle>
+              </Link>
+              <span
                 css={css`
-                  display: flex;
-                  flex-direction: row;
+                  font-size: 0.8em;
                 `}
               >
-                {post.frontmatter.keywords.map((keyword, i) => {
-                  return (
-                    <div
-                      key={i}
-                      css={css`
-                        background-color: #ddd;
-                        margin: 0px 5px 0px 5px;
-                        padding: 2px 5px 2px 5px;
-                      `}
-                    >
-                      {keyword}
-                    </div>
-                  )
-                })}
-              </div>
-            )}
-            <Description>
-              {post.excerpt}{' '}
-              <Link
-                to={post.frontmatter.slug}
-                aria-label={`View ${post.frontmatter.title}`}
-              >
-                Read Article →
-              </Link>
-            </Description>
-            <span />
-          </div>
-        ))}
-        <Link
-          to="/blog"
-          aria-label="Visit blog page"
-          className="button-secondary"
-        >
-          View all articles
-        </Link>
-        <hr />
+                Date: {`${delivery.date} `}
+                {delivery.location && (
+                  <span>- Location: {`${delivery.location} `}</span>
+                )}
+                {delivery.organiser && (
+                  <span>- Organiser: {`${delivery.organiser.name}`}</span>
+                )}
+              </span>
+              <p>{description}</p>
+              {links.code && (
+                <div>
+                  {`Code Sample available `}
+                  <Link to={links.code} aria-label={title}>
+                    here
+                  </Link>
+                </div>
+              )}
+            </div>
+          )
+        })}
       </Container>
     </Layout>
   )

@@ -41,6 +41,19 @@ const Header = ({
         <Link to="/" aria-label="go to homepage" activeClassName="active">
           {siteTitle}
         </Link>
+        <Link to="/about" aria-label="about me" activeClassName="active">
+          About
+        </Link>
+        <Link
+          to="/projects"
+          aria-label="about projects"
+          activeClassName="active"
+        >
+          Projects
+        </Link>
+        <Link to="/talks" aria-label="about me" activeClassName="active">
+          Tech Talks
+        </Link>
         <div
           css={css`
             font-size: 16px;
@@ -60,15 +73,9 @@ const Header = ({
             }
           `}
         >
-          {/*
-          <Link
-            to="/blog"
-            activeClassName="active"
-            aria-label="View blog page"
-          >
+          <Link to="/blog" activeClassName="active" aria-label="View blog page">
             Blog
           </Link>
-          */}
         </div>
       </nav>
     </Container>
