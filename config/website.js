@@ -18,8 +18,8 @@ module.exports = {
   googleAnalyticsID: '',
 
   // Manifest and Progress color
-  themeColor: '#006CAB',
-  backgroundColor: '#2b2e3c',
+  themeColor: '#0078CC',
+  backgroundColor: '#0078CC',
 
   // Social component
   twitter: 'https://twitter.com/lorderikir/',

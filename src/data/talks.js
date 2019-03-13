@@ -17,8 +17,9 @@ export const talks = [
     title:
       'Building NodeJS Apps on Google’s Scalable Infrastructure for JuniorDev', // Talk title
     links: {
-      slides: '', // Link to Slides,
-      code: '', // code repo link
+      slides:
+        'https://speakerdeck.com/lorderikir/building-scalable-nodejs-apps-on-googles-infrastructure', // Link to Slides,
+      code: 'https://github.com/lorderikir/juniordev-gcp-techtalk', // code repo link
     },
     description:
       'This talk is a brief introduction to Google Cloud Platform and dives deep into Google App Engine. And Also deploying a NodeJS application to Google App Engine', // talk description

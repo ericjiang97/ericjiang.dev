@@ -8,6 +8,11 @@ import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
 import theme from '../../config/theme'
 import Hero from '../components/Hero'
+import LinkButton from '../components/LinkButton'
+
+import TechTalksImg from '../images/conference.svg'
+import AboutImg from '../images/about_me.svg'
+import SWEImg from '../images/swe_coding.svg'
 
 const PostTitle = styled.h2`
   margin-bottom: ${rhythm(0.3)};
@@ -22,7 +27,9 @@ const Description = styled.p`
   margin-bottom: 10px;
   display: inline-block;
 `
-
+const Action = link => {
+  return <a href={link} />
+}
 export default function Index({ data: { site, allMdx } }) {
   return (
     <Layout
@@ -37,7 +44,32 @@ export default function Index({ data: { site, allMdx } }) {
           background-color: #fff;
         `}
       >
-        <div>Actions go here</div>
+        <div
+          css={css`
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 0;
+          `}
+        >
+          <LinkButton
+            to="/talks"
+            heading="Talks"
+            backgroundImg={TechTalksImg}
+          />
+          <LinkButton
+            to="/about"
+            heading="About Me"
+            backgroundColor={theme.colors.green}
+            backgroundImg={AboutImg}
+          />
+          <LinkButton
+            to="/projects"
+            heading="Project"
+            backgroundColor={theme.colors.red}
+            backgroundImg={SWEImg}
+          />
+        </div>
         <hr />
         <h2>Latest Posts</h2>
         {allMdx.edges.map(({ node: post }) => (

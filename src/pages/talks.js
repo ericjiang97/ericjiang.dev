@@ -56,7 +56,12 @@ export default function Index({ data: { site, allMdx } }) {
                   <span>- Location: {`${delivery.location} `}</span>
                 )}
                 {delivery.organiser && (
-                  <span>- Organiser: {`${delivery.organiser.name}`}</span>
+                  <span>
+                    - Organiser:{' '}
+                    <a href={delivery.organiser.link}>{`${
+                      delivery.organiser.name
+                    }`}</a>
+                  </span>
                 )}
               </span>
               <p>{description}</p>
