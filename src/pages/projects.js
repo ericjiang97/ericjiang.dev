@@ -7,7 +7,7 @@ import Link from '../components/Link'
 import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
 import theme from '../../config/theme'
-import Hero from '../components/Hero'
+import SmallHero from '../components/SmallHero'
 import ProfilePic from '../images/profile.png'
 
 const Description = styled.p`
@@ -22,7 +22,7 @@ export default function Index({ data: { site, allMdx } }) {
       headerColor={theme.colors.white}
       headerBg={theme.brand.primary}
     >
-      <Hero />
+      <SmallHero />
       <Container
         css={css`
           padding-bottom: 0;
