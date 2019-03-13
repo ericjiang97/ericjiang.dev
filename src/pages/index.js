@@ -8,6 +8,8 @@ import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
 import theme from '../../config/theme'
 
+import ProfilePic from '../images/profile.png'
+
 const Hero = () => (
   <section
     css={css`
@@ -26,6 +28,13 @@ const Hero = () => (
         flex-direction: column;
       `}
     >
+      <img
+        src={ProfilePic}
+        css={css`
+          max-width: 150px;
+          border-radius: 100%;
+        `}
+      />
       <h1
         css={css`
           position: relative;
@@ -33,9 +42,11 @@ const Hero = () => (
           line-height: 1.5;
           margin: 0;
           max-width: ${rhythm(15)};
+          font-weight: 300;
         `}
       >
-        Your blog says the things you want to say.
+        👋, Hi I'm Eric, I'm a final year IT student at Monash University and
+        I'm currently building MonPlan.
       </h1>
     </Container>
     <div

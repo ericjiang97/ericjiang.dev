@@ -7,12 +7,12 @@ module.exports = {
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: 'images/logo.png', // Used for SEO and manifest, path to your image you placed in the 'static' folder
   siteDescription: 'This is where they post things!',
-  author: 'Author', // Author for schemaORGJSONLD
-  organization: 'egghead.io LLC',
+  author: 'Eric Jiang', // Author for schemaORGJSONLD
+  organization: '',
 
   // siteFBAppID: '123456789', // Facebook App ID - Optional
-  userTwitter: '@eggheadio', // Twitter Username
-  ogSiteName: 'egghead.io Gatsby Starter Blog', // Facebook Site Name
+  userTwitter: '@lorderikir', // Twitter Username
+  ogSiteName: 'Eric Jiang', // Facebook Site Name
   ogLanguage: 'en_US',
   googleAnalyticsID: '',
 
@@ -21,8 +21,8 @@ module.exports = {
   backgroundColor: '#2b2e3c',
 
   // Social component
-  twitter: 'https://twitter.com/eggheadio/',
-  twitterHandle: '@eggheadio',
-  github: 'https://github.com/eggheadio/',
-  linkedin: '',
+  twitter: 'https://twitter.com/lorderikir/',
+  twitterHandle: '@lorderikir',
+  github: 'https://github.com/lorderikir/',
+  linkedin: 'https://linkedin.com/in/ericjiang97',
 }
