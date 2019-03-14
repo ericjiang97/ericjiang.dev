@@ -47,18 +47,20 @@ class LinkButton extends React.Component {
             >
               {heading}
             </h1>
-            <p
-              css={css`
-                color: ${textColor};
-                font-weight: 300;
-                margin-top: 5px;
-                font-size: 1em;
-              `}
-            >
-              {subheading}
-            </p>
+            {subheading && (
+              <p
+                css={css`
+                  color: ${textColor};
+                  font-weight: 300;
+                  margin-top: 5px;
+                  font-size: 1em;
+                `}
+              >
+                {subheading}
+              </p>
+            )}
           </div>
-          {backgroundImg && <img src={backgroundImg} alt="" />}
+          {backgroundImg && <img src={backgroundImg} alt="" width="100%" />}
         </div>
       </a>
     )

@@ -13,6 +13,7 @@ import LinkButton from '../components/LinkButton'
 import TechTalksImg from '../images/conference.svg'
 import AboutImg from '../images/about_me.svg'
 import SWEImg from '../images/swe_coding.svg'
+import PhotosImg from '../images/photos.svg'
 
 const PostTitle = styled.h2`
   margin-bottom: ${rhythm(0.3)};
@@ -65,6 +66,12 @@ export default function Index({ data: { site, allMdx } }) {
             heading="Projects"
             backgroundColor={theme.colors.red}
             backgroundImg={SWEImg}
+          />
+          <LinkButton
+            to="https://flickr.com/people/lorderikir"
+            heading="Photos"
+            backgroundColor={theme.colors.black}
+            backgroundImg={PhotosImg}
           />
         </div>
         <hr />
