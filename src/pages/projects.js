@@ -25,12 +25,27 @@ export default function Index({ data: { site, allMdx } }) {
         <h1>Projects</h1>
         <hr />
         {projects.map((project, index) => {
-          const { title, dates, description } = project
+          const { title, dates, description, copyright, link, image } = project
           return (
-            <div key={index}>
-              <h3>{title}</h3>
+            <div key={index} id={title}>
+              <a href={link} target="_blank" rel="noreferrer noopener">
+                <h3>{title}</h3>
+              </a>
+              {image && <img src={image} alt="project screenshot" />}
               <span>{`${dates.from} - ${dates.to || 'Present'}`}</span>
-              <Remark source={description} />
+              <Remark
+                source={description}
+                css={css`
+                  font-size: 0.8em;
+                `}
+              />
+              <span
+                css={css`
+                  font-size: 0.8em;
+                `}
+              >
+                {copyright}
+              </span>
               <hr />
             </div>
           )

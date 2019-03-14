@@ -49,7 +49,7 @@ export default function Index({ data: { site, allMdx } }) {
         {talks.map((talk, index) => {
           const { title, description, delivery, links } = talk
           return (
-            <div>
+            <div key={index}>
               <Link to={links.slides} aria-label={title}>
                 <PostTitle>{title}</PostTitle>
               </Link>
