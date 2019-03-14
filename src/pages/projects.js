@@ -39,13 +39,13 @@ export default function Index({ data: { site, allMdx } }) {
                   font-size: 0.8em;
                 `}
               />
-              <span
+              <p
                 css={css`
                   font-size: 0.8em;
                 `}
               >
                 {copyright}
-              </span>
+              </p>
               <hr />
             </div>
           )
