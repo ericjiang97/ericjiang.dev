@@ -95,7 +95,7 @@ export const GitHub = ({
 
 export const RssFeed = ({
   color = `${theme.colors.body_color}`,
-  url = `/feed.xml`,
+  url = `/rss.xml`,
 }) => (
   <Link
     to={url}
