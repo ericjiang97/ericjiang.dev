@@ -15,7 +15,7 @@ export default function SmallHero() {
         }
         width: 100%;
         background: ${theme.brand.primary};
-        padding: 20px 0 30px 0;
+        padding: 10px 0 10px 0;
         display: flex;
       `}
     >
@@ -25,18 +25,19 @@ export default function SmallHero() {
           flex-direction: row;
           justify-content: center;
           align-items: center;
+          flex-wrap: wrap;
         `}
       >
         <img
           src={ProfilePic}
           css={css`
-            max-width: 150px;
-            max-height: 150px;
+            max-width: 75px;
+            max-height: 75px;
             border-radius: 100%;
           `}
           alt="Eric"
         />
-        <h3
+        <h4
           css={css`
             position: relative;
             z-index: 5;
@@ -52,7 +53,7 @@ export default function SmallHero() {
           </span>
           , Hi I'm Eric, I'm a final year IT student at Monash University and
           I'm currently building MonPlan.
-        </h3>
+        </h4>
       </Container>
       <div
         css={css`
