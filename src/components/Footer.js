@@ -19,15 +19,18 @@ const Footer = ({ author, noSubscribeForm }) => (
           display: flex;
           align-items: center;
           justify-content: space-between;
+          flex-direction: column;
+          flex-wrap: wrap;
         `}
       >
         <div
           css={css`
             font-size: 90%;
             opacity: 0.7;
+            display: flex;
           `}
         >
-          {author && `${author} \u00A9 ${new Date().getFullYear()}`}
+          {author && `Copyright \u00A9 ${author}  ${new Date().getFullYear()}`}
         </div>
         <div>
           <RssFeed />

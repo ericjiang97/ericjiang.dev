@@ -47,6 +47,8 @@ export default function Index({ data: { site, allMdx } }) {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
             padding: 0;
           `}
         >
