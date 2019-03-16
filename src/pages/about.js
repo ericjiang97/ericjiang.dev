@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
+import MediaQuery from 'react-responsive'
+
 import Layout from '../components/Layout'
 import Container from 'components/Container'
 import theme from '../../config/theme'
@@ -13,7 +15,9 @@ export default function Index({ data: { site, allMdx } }) {
       headerColor={theme.colors.white}
       headerBg={theme.brand.primary}
     >
-      <SmallHero />
+      <MediaQuery minDeviceWidth={400}>
+        <SmallHero />
+      </MediaQuery>
       <Container
         css={css`
           padding-bottom: 0;

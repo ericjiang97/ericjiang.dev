@@ -7,6 +7,7 @@ import theme from '../../config/theme'
 import SmallHero from '../components/SmallHero'
 import { projects } from '../data/projects'
 import Remark from 'react-markdown'
+import MediaQuery from 'react-responsive'
 
 export default function Index({ data: { site, allMdx } }) {
   return (
@@ -15,7 +16,9 @@ export default function Index({ data: { site, allMdx } }) {
       headerColor={theme.colors.white}
       headerBg={theme.brand.primary}
     >
-      <SmallHero />
+      <MediaQuery minDeviceWidth={400}>
+        <SmallHero />
+      </MediaQuery>
       <Container
         css={css`
           padding-bottom: 0;
