@@ -56,6 +56,7 @@ module.exports = {
         decks: [],
       },
     },
+    'gatsby-plugin-twitter',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-emotion',
@@ -150,6 +151,12 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/lib/typography`,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: ['@weknow/gatsby-remark-twitter'],
       },
     },
     'gatsby-plugin-offline',
