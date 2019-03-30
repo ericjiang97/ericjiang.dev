@@ -1,38 +1,51 @@
-# egghead.io creator MDX Blog Starter Project
+# lorderikir.me Personal Website
 
-This is based on Robin Wieruch's https://github.com/rwieruch/gatsby-mdx-blog-starter-project
-
-Lot's of nice pieces are also borrowed from Jason Lengstorf https://github.com/jlengstorf/lengstorf.com
-
+My personal site at [lorderikir.me](https://lorderikir.me) is based off the [Gatsby Starter Egghead Blog](https://github.com/eggheadio/gatsby-starter-egghead-blog)
 A starter project in [Gatsby.js](https://www.gatsbyjs.org/) with [MDX](https://github.com/mdx-js/mdx).
 
-## Features
+## [➞ Visit my website](https://lorderikir.me)
 
-- MDX: JavaScript/React in Markdown
-- Prism.js: Syntax Highlighting
-- Pagination
-- Emotion
-- Typography.js
-- Self-hosted fonts ([Inter UI](https://rsms.me/inter/))
-- Social media share buttons
-- Site & Theme config files
-- ConvertKit subscribe form (Formik and Yup)
-- Placeholder illustrations by [Katerina Limpitsouni](https://twitter.com/ninalimpi) from [undraw.co](https://undraw.co/)
+# Development
 
-## [➞ Demo](https://egghead-gatsby-starter.netlify.com/)
+## Requirements
 
-## Setup
+- Node & NPM
+- Yarn (recommended)
+- NVM (recommended)
 
-- `git clone git@github.com:eggheadio/gatsby-starter-egghead-blog.git`
-- `cd gatsby-starter-egghead-blog`
-- `npm install`
-- `npm run develop`
-- visit http://localhost:8000
+## Getting Started
 
-## Setup via Gatsby CLI
+1. Clone this repository locally
 
-- `gatsby new gatsby-starter-egghead-blog git@github.com:eggheadio/gatsby-starter-egghead-blog.git`
-- `cd gatsby-starter-egghead-blog`
-- `npm install`
-- `gatsby develop`
-- visit http://localhost:8000
+   ```bash
+   git clone https://github.com/lorderikir/lorderikir.me
+
+   # or if you are using SSH
+
+   git clone git@github.com:lorderikir/lorderikir.me.git
+   ```
+
+2. Go into current directory `cd lorderikir.me`
+3. Install required Node dependencies
+
+   ```bash
+   npm install
+
+   # or if you prefer yarn
+
+   yarn
+   ```
+
+4. Start the local development server
+
+   ```bash
+   npm run develop
+
+   # or if you prefer yarn
+
+   yarn develop
+   ```
+
+# LICENSE
+
+See [LICENSE](./LICENSE)
