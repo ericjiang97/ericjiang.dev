@@ -28,7 +28,6 @@ const Header = ({
         css={css`
           width: 100%;
           display: flex;
-          justify-content: space-between;
           align-items: center;
           color: ${headerColor};
           a {
@@ -41,12 +40,15 @@ const Header = ({
           }
         `}
       >
-        <MediaQuery maxDeviceWidth={330}>
+        <div
+          css={css`
+            flex: 1;
+          `}
+        >
           <Link to="/" aria-label="go to homepage" activeClassName="active">
             <div
               css={css`
                 display: flex;
-                justify-content: center;
                 align-items: center;
               `}
             >
@@ -65,53 +67,53 @@ const Header = ({
                   margin-left: 5px;
                 `}
               >
-                {' '}
-                Eric Jiang
+                {siteTitle}
               </span>
             </div>
           </Link>
-        </MediaQuery>
+        </div>
+        <Link
+          to="/blog"
+          aria-label="about me"
+          activeClassName="active"
+          css={css`
+            margin: 5px;
+          `}
+        >
+          Blog
+        </Link>
+        <Link
+          to="/about"
+          aria-label="about me"
+          activeClassName="active"
+          css={css`
+            margin: 5px;
+          `}
+        >
+          About
+        </Link>
         <MediaQuery minDeviceWidth={330}>
-          <Link to="/" aria-label="go to homepage" activeClassName="active">
-            {siteTitle}
-          </Link>
-          <Link to="/about" aria-label="about me" activeClassName="active">
-            About
-          </Link>
           <Link
             to="/projects"
             aria-label="about projects"
             activeClassName="active"
+            css={css`
+              margin: 5px;
+            `}
           >
             Projects
           </Link>
-          <Link to="/talks" aria-label="about me" activeClassName="active">
+          <Link
+            to="/talks"
+            aria-label="about me"
+            activeClassName="active"
+            css={css`
+              margin: 5px;
+            `}
+          >
             Talks
           </Link>
         </MediaQuery>
-        <div
-          css={css`
-            font-size: 16px;
-            line-height: 1.25;
-            display: flex;
-            align-items: center;
-            a {
-              color: ${dark ? '#fbfbfb' : 'rgba(0,0,0,0.85)'};
-              text-decoration: none;
-              & + a {
-                margin-left: 32px;
-              }
-            }
-            .active {
-              display: none;
-              visibility: hidden;
-            }
-          `}
-        >
-          <Link to="/blog" activeClassName="active" aria-label="View blog page">
-            Blog
-          </Link>
-        </div>
       </nav>
     </Container>
   </header>
