@@ -1,6 +1,6 @@
 ---
-slug: 20190330-march-2019-in-review
-date: 2019-03-30
+slug: 20190331-march-2019-in-review
+date: 2019-03-31
 title: 'March 2019 in review'
 description: ''
 published: true
@@ -19,4 +19,8 @@ As I previous stated back in late February 2019, that this year was going to be 
 
 ## Interviewing with Google
 
-Yep, that's right despite my not so good grades/GPA, I've managed to snag a video interview with Google.
+My plans after uni isn't that amazing, I've applied for a few roles across some really big tech companies - Google (Sydney & Taiwan), Atlassian (Sydney) and REA Group (Melbourne). Though if I don't get any of these roles, I'll be applying for a mid level roles later this year. So yeah, I'd applied for this role (Test Engineering) back in January, and the main reason why I applied for this role that's going to be located in Taiwan, is not only because I love doing DevOps/SRE, I also wanted to travel a bit more (especially back to Japan - 🤣)
+
+Yep, that's right despite my not so good grades/GPA, I've managed to snag a video interview with Google. The interview went fairly well, I did a lot of [Hackerrank](https://www.hackerrank.com) questions before the interview. But for those who are looking for a test engineering role - the questions were straightforward, having a knowledge for general data structures, SRE/DevOps/SysAdmin strategies and complexity will be very beneficial.
+
+I'm hope that I can this role thought! 🤞
