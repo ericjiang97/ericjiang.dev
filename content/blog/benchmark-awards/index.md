@@ -5,7 +5,7 @@ title: 'Winning the Rising Star Category of the 2019 itNews Benchmark Awards'
 description: ' '
 published: true
 banner: './banner.jpg'
-tags: ["career"]
+tags: ["career", "review"]
 ---
 
 It's a great honour and privilege to win the 2019 itnews #BenchmarkAwards - Rising Star Category along side Fiona Sparks (Go Victoria!)

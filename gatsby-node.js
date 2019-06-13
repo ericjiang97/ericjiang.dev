@@ -31,7 +31,6 @@ const createPosts = (createPage, createRedirect, edges) => {
       },
     })
   })
-  console.log(edges)
   // Tag pages:
   let tags = []
   // Iterate through each post, putting all found tags into `tags`
@@ -42,6 +41,7 @@ const createPosts = (createPage, createRedirect, edges) => {
   })
   // Eliminate duplicate tags
   tags = _.uniq(tags)
+  console.log(tags)
 
   // Make tag pages
   tags.forEach(tag => {

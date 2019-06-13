@@ -6,7 +6,7 @@ description: 'That was quick! 2018 went by in a breeze and we’re here with a n
 published: true
 author: 'Eric Jiang'
 banner: './carsales_talk.jpg'
-tags: ['review', 'clubs']
+tags: ['review']
 ---
 
 As some of you might know, I've recently joined [Wired Monash](http://wired.org.au) - the Students IT Society as the Graduate Representative.
