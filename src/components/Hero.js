@@ -46,8 +46,8 @@ export default function Hero() {
           <span role="img" aria-label="wave">
             👋
           </span>
-          , Hi I'm Eric, I'm a final year IT student at Monash University and
-          I'm currently building MonPlan.
+          , Hi I'm Eric, I'm a final year IT student at Monash Uni and I'm
+          currently working as Software Engineer at eSolutions, Monash Uni.
         </h1>
       </Container>
       <div

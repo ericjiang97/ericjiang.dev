@@ -25,6 +25,7 @@ export default function Index({ data: { site, allMdx } }) {
         `}
       >
         <h1>About Me</h1>
+        <p>I love delivering impact to everyone in the community.</p>
         <p>
           I'm currently in my final year (studying part-time) in my Bachelor of
           Information Technology at{' '}
@@ -34,12 +35,11 @@ export default function Index({ data: { site, allMdx } }) {
             rel="noreferrer noopener"
           >
             Monash University
-          </a>{' '}
-          degree where I'm majoring in Computer networks and security. Even
-          though I'm majoring in the Cybersecurity, I still love other sides of
-          the IT field such as Product Management, Software Engineering and
-          Web/Cloud Technologies. And applying knowledge from the Cybersecurity
-          and DevOps into Software Development.
+          </a>
+          . I'm majoring in Computer networks and security. I still love other
+          sides of the IT field such as Product Management, Software Engineering
+          and Web/Cloud Technologies. And applying knowledge from the
+          Cybersecurity and DevOps into Software Development.
         </p>
         <p>
           Over the past few years I've been building{' '}
