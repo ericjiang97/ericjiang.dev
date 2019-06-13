@@ -1,37 +1,56 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
+import { Link, graphql } from 'gatsby'
+import { css } from '@emotion/core'
 
 // Utilities
 import kebabCase from 'lodash/kebabCase'
+import MediaQuery from 'react-responsive'
 
 // Components
-import { Helmet } from 'react-helmet'
-import { Link, graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import SmallHero from '../components/SmallHero'
+
+// Configuration
+import theme from '../../config/theme'
+import Container from '../components/Container'
 
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
+    site,
   },
-}) => (
-  <div>
-    <Helmet title={title} />
-    <div>
-      <h1>Tags</h1>
-      <ul>
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-)
+}) => {
+  return (
+    <Layout
+      site={site}
+      headerColor={theme.colors.white}
+      headerBg={theme.brand.primary}
+    >
+      <MediaQuery minDeviceWidth={400}>
+        <SmallHero />
+      </MediaQuery>
+      <Container
+        css={css`
+          padding-bottom: 0;
+          background-color: #fff;
+        `}
+      >
+        <h1>Tags</h1>
+        <ul>
+          {group.map(tag => (
+            <li key={tag.fieldValue}>
+              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                {tag.fieldValue} ({tag.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Container>
+    </Layout>
+  )
+}
 
 TagsPage.propTypes = {
   data: PropTypes.shape({
@@ -56,6 +75,7 @@ export default TagsPage
 export const pageQuery = graphql`
   query {
     site {
+      ...site
       siteMetadata {
         title
       }
