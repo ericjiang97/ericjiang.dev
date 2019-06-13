@@ -4,6 +4,7 @@ date: 2019-03-13
 title: 'Hello World!'
 description: '👋 Hi there! Welcome to my blog!!! Over the past few years I have built various personal sites, this is my new site. '
 published: true
+tags: ['development']
 banner: './banner.jpg'
 ---
 

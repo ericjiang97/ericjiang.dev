@@ -31,6 +31,29 @@ const createPosts = (createPage, createRedirect, edges) => {
       },
     })
   })
+  console.log(edges)
+  // Tag pages:
+  let tags = []
+  // Iterate through each post, putting all found tags into `tags`
+  _.each(edges, edge => {
+    if (_.get(edge, 'node.frontmatter.tags')) {
+      tags = [...edge.node.frontmatter.tags, ...tags]
+    }
+  })
+  // Eliminate duplicate tags
+  tags = _.uniq(tags)
+
+  // Make tag pages
+  tags.forEach(tag => {
+    console.log(`Creating tag ${tag}`)
+    createPage({
+      path: `/tags/${_.kebabCase(tag)}/`,
+      component: path.resolve('src/templates/tags.js'),
+      context: {
+        tag,
+      },
+    })
+  })
 }
 
 exports.createPages = ({ actions, graphql }) =>
@@ -48,6 +71,9 @@ exports.createPages = ({ actions, graphql }) =>
                 name
                 sourceInstanceName
               }
+            }
+            frontmatter {
+              tags
             }
             excerpt(pruneLength: 250)
             fields {
@@ -73,6 +99,7 @@ exports.createPages = ({ actions, graphql }) =>
 
     const { edges } = data.allMdx
     const { createRedirect, createPage } = actions
+
     createPosts(createPage, createRedirect, edges)
     createPaginatedPages(actions.createPage, edges, '/blog', {
       categories: [],
@@ -161,6 +188,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'description',
       node,
       value: node.frontmatter.description,
+    })
+
+    createNodeField({
+      name: 'tags',
+      node,
+      value: node.frontmatter.tags,
     })
 
     createNodeField({
