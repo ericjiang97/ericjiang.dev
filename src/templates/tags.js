@@ -1,8 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { css } from '@emotion/core'
+import { Link, graphql } from 'gatsby'
 
 // Components
-import { Link, graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import theme from '../../config/theme'
+import Container from '../components/Container'
 
 const Tags = ({ pageContext, data }) => {
   console.log(pageContext, data)
@@ -13,24 +17,35 @@ const Tags = ({ pageContext, data }) => {
   } tagged with "${tag}"`
 
   return (
-    <div>
-      <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { slug, title } = node.frontmatter
-          return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
-          )
-        })}
-      </ul>
-      {/*
+    <Layout
+      site={data.site}
+      headerColor={theme.colors.white}
+      headerBg={theme.brand.primary}
+    >
+      <Container
+        css={css`
+          padding-bottom: 0;
+          background-color: #fff;
+        `}
+      >
+        <h1>{tagHeader}</h1>
+        <ul>
+          {edges.map(({ node }) => {
+            const { slug, title } = node.frontmatter
+            return (
+              <li key={slug}>
+                <Link to={slug}>{title}</Link>
+              </li>
+            )
+          })}
+        </ul>
+        {/*
               This links to a page that does not yet exist.
               We'll come back to it!
             */}
-      <Link to="/tags">All tags</Link>
-    </div>
+        <Link to="/tags">All tags</Link>
+      </Container>
+    </Layout>
   )
 }
 
@@ -61,6 +76,9 @@ export default Tags
 
 export const pageQuery = graphql`
   query($tag: String) {
+    site {
+      ...site
+    }
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

@@ -10,6 +10,7 @@ import { fonts } from '../lib/typography'
 import Share from '../components/Share'
 import config from '../../config/website'
 import { bpMaxSM } from '../lib/breakpoints'
+import TagLabel from '../components/TagLabel'
 
 export default function Post({
   data: { site, mdx },
@@ -19,6 +20,7 @@ export default function Post({
   const date = mdx.frontmatter.date
   const title = mdx.frontmatter.title
   const banner = mdx.frontmatter.banner
+  const tags = mdx.frontmatter.tags
 
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>
@@ -78,6 +80,14 @@ export default function Post({
         </Container>
         {/* <SubscribeForm /> */}
       </article>
+      <Container>
+        <h2>Tags</h2>
+        <div>
+          {tags.map((tag, i) => {
+            return <TagLabel key={i}>{tag}</TagLabel>
+          })}
+        </div>
+      </Container>
       <Container noVerticalPadding>
         <Share
           url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}
@@ -100,6 +110,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         author
+        tags
         banner {
           childImageSharp {
             fluid(maxWidth: 900) {
