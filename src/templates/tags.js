@@ -5,8 +5,11 @@ import { Link, graphql } from 'gatsby'
 
 // Components
 import Layout from '../components/Layout'
-import theme from '../../config/theme'
 import Container from '../components/Container'
+import BlogPost from '../components/BlogPost'
+
+// Configuration
+import theme from '../../config/theme'
 
 const Tags = ({ pageContext, data }) => {
   console.log(pageContext, data)
@@ -30,13 +33,8 @@ const Tags = ({ pageContext, data }) => {
       >
         <h1>{tagHeader}</h1>
         <ul>
-          {edges.map(({ node }) => {
-            const { slug, title } = node.frontmatter
-            return (
-              <li key={slug}>
-                <Link to={slug}>{title}</Link>
-              </li>
-            )
+          {edges.map(({ node: post }) => {
+            return <BlogPost post={post} />
           })}
         </ul>
         {/*
@@ -87,9 +85,19 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          excerpt(pruneLength: 300)
           frontmatter {
             title
             slug
+            date(formatString: "MMMM DD, YYYY")
+            banner {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+            tags
           }
         }
       }
