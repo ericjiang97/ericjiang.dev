@@ -72,17 +72,42 @@ function BlogPost({ post }) {
       >
         {post.excerpt}
       </p>
-      <Link
-        to={`/${post.frontmatter.slug}`}
-        aria-label={`view "${post.frontmatter.title}" article`}
+      <div
+        css={css`
+          display: flex;
+        `}
       >
-        Read Article →
-      </Link>
-      <div>
-        <h3>Tagged with:</h3>
-        {post.frontmatter.tags.map((tag, index) => (
-          <TagLabel key={index}>{tag}</TagLabel>
-        ))}
+        <div
+          css={css`
+            margin-top: 10px;
+            flex: 1;
+          `}
+        >
+          <div
+            css={css`
+              font-size: 16px;
+              margin-bottom: 5px;
+            `}
+          >
+            Tags:
+          </div>
+          {post.frontmatter.tags.map((tag, index) => (
+            <TagLabel key={index}>{tag}</TagLabel>
+          ))}
+        </div>
+        <div
+          css={css`
+            display: flex;
+            align-items: center;
+          `}
+        >
+          <Link
+            to={`/${post.frontmatter.slug}`}
+            aria-label={`view "${post.frontmatter.title}" article`}
+          >
+            Read Article →
+          </Link>
+        </div>
       </div>
     </div>
   )

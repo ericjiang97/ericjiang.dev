@@ -14,6 +14,7 @@ import SmallHero from '../components/SmallHero'
 // Configuration
 import theme from '../../config/theme'
 import Container from '../components/Container'
+import TagLabel from '../components/TagLabel'
 
 const TagsPage = ({
   data: {
@@ -32,20 +33,22 @@ const TagsPage = ({
       </MediaQuery>
       <Container
         css={css`
-          padding-bottom: 0;
           background-color: #fff;
         `}
       >
         <h1>Tags</h1>
-        <ul>
+        <div
+          css={css`
+            display: flex;
+            flex-wrap: wrap;
+          `}
+        >
           {group.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
+            <TagLabel to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+              {tag.fieldValue} ({tag.totalCount})
+            </TagLabel>
           ))}
-        </ul>
+        </div>
       </Container>
     </Layout>
   )

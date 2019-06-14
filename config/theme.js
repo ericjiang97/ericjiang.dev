@@ -13,7 +13,7 @@ const brand = {
 }
 
 const colors = {
-  primary_light: `${lighten(0.55, brand.primary)}`,
+  primary_light: `${lighten(0.75, brand.primary)}`,
   blog_header: '#05233f',
   gray: '#92a2b2',
   black: '#000',

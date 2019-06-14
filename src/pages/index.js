@@ -14,7 +14,6 @@ import TechTalksImg from '../images/conference.svg'
 import AboutImg from '../images/about_me.svg'
 import SWEImg from '../images/swe_coding.svg'
 import PhotosImg from '../images/photos.svg'
-import GeneralUtils from '../utils/GeneralUtils'
 
 const PostTitle = styled.h2`
   margin-bottom: ${rhythm(0.3)};
@@ -143,7 +142,7 @@ export default function Index({ data: { site, allMdx } }) {
             background: theme.brand.primary,
             color: theme.colors.white,
             ':hover': {
-              color: '#9EBCD8',
+              color: theme.colors.primary_light,
             },
           })}
         >

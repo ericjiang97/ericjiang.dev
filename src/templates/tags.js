@@ -57,7 +57,7 @@ const Tags = ({ pageContext, data }) => {
             background: theme.brand.primary,
             color: theme.colors.white,
             ':hover': {
-              color: '#9EBCD8',
+              color: theme.colors.primary_light,
             },
           })}
         >
