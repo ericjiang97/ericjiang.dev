@@ -13,6 +13,7 @@ const Header = ({
   bgColor = 'none',
   siteTitle,
   headerColor = 'black',
+  sticky = false,
 }) => (
   <header
     css={css`
@@ -21,6 +22,9 @@ const Header = ({
       background: none;
       padding: 15px 0 15px 0;
       background: ${dark ? '#090909' : `${bgColor}` || 'none'};
+      position: ${sticky ? 'fixed' : 'inherit'};
+      top: ${sticky ? 0 : 'inherit'};
+      z-index: ${sticky ? 9 : 'inherit'};
     `}
   >
     <Container noVerticalPadding>

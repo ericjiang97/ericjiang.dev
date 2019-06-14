@@ -112,6 +112,7 @@ export default ({
   headerColor,
   noFooter,
   noSubscribeForm,
+  stickyHeader = false,
 }) => {
   const {
     description: siteDescription,
@@ -154,11 +155,18 @@ export default ({
               dark={dark}
               bgColor={headerBg}
               headerColor={headerColor}
+              sticky={stickyHeader}
             />
           )}
-          <MDXProvider components={mdxComponents}>
-            <Fragment>{children}</Fragment>
-          </MDXProvider>
+          <div
+            css={css`
+              margin-top: ${stickyHeader ? '35px' : '0px'};
+            `}
+          >
+            <MDXProvider components={mdxComponents}>
+              <Fragment>{children}</Fragment>
+            </MDXProvider>
+          </div>
           {!noFooter && (
             <Footer
               author={site.siteMetadata.author.name}

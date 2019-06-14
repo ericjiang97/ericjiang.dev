@@ -11,6 +11,7 @@ import Share from '../components/Share'
 import config from '../../config/website'
 import { bpMaxSM } from '../lib/breakpoints'
 import TagLabel from '../components/TagLabel'
+import theme from '../../config/theme'
 
 export default function Post({
   data: { site, mdx },
@@ -23,7 +24,13 @@ export default function Post({
   const tags = mdx.frontmatter.tags
 
   return (
-    <Layout site={site} frontmatter={mdx.frontmatter}>
+    <Layout
+      site={site}
+      frontmatter={mdx.frontmatter}
+      stickyHeader={true}
+      headerColor={theme.colors.white}
+      headerBg={theme.colors.blog_header}
+    >
       <SEO frontmatter={mdx.frontmatter} isBlogPost />
       <article
         css={css`

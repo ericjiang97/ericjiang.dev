@@ -23,25 +23,31 @@ const Tags = ({ pageContext, data }) => {
     <Layout
       site={data.site}
       headerColor={theme.colors.white}
-      headerBg={theme.brand.primary}
+      headerBg={theme.colors.blog_header}
+      stickyHeader={true}
     >
       <Container
         css={css`
-          padding-bottom: 0;
           background-color: #fff;
         `}
       >
-        <h1>{tagHeader}</h1>
-        <ul>
-          {edges.map(({ node: post }) => {
-            return <BlogPost post={post} />
-          })}
-        </ul>
-        {/*
-              This links to a page that does not yet exist.
-              We'll come back to it!
-            */}
-        <Link to="/tags">All tags</Link>
+        <h1
+          css={css`
+            text-align: center;
+          `}
+        >
+          {tagHeader}
+        </h1>
+      </Container>
+      <Container
+        css={css`
+          background-color: #fff;
+        `}
+      >
+        {edges.map(({ node: post }) => {
+          return <BlogPost post={post} />
+        })}
+        <Link to="/tags">View All tags</Link>
       </Container>
     </Layout>
   )

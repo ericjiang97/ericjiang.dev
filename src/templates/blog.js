@@ -12,10 +12,7 @@ import BlogPost from '../components/BlogPost'
 // Configuration
 import theme from '../../config/theme'
 
-const Blog = ({
-  data: { site, allMdx },
-  pageContext: { pagination, categories },
-}) => {
+const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
   const { page, nextPagePath, previousPagePath } = pagination
 
   const posts = page
@@ -32,7 +29,8 @@ const Blog = ({
     <Layout
       site={site}
       headerColor={theme.colors.white}
-      headerBg={theme.brand.primary}
+      headerBg={theme.colors.blog_header}
+      stickyHeader={true}
     >
       <SEO />
       <Container

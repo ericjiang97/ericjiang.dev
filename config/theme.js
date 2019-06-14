@@ -2,7 +2,7 @@ import { darken, lighten } from 'polished'
 import { fonts } from '../src/lib/typography'
 
 const brand = {
-  primary: '#0078CC',
+  primary: '#05233f',
   //primary: '#5348FF',
   //primary: '#1ABC9C',
   //primary: '#D42210',
@@ -14,6 +14,7 @@ const brand = {
 
 const colors = {
   primary_light: `${lighten(0.55, brand.primary)}`,
+  blog_header: '#05233f',
   gray: '#D3D3D3',
   black: '#000',
   white: '#fff',
