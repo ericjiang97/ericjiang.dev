@@ -14,6 +14,7 @@ import TechTalksImg from '../images/conference.svg'
 import AboutImg from '../images/about_me.svg'
 import SWEImg from '../images/swe_coding.svg'
 import PhotosImg from '../images/photos.svg'
+import GeneralUtils from '../utils/GeneralUtils'
 
 const PostTitle = styled.h2`
   margin-bottom: ${rhythm(0.3)};
@@ -136,7 +137,15 @@ export default function Index({ data: { site, allMdx } }) {
         <Link
           to="/blog"
           aria-label="Visit blog page"
-          className="button-secondary"
+          css={css({
+            borderRadius: 4,
+            padding: '12px 12px',
+            background: theme.brand.primary,
+            color: theme.colors.white,
+            ':hover': {
+              color: '#9EBCD8',
+            },
+          })}
         >
           View all articles
         </Link>

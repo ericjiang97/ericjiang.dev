@@ -161,6 +161,7 @@ export default ({
           <div
             css={css`
               margin-top: ${stickyHeader ? '35px' : '0px'};
+              flex: 1;
             `}
           >
             <MDXProvider components={mdxComponents}>

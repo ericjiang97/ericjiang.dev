@@ -47,7 +47,22 @@ const Tags = ({ pageContext, data }) => {
         {edges.map(({ node: post }) => {
           return <BlogPost post={post} />
         })}
-        <Link to="/tags">View All tags</Link>
+
+        <Link
+          to="/tags"
+          aria-label="Visit blog page"
+          css={css({
+            borderRadius: 4,
+            padding: '12px 12px',
+            background: theme.brand.primary,
+            color: theme.colors.white,
+            ':hover': {
+              color: '#9EBCD8',
+            },
+          })}
+        >
+          View all tags
+        </Link>
       </Container>
     </Layout>
   )
