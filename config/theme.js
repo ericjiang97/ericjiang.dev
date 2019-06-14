@@ -9,13 +9,13 @@ const brand = {
   //primary: '#D96E0E',
   //primary: '#9B59B6',
   //primary: '#6420E5',
-  secondary: '#EEF4F2',
+  secondary: '#fcfacf',
 }
 
 const colors = {
   primary_light: `${lighten(0.55, brand.primary)}`,
   blog_header: '#05233f',
-  gray: '#D3D3D3',
+  gray: '#92a2b2',
   black: '#000',
   white: '#fff',
   bg_color: '#fafafa',
