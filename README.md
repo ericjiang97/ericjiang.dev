@@ -1,9 +1,13 @@
+![homepage](./homepage.png)
+
 # lorderikir.me Personal Website
 
 My personal site at [lorderikir.me](https://lorderikir.me) is based off the [Gatsby Starter Egghead Blog](https://github.com/eggheadio/gatsby-starter-egghead-blog)
 A starter project in [Gatsby.js](https://www.gatsbyjs.org/) with [MDX](https://github.com/mdx-js/mdx).
 
-## [➞ Visit my website](https://lorderikir.me)
+### [➞ Visit my website](https://lorderikir.me)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/08b9b7b7-2d13-47d7-bc37-c317ab4a4c6b/deploy-status)](https://app.netlify.com/sites/lorderikir/deploys)
 
 # Development
 
