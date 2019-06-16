@@ -76,11 +76,8 @@ class TagsPage extends React.Component {
         site={site}
         headerColor={theme.colors.white}
         headerBg={theme.brand.primary}
+        showBlogHeader={true}
       >
-        <MediaQuery minDeviceWidth={400}>
-          <SmallHero />
-        </MediaQuery>
-
         <Container
           css={css`
             background-color: #fff;

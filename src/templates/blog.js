@@ -31,6 +31,7 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
       headerColor={theme.colors.white}
       headerBg={theme.colors.blog_header}
       stickyHeader={true}
+      showBlogHeader={true}
     >
       <SEO />
       <Container

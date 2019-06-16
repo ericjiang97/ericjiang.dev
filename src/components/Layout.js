@@ -12,6 +12,7 @@ import reset from '../lib/reset'
 import { fonts } from '../lib/typography'
 import config from '../../config/website'
 import Footer from '../components/Footer'
+import BlogHeader from './BlogHeader'
 
 export const globalStyles = css`
   .button-secondary {
@@ -113,6 +114,7 @@ export default ({
   noFooter,
   noSubscribeForm,
   stickyHeader = false,
+  showBlogHeader = false,
 }) => {
   const {
     description: siteDescription,
@@ -149,18 +151,27 @@ export default ({
             <html lang="en" />
             <noscript>This site runs best with JavaScript enabled.</noscript>
           </Helmet>
-          {site && (
-            <Header
-              siteTitle={site.siteMetadata.title}
-              dark={dark}
-              bgColor={headerBg}
-              headerColor={headerColor}
-              sticky={stickyHeader}
-            />
-          )}
           <div
             css={css`
-              margin-top: ${stickyHeader ? '35px' : '0px'};
+              position: ${stickyHeader ? 'fixed' : 'inherit'};
+              top: ${stickyHeader ? 0 : 'inherit'};
+              z-index: ${stickyHeader ? 9 : 'inherit'};
+              width: 100%;
+            `}
+          >
+            {site && (
+              <Header
+                siteTitle={site.siteMetadata.title}
+                dark={dark}
+                bgColor={headerBg}
+                headerColor={headerColor}
+              />
+            )}
+            {showBlogHeader && <BlogHeader />}
+          </div>
+          <div
+            css={css`
+              margin-top: ${stickyHeader ? '50px' : '0px'};
               flex: 1;
             `}
           >

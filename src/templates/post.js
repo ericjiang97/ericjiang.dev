@@ -30,6 +30,7 @@ export default function Post({
       stickyHeader={true}
       headerColor={theme.colors.white}
       headerBg={theme.colors.blog_header}
+      showBlogHeader={true}
     >
       <SEO frontmatter={mdx.frontmatter} isBlogPost />
       <article

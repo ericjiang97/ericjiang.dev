@@ -24,6 +24,7 @@ const Tags = ({ pageContext, data }) => {
       site={data.site}
       headerColor={theme.colors.white}
       headerBg={theme.colors.blog_header}
+      showBlogHeader={true}
       stickyHeader={true}
     >
       <Container
