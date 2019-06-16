@@ -8,6 +8,7 @@ import SmallHero from '../components/SmallHero'
 import { projects } from '../data/projects'
 import Remark from 'react-markdown'
 import MediaQuery from 'react-responsive'
+import Repository from '../components/Repository'
 
 export default function Index({ data: { site, allMdx } }) {
   return (
