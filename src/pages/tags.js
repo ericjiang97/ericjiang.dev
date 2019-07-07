@@ -5,12 +5,10 @@ import { css } from '@emotion/core'
 
 // Utilities
 import kebabCase from 'lodash/kebabCase'
-import MediaQuery from 'react-responsive'
 import Fuse from 'fuse.js'
 
 // Components
 import Layout from '../components/Layout'
-import SmallHero from '../components/SmallHero'
 
 // Configuration
 import theme from '../../config/theme'
