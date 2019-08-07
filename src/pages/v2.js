@@ -50,10 +50,10 @@ export default function Index({ data: { site, allMdx } }) {
               display: flex;
               flex-direction: ${isDesktopOrLaptop ? 'row' : 'column'};
               flex-wrap: wrap;
-              width: 100vw;
+              max-width: 100vw;
             `}
           >
-            <Sidebar />
+            {isDesktopOrLaptop && <Sidebar />}
             <div
               css={css`
                 flex: 3;
