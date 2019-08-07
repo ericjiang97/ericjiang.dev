@@ -39,3 +39,6 @@ geckoDM was built to solve harder to download lectures over the echo360 platform
 
 So, studying at university helps you to learn how you should study. Because you should never stop learning (I sort of tied that into Monash University’s motto — Ancora Imparo (or “I’m still learning”)
 
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;Without failure there is no achievement.&quot;<br /><br/>- John C. Maxwell</p>&mdash; Eric Jiang 🇦🇺 (@lorderikir) <a href="https://twitter.com/lorderikir/status/1002085911931240448?ref_src=twsrc%5Etfw">May 31, 2018</a></blockquote>

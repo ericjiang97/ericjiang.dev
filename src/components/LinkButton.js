@@ -29,7 +29,7 @@ class LinkButton extends React.Component {
         href={to}
         css={css`
           padding: 0px;
-          margin: 2px;
+          margin: 8px;
         `}
       >
         <div css={this.getInternalDivStyles()}>
@@ -60,7 +60,7 @@ class LinkButton extends React.Component {
               </p>
             )}
           </div>
-          {backgroundImg && <img src={backgroundImg} alt="" width="100%" />}
+          {backgroundImg && <img src={backgroundImg} alt="" width="80%" />}
         </div>
       </a>
     )
