@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
+import { kebabCase } from 'change-case'
 
 import { rhythm } from '../lib/typography'
 
@@ -17,6 +18,7 @@ import AboutImg from '../images/about_me.svg'
 import SWEImg from '../images/swe_coding.svg'
 import PhotosImg from '../images/photos.svg'
 import Sidebar from '../components/Sidebar'
+import TagLabel from '../components/TagLabel'
 
 const PostTitle = styled.h3`
   margin-bottom: ${rhythm(0.3)};
@@ -114,61 +116,70 @@ export default function Index({ data: { site, allMdx } }) {
             `}
           />
           <h2>Latest Posts</h2>
-          {allMdx.edges.map(({ node: post }) => (
-            <div
-              key={post.id}
-              css={css`
-                margin-bottom: 40px;
-              `}
-            >
-              <Link
-                to={post.frontmatter.slug}
-                aria-label={`View ${post.frontmatter.title}`}
-              >
-                <PostTitle>{post.frontmatter.title}</PostTitle>
-              </Link>
-              <div
-                css={css`
-                  margin-bottom: 10px;
-                `}
-              >
-                <b>{post.frontmatter.date}</b>
-              </div>
-              {post.frontmatter.keywords && (
+          {allMdx.edges.map(({ node: post }) => {
+            console.log(post.frontmatter)
+            return (
+              <>
                 <div
+                  key={post.id}
                   css={css`
-                    display: flex;
-                    flex-direction: row;
+                    margin-bottom: 40px;
                   `}
                 >
-                  {post.frontmatter.keywords.map((keyword, i) => {
-                    return (
-                      <div
-                        key={i}
-                        css={css`
-                          background-color: #ddd;
-                          margin: 0px 5px 0px 5px;
-                          padding: 2px 5px 2px 5px;
-                        `}
-                      >
-                        {keyword}
-                      </div>
-                    )
-                  })}
+                  {post.frontmatter.banner && (
+                    <img
+                      src={post.frontmatter.banner.childImageSharp.sizes.src}
+                      alt="post banner"
+                    />
+                  )}
+                  <div>
+                    <Link
+                      to={post.frontmatter.slug}
+                      aria-label={`View ${post.frontmatter.title}`}
+                    >
+                      <PostTitle>{post.frontmatter.title}</PostTitle>
+                    </Link>
+                    <div
+                      css={css`
+                        margin-bottom: 10px;
+                      `}
+                    >
+                      <b>{post.frontmatter.date}</b>
+                    </div>
+                  </div>
+
+                  {post.frontmatter.tags && (
+                    <div
+                      css={css`
+                        display: flex;
+                        flex-direction: row;
+                      `}
+                    >
+                      {post.frontmatter.tags.map((tag, i) => {
+                        return (
+                          <TagLabel
+                            to={`/tags/${kebabCase(tag.fieldValue)}/`}
+                            key={i}
+                          >
+                            {tag}
+                          </TagLabel>
+                        )
+                      })}
+                    </div>
+                  )}
+                  <Description>{post.excerpt}</Description>
+                  <Link
+                    to={post.frontmatter.slug}
+                    aria-label={`View ${post.frontmatter.title}`}
+                  >
+                    Read Article →
+                  </Link>
+                  <span />
                 </div>
-              )}
-              <Description>
-                {post.excerpt}{' '}
-                <Link
-                  to={post.frontmatter.slug}
-                  aria-label={`View ${post.frontmatter.title}`}
-                >
-                  Read Article →
-                </Link>
-              </Description>
-              <span />
-            </div>
-          ))}
+                <hr />
+              </>
+            )
+          })}
           <Link
             to="/blog"
             aria-label="Visit blog page"
@@ -184,7 +195,6 @@ export default function Index({ data: { site, allMdx } }) {
           >
             View all articles
           </Link>
-          <hr />
         </Container>
       </div>
     </div>
@@ -200,7 +210,7 @@ export const pageQuery = graphql`
       }
     }
     allMdx(
-      limit: 5
+      limit: 7
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { published: { ne: false } } }
     ) {
@@ -231,6 +241,7 @@ export const pageQuery = graphql`
             }
             slug
             keywords
+            tags
           }
         }
       }

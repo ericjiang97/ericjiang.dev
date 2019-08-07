@@ -61,6 +61,7 @@ export default function Sidebar() {
         <GitHub color={theme.colors.white} />
         <LinkedIn color={theme.colors.white} />
       </div>
+      <div>Copyright &copy; Eric Jiang {new Date().getFullYear()}</div>
     </div>
   )
 }
