@@ -1,5 +1,6 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import MediaQuery from 'react-responsive'
+import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 
 import theme from '../../config/theme'
@@ -7,6 +8,11 @@ import theme from '../../config/theme'
 // Images
 import ProfilePic from '../images/profile.png'
 import { Twitter, RssFeed, GitHub, LinkedIn } from './Social'
+
+const linkStyles = css`
+  margin: 5px;
+  color: white;
+`
 
 export default function Sidebar() {
   return (
@@ -54,6 +60,48 @@ export default function Sidebar() {
           Software Engineer, Monash University
         </h3>
       </div>
+      <MediaQuery minDeviceWidth={330}>
+        <div
+          css={css`
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+          `}
+        >
+          <Link
+            to="/blog"
+            aria-label="about me"
+            activeClassName="active"
+            css={linkStyles}
+          >
+            Blog
+          </Link>
+          <Link
+            to="/about"
+            aria-label="about me"
+            activeClassName="active"
+            css={linkStyles}
+          >
+            About
+          </Link>
+          <Link
+            to="/projects"
+            aria-label="about projects"
+            activeClassName="active"
+            css={linkStyles}
+          >
+            Projects
+          </Link>
+          <Link
+            to="/talks"
+            aria-label="about me"
+            activeClassName="active"
+            css={linkStyles}
+          >
+            Talks
+          </Link>
+        </div>
+      </MediaQuery>
 
       <div>
         <RssFeed color={theme.colors.white} />
