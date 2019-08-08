@@ -1,18 +1,25 @@
 import React, { Fragment } from 'react'
+import MediaQuery from 'react-responsive'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/tag'
 import { Global, css } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
-import { bpMaxSM } from '../lib/breakpoints'
-import theme from '../../config/theme'
+
+// Components
 import mdxComponents from './mdx'
 import Header from './Header'
+import BlogHeader from './BlogHeader'
+import Sidebar from './Sidebar'
+
+// Libraries
+import { bpMaxSM } from '../lib/breakpoints'
 import reset from '../lib/reset'
 import { fonts } from '../lib/typography'
+
+// Configurations
+import theme from '../../config/theme'
 import config from '../../config/website'
-import Footer from '../components/Footer'
-import BlogHeader from './BlogHeader'
 
 export const globalStyles = css`
   .button-secondary {
@@ -111,7 +118,6 @@ export default ({
   dark,
   headerBg,
   headerColor,
-  noFooter,
   noSubscribeForm,
   stickyHeader = false,
   showBlogHeader = false,
@@ -151,40 +157,51 @@ export default ({
             <html lang="en" />
             <noscript>This site runs best with JavaScript enabled.</noscript>
           </Helmet>
-          <div
-            css={css`
-              position: ${stickyHeader ? 'fixed' : 'inherit'};
-              top: ${stickyHeader ? 0 : 'inherit'};
-              z-index: ${stickyHeader ? 9 : 'inherit'};
-              width: 100%;
-            `}
-          >
-            {site && (
-              <Header
-                siteTitle={site.siteMetadata.title}
-                dark={dark}
-                bgColor={headerBg}
-                headerColor={headerColor}
-              />
+          <MediaQuery minDeviceWidth={1224}>
+            {isDesktopOrLaptop => (
+              <div>
+                <div
+                  css={css`
+                    display: flex;
+                    flex-direction: ${isDesktopOrLaptop ? 'row' : 'column'};
+                    flex-wrap: wrap;
+                  `}
+                >
+                  {isDesktopOrLaptop && <Sidebar />}
+                  <div
+                    css={css`
+                      flex: 3;
+                      overflow-x: hidden;
+                      max-height: 100vh;
+                      display: flex;
+                      flex-direction: column;
+                    `}
+                  >
+                    {!isDesktopOrLaptop && (
+                      <Header
+                        siteTitle={site.siteMetadata.title}
+                        bgColor={theme.brand.primary}
+                        headerColor={theme.colors.white}
+                      />
+                    )}
+                    {showBlogHeader && <BlogHeader />}
+                    <div
+                      css={css`
+                        padding-bottom: 0;
+                        background-color: #fff;
+                        padding: 10px 24px;
+                        max-width: 100vw;
+                      `}
+                    >
+                      <MDXProvider components={mdxComponents}>
+                        {children}
+                      </MDXProvider>
+                    </div>
+                  </div>
+                </div>
+              </div>
             )}
-            {showBlogHeader && <BlogHeader />}
-          </div>
-          <div
-            css={css`
-              margin-top: ${stickyHeader ? '50px' : '0px'};
-              flex: 1;
-            `}
-          >
-            <MDXProvider components={mdxComponents}>
-              <Fragment>{children}</Fragment>
-            </MDXProvider>
-          </div>
-          {!noFooter && (
-            <Footer
-              author={site.siteMetadata.author.name}
-              noSubscribeForm={noSubscribeForm}
-            />
-          )}
+          </MediaQuery>
         </div>
       </Fragment>
     </ThemeProvider>

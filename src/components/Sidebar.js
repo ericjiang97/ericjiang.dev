@@ -3,6 +3,10 @@ import MediaQuery from 'react-responsive'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 
+// Components
+import Footer from '../components/Footer'
+
+// Config
 import theme from '../../config/theme'
 
 // Images
@@ -69,6 +73,14 @@ export default function Sidebar() {
           `}
         >
           <Link
+            to="/"
+            aria-label="home"
+            activeClassName="active"
+            css={linkStyles}
+          >
+            Home
+          </Link>
+          <Link
             to="/blog"
             aria-label="about me"
             activeClassName="active"
@@ -103,12 +115,7 @@ export default function Sidebar() {
         </div>
       </MediaQuery>
 
-      <div>
-        <RssFeed color={theme.colors.white} />
-        <Twitter color={theme.colors.white} />
-        <GitHub color={theme.colors.white} />
-        <LinkedIn color={theme.colors.white} />
-      </div>
+      <Footer />
       <div>Copyright &copy; Eric Jiang {new Date().getFullYear()}</div>
     </div>
   )

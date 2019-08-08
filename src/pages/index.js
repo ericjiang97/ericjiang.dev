@@ -35,13 +35,28 @@ export default function Index({ data: { site, allMdx } }) {
       headerColor={theme.colors.white}
       headerBg={theme.brand.primary}
     >
-      <Hero />
       <Container
         css={css`
           padding-bottom: 0;
           background-color: #fff;
         `}
       >
+        <h1
+          css={css`
+            position: relative;
+            line-height: 1.5;
+            margin: 0;
+            font-weight: 300;
+            color: ${theme.brand.primary};
+          `}
+        >
+          <span role="img" aria-label="wave">
+            👋
+          </span>{' '}
+          Hi, I'm Eric.
+        </h1>
+        <hr />
+        <h2>Quick Links</h2>
         <div
           css={css`
             display: flex;
