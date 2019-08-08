@@ -2,6 +2,7 @@ import React from 'react'
 import MediaQuery from 'react-responsive'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
+import { darken, lighten } from 'polished'
 
 // Components
 import Footer from '../components/Footer'
@@ -27,8 +28,14 @@ export default function Sidebar() {
         height: 100vh;
         flex: 1;
         padding: 10px 24px;
-        background-color: ${theme.brand.primary};
         color: ${theme.colors.white};
+        background: linear-gradient(
+          to top right,
+          ${theme.brand.primary} 0%,
+          ${lighten(0.2, theme.brand.primary)} 50%,
+          ${lighten(0.3, theme.brand.primary)} 75%,
+          ${lighten(0.4, theme.brand.primary)} 100%
+        );
         display: flex;
         align-items: center;
         flex-direction: column;

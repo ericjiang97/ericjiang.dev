@@ -10,7 +10,6 @@ const Footer = ({ author, noSubscribeForm }) => (
     <div
       css={css`
         max-width: 100vw;
-        background-color: ${theme.brand.primary};
         color: ${theme.colors.white};
       `}
     >
