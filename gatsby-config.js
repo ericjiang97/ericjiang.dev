@@ -63,6 +63,12 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-netlify-cms',
+      enableIdentityWidget: true,
+      publicPath: `admin`,
+      htmlTitle: `Content Manager`,
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.siteTitle,
