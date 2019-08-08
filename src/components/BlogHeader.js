@@ -4,6 +4,13 @@ import { css } from '@emotion/core'
 import theme from '../../config/theme'
 import Container from './Container'
 
+const linkStyles = css({
+  margin: 10,
+  ':hover,:focus': {
+    color: '#485766',
+  },
+})
+
 export default function BlogHeader() {
   return (
     <div
@@ -21,9 +28,7 @@ export default function BlogHeader() {
           to="/blog"
           aria-label="about me"
           activeClassName="active"
-          css={css`
-            margin: 10px;
-          `}
+          css={linkStyles}
         >
           Blog Home
         </Link>
@@ -31,9 +36,7 @@ export default function BlogHeader() {
           to="/tags"
           aria-label="about me"
           activeClassName="active"
-          css={css`
-            margin: 10px;
-          `}
+          css={linkStyles}
         >
           All tags
         </Link>

@@ -12,10 +12,13 @@ import theme from '../../config/theme'
 // Images
 import ProfilePic from '../images/profile.png'
 
-const linkStyles = css`
-  margin: 5px;
-  color: white;
-`
+const linkStyles = css({
+  margin: 5,
+  color: 'white',
+  ':hover,:focus': {
+    color: '#aaa',
+  },
+})
 
 export default function Sidebar() {
   return (
