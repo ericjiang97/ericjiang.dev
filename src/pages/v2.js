@@ -40,17 +40,12 @@ export default function Index({ data: { site, allMdx } }) {
   return (
     <MediaQuery minDeviceWidth={1224}>
       {isDesktopOrLaptop => (
-        <div
-          css={css`
-            position: ${isDesktopOrLaptop ? 'fixed' : 'inherit'};
-          `}
-        >
+        <div>
           <div
             css={css`
               display: flex;
               flex-direction: ${isDesktopOrLaptop ? 'row' : 'column'};
               flex-wrap: wrap;
-              max-width: 100vw;
             `}
           >
             {isDesktopOrLaptop && <Sidebar />}
@@ -70,11 +65,12 @@ export default function Index({ data: { site, allMdx } }) {
                   headerColor={theme.colors.white}
                 />
               )}
-              <Container
+              <div
                 css={css`
                   padding-bottom: 0;
                   background-color: #fff;
                   padding: 10px 24px;
+                  max-width: auto;
                 `}
               >
                 <h1
@@ -213,7 +209,7 @@ export default function Index({ data: { site, allMdx } }) {
                 >
                   View all articles
                 </Link>
-              </Container>
+              </div>
             </div>
           </div>
         </div>

@@ -1,10 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import css from '@emotion/css'
 
 export default class HTML extends React.Component {
   render() {
     return (
-      <html {...this.props.htmlAttributes}>
+      <html
+        {...this.props.htmlAttributes}
+        css={css`
+          overflow-y: hidden;
+        `}
+      >
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -14,7 +20,12 @@ export default class HTML extends React.Component {
           />
           {this.props.headComponents}
         </head>
-        <body {...this.props.bodyAttributes}>
+        <body
+          {...this.props.bodyAttributes}
+          css={css`
+            overflow: hidden;
+          `}
+        >
           {this.props.preBodyComponents}
           <noscript>This site runs best with JavaScript enabled.</noscript>
           <div
