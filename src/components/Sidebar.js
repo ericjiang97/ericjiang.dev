@@ -2,7 +2,7 @@ import React from 'react'
 import MediaQuery from 'react-responsive'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
-import { darken, lighten } from 'polished'
+import { lighten } from 'polished'
 
 // Components
 import Footer from '../components/Footer'
