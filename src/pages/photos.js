@@ -1,12 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import MediaQuery from 'react-responsive'
 
 import Layout from '../components/Layout'
 import Container from 'components/Container'
 import theme from '../../config/theme'
-import SmallHero from '../components/SmallHero'
 import Photo from '../components/Photo'
 
 export default function Photos({ data: { site, allMdx } }) {
@@ -16,9 +14,6 @@ export default function Photos({ data: { site, allMdx } }) {
       headerColor={theme.colors.white}
       headerBg={theme.brand.primary}
     >
-      <MediaQuery minDeviceWidth={400}>
-        <SmallHero />
-      </MediaQuery>
       <Container
         css={css`
           padding-bottom: 0;

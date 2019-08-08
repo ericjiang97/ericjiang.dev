@@ -7,7 +7,6 @@ import Link from '../components/Link'
 import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
 import theme from '../../config/theme'
-import Hero from '../components/Hero'
 import LinkButton from '../components/LinkButton'
 
 import TechTalksImg from '../images/conference.svg'

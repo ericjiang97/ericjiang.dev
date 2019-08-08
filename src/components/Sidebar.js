@@ -11,7 +11,6 @@ import theme from '../../config/theme'
 
 // Images
 import ProfilePic from '../images/profile.png'
-import { Twitter, RssFeed, GitHub, LinkedIn } from './Social'
 
 const linkStyles = css`
   margin: 5px;

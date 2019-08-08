@@ -1,12 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import MediaQuery from 'react-responsive'
 
 import Layout from '../components/Layout'
 import Container from 'components/Container'
 import theme from '../../config/theme'
-import SmallHero from '../components/SmallHero'
 
 export default function Index({ data: { site, allMdx } }) {
   return (
@@ -15,9 +13,6 @@ export default function Index({ data: { site, allMdx } }) {
       headerColor={theme.colors.white}
       headerBg={theme.brand.primary}
     >
-      <MediaQuery minDeviceWidth={400}>
-        <SmallHero />
-      </MediaQuery>
       <Container
         css={css`
           padding-bottom: 0;
@@ -56,7 +51,10 @@ export default function Index({ data: { site, allMdx } }) {
           the Rising Star Category of the 2019 itNews Benchmark Awards for
           delivering MonPlan (while I'm still a student)
         </p>
-        <p>You can find my resume here</p>
+        <p>
+          You can find my resume{' '}
+          <a href="./downloads/EricResume_Aug2019_Software.pdf">here</a>
+        </p>
       </Container>
     </Layout>
   )

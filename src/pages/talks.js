@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
-import MediaQuery from 'react-responsive'
 
 import Layout from '../components/Layout'
 import Link from '../components/Link'
@@ -10,7 +9,6 @@ import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
 import theme from '../../config/theme'
 import { talks } from '../data/talks'
-import SmallHero from '../components/SmallHero'
 
 import JuniorDevTalk from '../images/gcp-juniordev-talk.jpg'
 
@@ -30,9 +28,6 @@ export default function Index({ data: { site, allMdx } }) {
       headerColor={theme.colors.white}
       headerBg={theme.brand.primary}
     >
-      <MediaQuery minDeviceWidth={400}>
-        <SmallHero />
-      </MediaQuery>
       <Container
         css={css`
           padding-bottom: 0;

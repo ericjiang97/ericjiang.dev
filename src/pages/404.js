@@ -1,10 +1,8 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import MediaQuery from 'react-responsive'
 
 // COMPONENTS
 import Layout from '../components/Layout'
-import SmallHero from '../components/SmallHero'
 
 // CONFIG
 import theme from '../../config/theme'
@@ -19,9 +17,6 @@ export default ({ data: { site } }) => (
       headerColor={theme.colors.white}
       headerBg={theme.brand.primary}
     >
-      <MediaQuery minDeviceWidth={340}>
-        <SmallHero />
-      </MediaQuery>
       <div
         css={css`
           padding: 2em;
