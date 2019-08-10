@@ -3,6 +3,7 @@ import Link from './Link'
 import theme from '../../config/theme'
 import { css } from '@emotion/core'
 import config from '../../config/website'
+import { darken } from 'polished'
 
 export const Twitter = ({
   color = `${theme.colors.body_color}`,
@@ -14,7 +15,7 @@ export const Twitter = ({
       color: ${color};
       margin-left: 10px;
       :hover {
-        color: ${theme.brand.primary};
+        color: ${darken(0.3, color)};
       }
     `}
     aria-label="Visit my Twitter"
@@ -44,7 +45,7 @@ export const LinkedIn = ({
       margin-left: 10px;
       color: ${color};
       :hover {
-        color: ${theme.brand.primary};
+        color: ${darken(0.3, color)};
       }
     `}
     aria-label="Visit my LinkedIn"
@@ -73,7 +74,7 @@ export const GitHub = ({
       margin-left: 10px;
       color: ${color};
       :hover {
-        color: ${theme.brand.primary};
+        color: ${darken(0.3, color)};
       }
     `}
     aria-label="Visit my GitHub"
@@ -103,7 +104,7 @@ export const RssFeed = ({
       margin-left: 10px;
       color: ${color};
       :hover {
-        color: ${theme.brand.primary};
+        color: ${darken(0.3, color)};
       }
     `}
     aria-label="Visit my GitHub"
