@@ -2,21 +2,22 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 
-import Gallery from 'react-image-gallery'
-
 import Layout from '../components/Layout'
 import Container from 'components/Container'
 import theme from '../../config/theme'
 
-import 'react-image-gallery/styles/css/image-gallery.css'
+import PhotoGallery from '../components/PhotoGallery'
 
 export default function Photos({ data: { site, allFlickrPhoto } }) {
   const photos = allFlickrPhoto.edges.map(edge => {
     return {
+      src: edge.node.url_n,
       original: edge.node.url_c,
       thumbnail: edge.node.url_n,
-      originalTitle: edge.node.title,
+      full: edge.node.url_o,
+      title: edge.node.title,
       description: edge.node.description,
+      flickr_photo_id: edge.node.photo_id,
     }
   })
   return (
@@ -47,7 +48,7 @@ export default function Photos({ data: { site, allFlickrPhoto } }) {
           </ul>
         </p>
         <h2>Downloads</h2>
-        <Gallery items={photos} />
+        <PhotoGallery photos={photos} />
       </Container>
     </Layout>
   )
@@ -71,6 +72,8 @@ export const pageQuery = graphql`
           tags
           url_c
           url_n
+          url_o
+          photo_id
         }
       }
     }
