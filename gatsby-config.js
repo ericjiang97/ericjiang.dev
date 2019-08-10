@@ -159,6 +159,13 @@ module.exports = {
         plugins: ['@weknow/gatsby-remark-twitter'],
       },
     },
+    {
+      resolve: 'gatsby-source-flickr',
+      options: {
+        api_key: process.env.FLICKR_API_KEY,
+        user_id: process.env.FLICKR_USER_ID,
+      },
+    },
     'gatsby-plugin-offline',
   ],
 }

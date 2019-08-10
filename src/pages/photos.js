@@ -2,12 +2,23 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 
+import Gallery from 'react-image-gallery'
+
 import Layout from '../components/Layout'
 import Container from 'components/Container'
 import theme from '../../config/theme'
-import Photo from '../components/Photo'
 
-export default function Photos({ data: { site, allMdx } }) {
+import 'react-image-gallery/styles/css/image-gallery.css'
+
+export default function Photos({ data: { site, allFlickrPhoto } }) {
+  const photos = allFlickrPhoto.edges.map(edge => {
+    return {
+      original: edge.node.url_c,
+      thumbnail: edge.node.url_n,
+      originalTitle: edge.node.title,
+      description: edge.node.description,
+    }
+  })
   return (
     <Layout
       site={site}
@@ -36,7 +47,7 @@ export default function Photos({ data: { site, allMdx } }) {
           </ul>
         </p>
         <h2>Downloads</h2>
-        <Photo src="https://live.staticflickr.com/4842/31758320637_30b68e550d_k_d.jpg" />
+        <Gallery items={photos} />
       </Container>
     </Layout>
   )
@@ -50,39 +61,16 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(
-      limit: 5
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { published: { ne: false } } }
-    ) {
+    allFlickrPhoto(sort: { fields: [datetaken], order: DESC }) {
       edges {
         node {
-          excerpt(pruneLength: 190)
           id
-          fields {
-            title
-            slug
-            date
-          }
-          parent {
-            ... on File {
-              sourceInstanceName
-            }
-          }
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            description
-            banner {
-              childImageSharp {
-                sizes(maxWidth: 720) {
-                  ...GatsbyImageSharpSizes
-                }
-              }
-            }
-            slug
-            keywords
-          }
+          title
+          datetaken
+          description
+          tags
+          url_c
+          url_n
         }
       }
     }
