@@ -36,7 +36,8 @@ export default function Photos({ data: { site, allFlickrPhoto } }) {
         <h1>Photos</h1>
         <p>
           One of the things I also enjoy outside of my studies and work is
-          taking and editing photos
+          taking and editing photos. I currently am using a Canon 800D DSLR to
+          take photos, then using Skylum Luminar 3 for processing my photos.
         </p>
         <p>
           <b>Current Photo Gear:</b>
@@ -44,10 +45,14 @@ export default function Photos({ data: { site, allFlickrPhoto } }) {
             <li>Canon 800D DSLR</li>
             <li>18-55mm Kit Lens, 55-250mm Macro Lens</li>
             <li>Gobe CPL and UV Filters</li>
-            <li>Skylum Luminar 3 for Photo Editing</li>
           </ul>
         </p>
-        <h2>Downloads</h2>
+        <h2>Flickr Feed</h2>
+        This is my Flickr feed, check out my photos below! You can also view my
+        flickr profile at:{' '}
+        <a href="https://flickr.com/people/lorderikir">
+          https://flickr.com/people/lorderikir
+        </a>
         <PhotoGallery photos={photos} />
       </Container>
     </Layout>
