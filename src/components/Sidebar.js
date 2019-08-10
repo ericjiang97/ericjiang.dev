@@ -36,11 +36,14 @@ export default function Sidebar() {
           ${lighten(0.3, theme.brand.primary)} 75%,
           ${lighten(0.4, theme.brand.primary)} 100%
         );
-        display: flex;
         align-items: center;
         flex-direction: column;
-        min-width: 300px;
+        min-width: 330px;
         text-align: center;
+        display: flex;
+        @media screen and (min-width: 0px) and (max-width: 400px) {
+          display: none;
+        }
       `}
     >
       <div

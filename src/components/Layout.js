@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import MediaQuery from 'react-responsive'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/tag'
@@ -157,51 +156,48 @@ export default ({
             <html lang="en" />
             <noscript>This site runs best with JavaScript enabled.</noscript>
           </Helmet>
-          <MediaQuery minDeviceWidth={1224}>
-            {isDesktopOrLaptop => (
-              <div>
+          <div>
+            <div
+              css={css`
+                display: flex;
+                flex-direction: 'column';
+                flex-wrap: wrap;
+                @media (min-width: 1224px) {
+                  flex-direction: 'row';
+                }
+              `}
+            >
+              <Sidebar />
+              <div
+                css={css`
+                  flex: 3;
+                  overflow-x: hidden;
+                  max-height: 100vh;
+                  display: flex;
+                  flex-direction: column;
+                `}
+              >
+                <Header
+                  siteTitle={site.siteMetadata.title}
+                  bgColor={theme.brand.primary}
+                  headerColor={theme.colors.white}
+                />
+                {showBlogHeader && <BlogHeader />}
                 <div
                   css={css`
-                    display: flex;
-                    flex-direction: ${isDesktopOrLaptop ? 'row' : 'column'};
-                    flex-wrap: wrap;
+                    padding-bottom: 0;
+                    background-color: #fff;
+                    padding: 10px 24px;
+                    max-width: 100vw;
                   `}
                 >
-                  {isDesktopOrLaptop && <Sidebar />}
-                  <div
-                    css={css`
-                      flex: 3;
-                      overflow-x: hidden;
-                      max-height: 100vh;
-                      display: flex;
-                      flex-direction: column;
-                    `}
-                  >
-                    {!isDesktopOrLaptop && (
-                      <Header
-                        siteTitle={site.siteMetadata.title}
-                        bgColor={theme.brand.primary}
-                        headerColor={theme.colors.white}
-                      />
-                    )}
-                    {showBlogHeader && <BlogHeader />}
-                    <div
-                      css={css`
-                        padding-bottom: 0;
-                        background-color: #fff;
-                        padding: 10px 24px;
-                        max-width: 100vw;
-                      `}
-                    >
-                      <MDXProvider components={mdxComponents}>
-                        {children}
-                      </MDXProvider>
-                    </div>
-                  </div>
+                  <MDXProvider components={mdxComponents}>
+                    {children}
+                  </MDXProvider>
                 </div>
               </div>
-            )}
-          </MediaQuery>
+            </div>
+          </div>
         </div>
       </Fragment>
     </ThemeProvider>

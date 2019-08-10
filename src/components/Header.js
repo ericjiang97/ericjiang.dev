@@ -22,6 +22,10 @@ const Header = ({
       background: none;
       padding: 15px 0 15px 0;
       background: ${dark ? '#090909' : `${bgColor}` || 'none'};
+      display: none;
+      @media screen and (min-width: 0px) and (max-width: 400px) {
+        display: flex;
+      }
     `}
   >
     <Container noVerticalPadding>
