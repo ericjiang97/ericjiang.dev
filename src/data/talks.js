@@ -12,7 +12,27 @@ export const talks = [
   //         organiser: '',  // Organiser of Talk (if applicable)
   //     }
   // }
+  {
+    title: 'Introduction to Git', // Talk title
+    links: {
+      slides: 'https://speakerdeck.com/lorderikir/introduction-to-git', // Link to Slides,
+      code: 'https://github.com/lorderikir/intro-to-git', // code repo link
+    },
+    description: 'Introduction to Git Workshop', // talk description
+    photo: null,
+    delivery: {
+      location:
+        'Learning and Teaching Building, Monash University, VIC AU 3800', // Location of Talk
 
+      // Organiser of Talk (if applicable)
+      organiser: {
+        name: 'Wired Monash',
+        link: 'https://wired.org.au',
+      },
+
+      date: '1 Aug 2019',
+    },
+  },
   {
     title:
       'Building NodeJS Apps on Google’s Scalable Infrastructure for JuniorDev', // Talk title
