@@ -2,6 +2,7 @@ import React from 'react'
 import css from '@emotion/css'
 import theme from '../../config/theme'
 import GeneralUtils from '../utils/GeneralUtils'
+import { lighten } from 'polished'
 
 class LinkButton extends React.Component {
   getInternalDivStyles = () => {
@@ -20,6 +21,8 @@ class LinkButton extends React.Component {
       ':hover': {
         backgroundColor: GeneralUtils.colorLightenDarken(backgroundColor, 20),
       },
+      borderRadius: 10,
+      boxShadow: `5px 5px ${lighten(0.2, backgroundColor)}`,
     })
   }
   render() {

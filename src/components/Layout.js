@@ -19,6 +19,7 @@ import { fonts } from '../lib/typography'
 // Configurations
 import theme from '../../config/theme'
 import config from '../../config/website'
+import Hero from './Hero'
 
 export const globalStyles = css`
   .button-secondary {
@@ -118,6 +119,7 @@ export default ({
   headerBg,
   headerColor,
   noSubscribeForm,
+  showHero = false,
   stickyHeader = false,
   showBlogHeader = false,
 }) => {
@@ -183,6 +185,7 @@ export default ({
                   headerColor={theme.colors.white}
                 />
                 {showBlogHeader && <BlogHeader />}
+                {showHero && <Hero />}
                 <div
                   css={css`
                     padding-bottom: 0;

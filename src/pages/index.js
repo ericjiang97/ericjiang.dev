@@ -1,60 +1,35 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import styled from '@emotion/styled'
+
+// Components
 import Layout from '../components/Layout'
 import Link from '../components/Link'
 import Container from 'components/Container'
-import { rhythm } from '../lib/typography'
-import theme from '../../config/theme'
 import LinkButton from '../components/LinkButton'
+
+// Config
+import theme from '../../config/theme'
 
 import TechTalksImg from '../images/conference.svg'
 import AboutImg from '../images/about_me.svg'
 import SWEImg from '../images/swe_coding.svg'
 import PhotosImg from '../images/photos.svg'
+import BlogPost from '../components/BlogPost'
 
-const PostTitle = styled.h2`
-  margin-bottom: ${rhythm(0.3)};
-  transition: ${theme.transition.ease};
-  :hover {
-    color: ${theme.brand.primary};
-    transition: ${theme.transition.ease};
-  }
-`
-
-const Description = styled.p`
-  margin-bottom: 10px;
-  display: inline-block;
-`
 export default function Index({ data: { site, allMdx } }) {
   return (
     <Layout
       site={site}
       headerColor={theme.colors.white}
       headerBg={theme.brand.primary}
+      showHero={true}
     >
       <Container
         css={css`
           padding-bottom: 0;
-          background-color: #fff;
         `}
       >
-        <h1
-          css={css`
-            position: relative;
-            line-height: 1.5;
-            margin: 0;
-            font-weight: 300;
-            color: ${theme.brand.primary};
-          `}
-        >
-          <span role="img" aria-label="wave">
-            👋
-          </span>{' '}
-          Hi, I'm Eric.
-        </h1>
-        <hr />
         <h2>Quick Links</h2>
         <div
           css={css`
@@ -63,7 +38,7 @@ export default function Index({ data: { site, allMdx } }) {
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            padding: 0;
+            padding: 0px 0px 10px 0px;
           `}
         >
           <LinkButton
@@ -91,61 +66,18 @@ export default function Index({ data: { site, allMdx } }) {
           />
         </div>
         <hr />
-        <h2>Latest Posts</h2>
+        <div
+          css={css`
+            text-align: center;
+          `}
+        >
+          <h2>Latest Posts</h2>
+        </div>
         {allMdx.edges.map(({ node: post }) => (
-          <div
-            key={post.id}
-            css={css`
-              margin-bottom: 40px;
-            `}
-          >
-            <Link
-              to={post.frontmatter.slug}
-              aria-label={`View ${post.frontmatter.title}`}
-            >
-              <PostTitle>{post.frontmatter.title}</PostTitle>
-            </Link>
-            <div
-              css={css`
-                margin-bottom: 10px;
-              `}
-            >
-              <b>{post.frontmatter.date}</b>
-            </div>
-            {post.frontmatter.keywords && (
-              <div
-                css={css`
-                  display: flex;
-                  flex-direction: row;
-                `}
-              >
-                {post.frontmatter.keywords.map((keyword, i) => {
-                  return (
-                    <div
-                      key={i}
-                      css={css`
-                        background-color: #ddd;
-                        margin: 0px 5px 0px 5px;
-                        padding: 2px 5px 2px 5px;
-                      `}
-                    >
-                      {keyword}
-                    </div>
-                  )
-                })}
-              </div>
-            )}
-            <Description>
-              {post.excerpt}{' '}
-              <Link
-                to={post.frontmatter.slug}
-                aria-label={`View ${post.frontmatter.title}`}
-              >
-                Read Article →
-              </Link>
-            </Description>
-            <span />
-          </div>
+          <>
+            <BlogPost post={post} />
+            <hr />
+          </>
         ))}
         <Link
           to="/blog"
@@ -153,6 +85,7 @@ export default function Index({ data: { site, allMdx } }) {
           css={css({
             borderRadius: 4,
             padding: '12px 12px',
+            margin: 12,
             background: theme.brand.primary,
             color: theme.colors.white,
             ':hover': {
@@ -162,7 +95,6 @@ export default function Index({ data: { site, allMdx } }) {
         >
           View all articles
         </Link>
-        <hr />
       </Container>
     </Layout>
   )
@@ -183,7 +115,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 190)
+          excerpt(pruneLength: 300)
           id
           fields {
             title
@@ -198,16 +130,16 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
-            description
             banner {
               childImageSharp {
-                sizes(maxWidth: 720) {
-                  ...GatsbyImageSharpSizes
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }
             slug
             keywords
+            tags
           }
         }
       }

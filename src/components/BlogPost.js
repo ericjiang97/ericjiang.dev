@@ -51,9 +51,18 @@ function BlogPost({ post }) {
           </Link>
         </div>
       )}
+      <small
+        css={css`
+          margin-bottom: 2px;
+          font-weight: 300;
+          color: #777;
+        `}
+      >
+        {post.frontmatter.date}
+      </small>
       <h2
         css={css`
-          margin-top: 30px;
+          margin-top: 10px;
           margin-bottom: 10px;
         `}
       >
@@ -64,7 +73,6 @@ function BlogPost({ post }) {
           {post.frontmatter.title}
         </Link>
       </h2>
-      <small>{post.frontmatter.date}</small>
       <p
         css={css`
           margin-top: 10px;
