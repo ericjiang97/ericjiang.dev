@@ -41,7 +41,7 @@ export default function Sidebar() {
         min-width: 330px;
         text-align: center;
         display: flex;
-        @media screen and (min-width: 0px) and (max-width: 400px) {
+        @media screen and (min-width: 0px) and (max-width: 500px) {
           display: none;
         }
       `}
