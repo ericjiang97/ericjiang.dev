@@ -23,7 +23,10 @@ const Header = ({
       padding: 15px 0 15px 0;
       background: ${dark ? '#090909' : `${bgColor}` || 'none'};
       display: none;
-      @media screen and (min-width: 0px) and (max-width: 400px) {
+      @media screen and (min-width: 0px) and (max-width: 330px) {
+        display: flex;
+      }
+      @media screen and (min-width: 0px) and (max-width: 450px) {
         display: flex;
       }
     `}
@@ -125,13 +128,3 @@ const Header = ({
 )
 
 export default Header
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
