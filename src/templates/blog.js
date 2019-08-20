@@ -14,7 +14,7 @@ import theme from '../../config/theme'
 
 const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
   const { page, nextPagePath, previousPagePath } = pagination
-
+  console.log(nextPagePath, previousPagePath)
   const posts = page
     .map(id =>
       allMdx.edges.find(
@@ -55,15 +55,17 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
         ))}
         <br />
         <br />
-        <div>
-          {nextPagePath && (
-            <Link to={nextPagePath} aria-label="View next page">
-              Next Page →
-            </Link>
-          )}
+        <div style={{ display: 'flex' }}>
+          <div style={{ flex: 1 }}>
+            {nextPagePath && (
+              <Link to={nextPagePath} aria-label="View previous page">
+                ← Previous Page
+              </Link>
+            )}
+          </div>
           {previousPagePath && (
-            <Link to={previousPagePath} aria-label="View previous page">
-              ← Previous Page
+            <Link to={previousPagePath} aria-label="View next page">
+              Next Page →
             </Link>
           )}
         </div>
