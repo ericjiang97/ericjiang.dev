@@ -30,7 +30,7 @@ export default function Index({ data: { site, allMdx } }) {
             text-align: center;
           `}
         >
-          <h2>Latest Posts</h2>
+          <h2>Latest Blog Posts</h2>
         </div>
         <div style={{ marginBottom: 30 }}>
           {allMdx.edges.map(({ node: post }) => (
