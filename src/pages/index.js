@@ -76,7 +76,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 300)
+          excerpt(pruneLength: 150)
           id
           fields {
             title
@@ -90,7 +90,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "ddd DD MMMM YYYY")
             banner {
               childImageSharp {
                 fluid(maxWidth: 600) {
