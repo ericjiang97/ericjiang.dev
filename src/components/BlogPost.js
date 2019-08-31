@@ -26,33 +26,31 @@ function BlogPost({ post }) {
         .gatsby-image-wrapper {
         }
         background: white;
-        padding: 40px;
+        padding: 12px 24px;
         ${bpMaxSM} {
           padding: 20px;
         }
         display: flex;
         flex-direction: column;
+        border-bottom: solid 1px #eee;
       `}
     >
       {post.frontmatter.banner && (
-        <div
-          css={css`
-            padding: 60px 60px 40px 60px;
-            ${bpMaxSM} {
-              padding: 20px;
-            }
-          `}
-        >
+        <div>
           <Link
             aria-label={`View ${post.frontmatter.title} article`}
             to={`/${post.frontmatter.slug}`}
           >
-            <Img sizes={post.frontmatter.banner.childImageSharp.fluid} />
+            <Img
+              sizes={post.frontmatter.banner.childImageSharp.fluid}
+              style={{ width: 500 }}
+            />
           </Link>
         </div>
       )}
       <small
         css={css`
+          margin-top: 10px;
           margin-bottom: 2px;
           font-weight: 300;
           color: #777;
@@ -62,8 +60,9 @@ function BlogPost({ post }) {
       </small>
       <h2
         css={css`
-          margin-top: 10px;
+          margin-top: 5px;
           margin-bottom: 10px;
+          font-size: 1em;
         `}
       >
         <Link
@@ -73,50 +72,34 @@ function BlogPost({ post }) {
           {post.frontmatter.title}
         </Link>
       </h2>
-      <p
-        css={css`
-          margin-top: 10px;
-        `}
-      >
-        {post.excerpt}
-      </p>
       <div
         css={css`
           display: flex;
+          flex-wrap: wrap;
+          margin-bottom: 5px;
         `}
       >
         <div
           css={css`
-            margin-top: 10px;
+            margin-top: 5px;
             flex: 1;
           `}
         >
-          <div
-            css={css`
-              font-size: 16px;
-              margin-bottom: 5px;
-            `}
-          >
-            Tags:
-          </div>
           {post.frontmatter.tags.map((tag, index) => (
             <TagLabel key={index}>{tag}</TagLabel>
           ))}
         </div>
-        <div
+      </div>
+      {post.excerpt && (
+        <p
           css={css`
-            display: flex;
-            align-items: center;
+            margin-top: 10px;
+            font-size: 0.75em;
           `}
         >
-          <Link
-            to={`/${post.frontmatter.slug}`}
-            aria-label={`view "${post.frontmatter.title}" article`}
-          >
-            Read Article →
-          </Link>
-        </div>
-      </div>
+          {post.excerpt}
+        </p>
+      )}
     </div>
   )
 }

@@ -6,15 +6,10 @@ import { css } from '@emotion/core'
 import Layout from '../components/Layout'
 import Link from '../components/Link'
 import Container from 'components/Container'
-import LinkButton from '../components/LinkButton'
 
 // Config
 import theme from '../../config/theme'
 
-import TechTalksImg from '../images/conference.svg'
-import AboutImg from '../images/about_me.svg'
-import SWEImg from '../images/swe_coding.svg'
-import PhotosImg from '../images/photos.svg'
 import BlogPost from '../components/BlogPost'
 
 export default function Index({ data: { site, allMdx } }) {
@@ -30,42 +25,6 @@ export default function Index({ data: { site, allMdx } }) {
           padding-bottom: 0;
         `}
       >
-        <h2>Quick Links</h2>
-        <div
-          css={css`
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0px 0px 10px 0px;
-          `}
-        >
-          <LinkButton
-            to="/talks"
-            heading="Talks"
-            backgroundImg={TechTalksImg}
-          />
-          <LinkButton
-            to="/about"
-            heading="About Me"
-            backgroundColor={theme.colors.green}
-            backgroundImg={AboutImg}
-          />
-          <LinkButton
-            to="/projects"
-            heading="Projects"
-            backgroundColor={theme.colors.red}
-            backgroundImg={SWEImg}
-          />
-          <LinkButton
-            to="https://flickr.com/people/lorderikir"
-            heading="Photos"
-            backgroundColor={theme.colors.black}
-            backgroundImg={PhotosImg}
-          />
-        </div>
-        <hr />
         <div
           css={css`
             text-align: center;
@@ -73,12 +32,14 @@ export default function Index({ data: { site, allMdx } }) {
         >
           <h2>Latest Posts</h2>
         </div>
-        {allMdx.edges.map(({ node: post }) => (
-          <>
-            <BlogPost post={post} />
-            <hr />
-          </>
-        ))}
+        <div style={{ marginBottom: 30 }}>
+          {allMdx.edges.map(({ node: post }) => (
+            <>
+              <BlogPost post={post} />
+            </>
+          ))}
+        </div>
+
         <Link
           to="/blog"
           aria-label="Visit blog page"

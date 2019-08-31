@@ -14,6 +14,7 @@ function TagLabel({ children, to }) {
         borderRadius: 4,
         color: theme.colors.white,
         margin: 2,
+        fontSize: '0.75em',
         ':hover,:focus': {
           color: theme.colors.primary_light,
         },
