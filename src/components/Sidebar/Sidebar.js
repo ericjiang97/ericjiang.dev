@@ -5,13 +5,13 @@ import { css } from '@emotion/core'
 import { lighten } from 'polished'
 
 // Components
-import Footer from '../components/Footer'
+import Footer from '../Footer'
 
 // Config
-import theme from '../../config/theme'
+import theme from '../../../config/theme'
 
 // Images
-import ProfilePic from '../images/profile.jpeg'
+import ProfilePic from '../../images/profile.jpeg'
 
 const linkStyles = css({
   margin: 5,
@@ -38,12 +38,14 @@ export default function Sidebar() {
         );
         align-items: center;
         flex-direction: column;
-        min-width: 330px;
+        width: 300px;
         text-align: center;
         display: flex;
-        @media screen and (min-width: 0px) and (max-width: 500px) {
-          display: none;
-        }
+        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+        position: fixed;
+        z-index: 200;
+        transform: transformX(-100%);
+        transition: transform 0.3s ease-out;
       `}
     >
       <div
@@ -76,40 +78,38 @@ export default function Sidebar() {
           Software Engineer, Monash University
         </h3>
       </div>
-      <MediaQuery minDeviceWidth={330}>
-        <div
-          css={css`
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-          `}
+      <div
+        css={css`
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+        `}
+      >
+        <Link
+          to="/"
+          aria-label="home"
+          activeClassName="active"
+          css={linkStyles}
         >
-          <Link
-            to="/"
-            aria-label="home"
-            activeClassName="active"
-            css={linkStyles}
-          >
-            Home
-          </Link>
-          <Link
-            to="/blog"
-            aria-label="about me"
-            activeClassName="active"
-            css={linkStyles}
-          >
-            Blog
-          </Link>
-          <Link
-            to="/talks"
-            aria-label="about me"
-            activeClassName="active"
-            css={linkStyles}
-          >
-            Talks
-          </Link>
-        </div>
-      </MediaQuery>
+          Home
+        </Link>
+        <Link
+          to="/blog"
+          aria-label="about me"
+          activeClassName="active"
+          css={linkStyles}
+        >
+          Blog
+        </Link>
+        <Link
+          to="/talks"
+          aria-label="about me"
+          activeClassName="active"
+          css={linkStyles}
+        >
+          Talks
+        </Link>
+      </div>
 
       <Footer />
       <div>Copyright &copy; Eric Jiang {new Date().getFullYear()}</div>
