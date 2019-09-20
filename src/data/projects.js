@@ -46,16 +46,22 @@ export const projects = {
       description: `Bit by Bit Hackathon is our hackathon for beginning hackers and is only available to Monash University students.`,
     },
     {
-      title: 'GeckoDM', //project title
+      title: 'geckoDM', //project title
       link: 'https://geckodm.github.io', // link to project
       githubRepo: 'https://github.com/GeckoDM/GeckoDownloadManager',
       description: `Gecko Download Manager (GeckoDM) is a Chrome Extension that improves downloading lectures from the Echo360 System.`,
     },
     {
-      title: 'PTV Signange', //project title
+      title: 'ptv-signage', //project title
       link: 'https://metrotrains.ericjiang.dev', // link to project
       githubRepo: 'https://github.com/lorderikir/melbpt',
-      description: `Gecko Download Manager (GeckoDM) is a Chrome Extension that improves downloading lectures from the Echo360 System.`,
+      description: `A Rebuild of the Metro Trains PID Website by lorderikir`,
+    },
+    {
+      title: 'fetch-github-profile',
+      link: 'https://www.npmjs.com/package/fetch-github-profile',
+      githubRepo: 'https://github.com/ericjiang97/fetch-github-profile',
+      description: 'Fetching a GitHub Profile Card directly into Your Terminal',
     },
   ],
 }
