@@ -27,19 +27,6 @@ export default function Hero() {
             display: flex;
           `}
         >
-          <div
-            css={css`
-              margin-right: 10px;
-            `}
-          >
-            <img
-              src={ProfilePic}
-              css={css`
-                height: 150px;
-                border-radius: 100%;
-              `}
-            />
-          </div>
           <div>
             <h2
               css={css`
