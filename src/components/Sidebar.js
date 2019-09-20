@@ -101,14 +101,6 @@ export default function Sidebar() {
             Blog
           </Link>
           <Link
-            to="/about"
-            aria-label="about me"
-            activeClassName="active"
-            css={linkStyles}
-          >
-            About
-          </Link>
-          <Link
             to="/talks"
             aria-label="about me"
             activeClassName="active"

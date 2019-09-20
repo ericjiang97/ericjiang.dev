@@ -11,6 +11,7 @@ import theme from '../../config/theme'
 import ProjectCard from '../components/Projects/ProjectCard'
 import FeaturedProjectCard from '../components/Projects/FeaturedProjectCard'
 import { projects } from '../data/projects'
+import { lighten } from 'polished'
 
 export default function Index({ data: { site, allMdx } }) {
   return (
@@ -26,6 +27,78 @@ export default function Index({ data: { site, allMdx } }) {
           color: white;
         `}
       >
+        <div
+          css={css`
+            padding: 10px 0px;
+            border-bottom: solid 1px ${lighten(0.4, theme.brand.primary)};
+          `}
+        >
+          <h2
+            css={css`
+              color: ${lighten(0.7, theme.brand.primary)};
+            `}
+          >
+            A bit about me...
+          </h2>
+          <p>I love delivering impact to everyone in the community.</p>
+          <p>
+            I'm currently in my final year (studying part-time) in my Bachelor
+            of Information Technology at{' '}
+            <a
+              href="https://monash.edu"
+              target="_blank"
+              rel="noreferrer noopener"
+              css={css`
+                color: white;
+                :hover {
+                  color: ${lighten(0.6, theme.brand.primary)};
+                }
+              `}
+            >
+              Monash University
+            </a>
+            . I'm majoring in Computer networks and security. I still love other
+            sides of the IT field such as Product Management, Software
+            Engineering and Web/Cloud Technologies. And applying knowledge from
+            the Cybersecurity and DevOps into Software Development.
+          </p>
+          <p>
+            Something that I'm currently proud of is winning the Rising Star
+            Category of the 2019 itNews Benchmark Awards for delivering MonPlan
+            (while I'm still a student)
+          </p>
+        </div>
+        <div
+          css={css`
+            padding: 15px 0px;
+            border-bottom: solid 1px ${lighten(0.4, theme.brand.primary)};
+          `}
+        >
+          <h2
+            css={css`
+              color: ${lighten(0.7, theme.brand.primary)};
+            `}
+          >
+            Previous Experience
+          </h2>
+          <a
+            href="./downloads/EricResume_Aug2019_Software.pdf"
+            css={css`
+              color: ${lighten(0.8, theme.brand.primary)};
+              padding: 10px 5px;
+              border: solid 1px ${lighten(0.8, theme.brand.primary)};
+              margin-bottom: 10px;
+              margin-top: 10px;
+              border-radius: 5px;
+              :hover {
+                background-color: ${lighten(0.8, theme.brand.primary)};
+                color: ${theme.brand.projectDescription};
+              }
+            `}
+          >
+            Download Resume
+          </a>
+        </div>
         <div
           css={css`
             padding: 10px 0px;

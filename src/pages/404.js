@@ -24,6 +24,7 @@ export default ({ data: { site } }) => (
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          color: white;
         `}
       >
         <img
@@ -34,7 +35,13 @@ export default ({ data: { site } }) => (
           `}
           alt="404"
         />
-        <h1>NOT FOUND</h1>
+        <h1
+          css={css`
+            color: white;
+          `}
+        >
+          NOT FOUND
+        </h1>
         <p>You just hit a route that doesn't exist... the sadness.</p>
       </div>
     </Layout>
