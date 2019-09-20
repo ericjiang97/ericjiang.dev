@@ -4,7 +4,7 @@ import { css } from '@emotion/core'
 import MediaQuery from 'react-responsive'
 
 import theme from '../../config/theme'
-import ProfilePic from '../images/profile.png'
+import ProfilePic from '../images/profile.jpeg'
 
 import Container from './Container'
 

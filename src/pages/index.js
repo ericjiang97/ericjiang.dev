@@ -9,8 +9,10 @@ import Container from 'components/Container'
 
 // Config
 import theme from '../../config/theme'
-
-import BlogPost from '../components/BlogPost'
+import { lighten } from 'polished'
+import ProjectCard from '../components/Projects/ProjectCard'
+import FeaturedProjectCard from '../components/Projects/FeaturedProjectCard'
+import { projects } from '../data/projects'
 
 export default function Index({ data: { site, allMdx } }) {
   return (
@@ -23,39 +25,35 @@ export default function Index({ data: { site, allMdx } }) {
       <Container
         css={css`
           padding-bottom: 0;
+          color: white;
         `}
       >
         <div
           css={css`
-            text-align: center;
+            padding: 10px 0px;
           `}
         >
-          <h2>Latest Blog Posts</h2>
+          <h2
+            css={css`
+              color: white;
+            `}
+          >
+            Projects
+          </h2>
+          <div
+            css={css`
+              display: flex;
+              flex-wrap: wrap;
+            `}
+          >
+            {projects.featured.map(project => (
+              <FeaturedProjectCard title={project.title} img={project.image} />
+            ))}
+          </div>
         </div>
-        <div style={{ marginBottom: 30 }}>
-          {allMdx.edges.map(({ node: post }) => (
-            <>
-              <BlogPost post={post} />
-            </>
-          ))}
-        </div>
-
-        <Link
-          to="/blog"
-          aria-label="Visit blog page"
-          css={css({
-            borderRadius: 4,
-            padding: '12px 12px',
-            margin: 12,
-            background: theme.brand.primary,
-            color: theme.colors.white,
-            ':hover': {
-              color: theme.colors.primary_light,
-            },
-          })}
-        >
-          View all articles
-        </Link>
+        <div>Home Page</div>
+        <div>Home Page</div>
+        <div>Home Page</div>
       </Container>
     </Layout>
   )

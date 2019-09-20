@@ -146,6 +146,7 @@ export default ({
             flex-direction: column;
             width: 100%;
             min-height: 100vh;
+            background-color: ${theme.brand.primary};
           `}
         >
           <Helmet
@@ -189,7 +190,7 @@ export default ({
                 <div
                   css={css`
                     padding-bottom: 0;
-                    background-color: #fff;
+                    // background-color: #fff;
                     padding: 10px 24px;
                     max-width: 100vw;
                   `}

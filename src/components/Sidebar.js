@@ -11,7 +11,7 @@ import Footer from '../components/Footer'
 import theme from '../../config/theme'
 
 // Images
-import ProfilePic from '../images/profile.png'
+import ProfilePic from '../images/profile.jpeg'
 
 const linkStyles = css({
   margin: 5,

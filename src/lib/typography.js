@@ -2,12 +2,12 @@ import Typography from 'typography'
 import '../fonts/fonts.css'
 
 export const fonts = {
-  regular: 'Inter UI Regular',
-  regularItalic: 'Inter UI Regular Italic',
-  semibold: 'Inter UI Semibold',
-  semiboldItalic: 'Inter UI Semibold Italic',
-  bold: 'Inter UI Bold',
-  boldItalic: 'Inter UI Bold Italic',
+  regular: 'Noto Sans',
+  regularItalic: 'Noto Sans Regular Italic',
+  semibold: 'Noto Sans Semibold',
+  semiboldItalic: 'Noto Sans Semibold Italic',
+  bold: 'Noto Sans Bold',
+  boldItalic: 'Noto Sans Bold Italic',
 }
 
 const typography = new Typography({
@@ -31,6 +31,7 @@ const typography = new Typography({
     },
     'h1,h2,h3,h4,h5,h6': {
       lineHeight: 1,
+      fontWeight: 300,
     },
     'h1,h2,h3,h4': {
       lineHeight: 1.25,
