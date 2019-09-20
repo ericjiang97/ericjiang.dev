@@ -25,6 +25,9 @@ const ProjectCard = ({ title, projectDescription, githubUrl, url }) => {
             background-color: ${lighten(0.05, theme.brand.primary)};
             opacity: 0.9;
             z-index: 3;
+            :hover {
+              background-color: ${lighten(0.1, theme.brand.primary)};
+            }
           `}
         >
           <div
