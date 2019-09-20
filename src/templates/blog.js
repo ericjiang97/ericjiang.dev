@@ -11,6 +11,7 @@ import BlogPost from '../components/BlogPost'
 
 // Configuration
 import theme from '../../config/theme'
+import { lighten } from 'polished'
 
 const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
   const { page, nextPagePath, previousPagePath } = pagination
@@ -58,13 +59,29 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
         <div style={{ display: 'flex' }}>
           <div style={{ flex: 1 }}>
             {nextPagePath && (
-              <Link to={nextPagePath} aria-label="View previous page">
+              <Link
+                to={nextPagePath}
+                aria-label="View previous page"
+                css={css`
+                  background-color: ${lighten(0.5, theme.brand.primary)};
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                `}
+              >
                 ← Previous Page
               </Link>
             )}
           </div>
           {previousPagePath && (
-            <Link to={previousPagePath} aria-label="View next page">
+            <Link
+              to={previousPagePath}
+              aria-label="View next page"
+              css={css`
+                background-color: ${lighten(0.5, theme.brand.primary)};
+                padding: 5px 10px;
+                border-radius: 5px;
+              `}
+            >
               Next Page →
             </Link>
           )}
