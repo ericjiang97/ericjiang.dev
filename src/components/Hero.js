@@ -2,9 +2,6 @@ import React from 'react'
 import { css } from '@emotion/core'
 import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
-import theme from '../../config/theme'
-// Images
-import ProfilePic from '../images/profile.jpeg'
 
 export default function Hero() {
   return (

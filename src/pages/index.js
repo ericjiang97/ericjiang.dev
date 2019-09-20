@@ -4,12 +4,10 @@ import { css } from '@emotion/core'
 
 // Components
 import Layout from '../components/Layout'
-import Link from '../components/Link'
 import Container from 'components/Container'
 
 // Config
 import theme from '../../config/theme'
-import { lighten } from 'polished'
 import ProjectCard from '../components/Projects/ProjectCard'
 import FeaturedProjectCard from '../components/Projects/FeaturedProjectCard'
 import { projects } from '../data/projects'

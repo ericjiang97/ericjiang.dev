@@ -1,7 +1,7 @@
 import React from 'react'
 import Remark from 'react-markdown'
 import css from '@emotion/css'
-import { lighten, rgb } from 'polished'
+import { lighten } from 'polished'
 
 import theme from '../../../config/theme'
 import { GitHub, ExternalLinkIcon } from '../Social'
