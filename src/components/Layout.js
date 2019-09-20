@@ -122,6 +122,7 @@ export default ({
   showHero = false,
   stickyHeader = false,
   showBlogHeader = false,
+  showSidebar = true,
 }) => {
   const {
     description: siteDescription,
@@ -170,7 +171,7 @@ export default ({
                 }
               `}
             >
-              <Sidebar />
+              {showSidebar && <Sidebar />}
               <div
                 css={css`
                   flex: 3;

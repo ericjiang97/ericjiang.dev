@@ -21,6 +21,7 @@ export default function Index({ data: { site, allMdx } }) {
       headerColor={theme.colors.white}
       headerBg={theme.brand.primary}
       showHero={true}
+      showSidebar={false}
     >
       <Container
         css={css`
