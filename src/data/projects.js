@@ -54,7 +54,7 @@ export const projects = {
     {
       title: 'PTV Signange', //project title
       link: 'https://metrotrains.ericjiang.dev', // link to project
-      githubRepo: 'https://github.com/GeckoDM/GeckoDownloadManager',
+      githubRepo: 'https://github.com/lorderikir/melbpt',
       description: `Gecko Download Manager (GeckoDM) is a Chrome Extension that improves downloading lectures from the Echo360 System.`,
     },
   ],

@@ -22,8 +22,8 @@ module.exports = {
   backgroundColor: '#05233f',
 
   // Social component
-  twitter: 'https://twitter.com/lorderikir/',
-  twitterHandle: '@lorderikir',
-  github: 'https://github.com/lorderikir/',
+  twitter: 'https://twitter.com/ericjiang97/',
+  twitterHandle: '@ericjiang97',
+  github: 'https://github.com/ericjiang97/',
   linkedin: 'https://linkedin.com/in/ericjiang97',
 }

@@ -40,6 +40,13 @@ export default function Index({ data: { site, allMdx } }) {
           >
             Projects
           </h2>
+          <h3
+            css={css`
+              color: white;
+            `}
+          >
+            Featured Projects
+          </h3>
           <div
             css={css`
               display: flex;
@@ -47,13 +54,41 @@ export default function Index({ data: { site, allMdx } }) {
             `}
           >
             {projects.featured.map(project => (
-              <FeaturedProjectCard title={project.title} img={project.image} />
+              <FeaturedProjectCard
+                title={project.title}
+                img={project.image}
+                fromDate={project.dates.from}
+                toDate={project.dates.to}
+                projectDescription={project.description}
+                githubUrl={project.githubRepo || null}
+                url={project.link}
+              />
+            ))}
+          </div>
+
+          <h3
+            css={css`
+              color: white;
+            `}
+          >
+            Other Projects
+          </h3>
+          <div
+            css={css`
+              display: flex;
+              flex-wrap: wrap;
+            `}
+          >
+            {projects.other.map(project => (
+              <ProjectCard
+                title={project.title}
+                projectDescription={project.description}
+                githubUrl={project.githubRepo || null}
+                url={project.link}
+              />
             ))}
           </div>
         </div>
-        <div>Home Page</div>
-        <div>Home Page</div>
-        <div>Home Page</div>
       </Container>
     </Layout>
   )
