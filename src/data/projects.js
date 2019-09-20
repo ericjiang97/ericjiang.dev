@@ -22,10 +22,7 @@ export const projects = {
         from: 'Oct 2016', // from (Month Year)
         to: 'Apr 2019', // to (Month Year)
       },
-      description: `MonPlan is the official Monash University Course Planning Tool. 
-      This project was started off as an Open Sourced Project by Josh Nelsson-Smith and me. \n\nKey 
-      Features include: \n - Preload enrolment data with grades \n- Integration into the university’s Student Management System (SMS)\n- Course Advisors have ability to review student's course plans
-      \n- Course Progression Guide and helper tool to show what students need to do to complete their degree and nominated area of study`,
+      description: `MonPlan is the official Monash University Course Planning Tool.`,
       copyright: 'Copyright (c) Monash University 2016 - 2019', // copyright text
     },
     {
@@ -37,11 +34,28 @@ export const projects = {
         from: 'Mar 2016', // from (Month Year)
         to: '', // to (Month Year)
       },
-      description: `MARIE.js is a very simple and intuitive Assembly Language Simulator. It is a web-based version of the MARIE simulator.
-      \nThis simulator is used in Monash University – Faculty of Information Technology unit: FIT1047 – Introduction to computer, networks and security. Which is a core unit of all IT courses at Monash University.
-      \nMARIE.js is an open-sourced project.`,
+      description: `MARIE.js is a very simple and intuitive Assembly Language Simulator. It is a web-based version of the MARIE simulator.`,
       copyright: 'Copyright (c) MARIE.js Team & Monash University 2016 - 2019', // copyright text
     },
   ],
-  other: [],
+  other: [
+    {
+      title: 'Bit by Bit 2019', //project title
+      link: 'https://bitbybit.netlify.com', // link to project
+      githubRepo: 'https://github.com/wiredmonash/bit-by-bit-hackathon-2019',
+      description: `Bit by Bit Hackathon is our hackathon for beginning hackers and is only available to Monash University students.`,
+    },
+    {
+      title: 'GeckoDM', //project title
+      link: 'https://geckodm.github.io', // link to project
+      githubRepo: 'https://github.com/GeckoDM/GeckoDownloadManager',
+      description: `Gecko Download Manager (GeckoDM) is a Chrome Extension that improves downloading lectures from the Echo360 System.`,
+    },
+    {
+      title: 'PTV Signange', //project title
+      link: 'https://metrotrains.ericjiang.dev', // link to project
+      githubRepo: 'https://github.com/GeckoDM/GeckoDownloadManager',
+      description: `Gecko Download Manager (GeckoDM) is a Chrome Extension that improves downloading lectures from the Echo360 System.`,
+    },
+  ],
 }
