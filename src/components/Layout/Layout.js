@@ -79,7 +79,7 @@ export default ({
                 }
               `}
             >
-              {sidebarOpen && <Sidebar />}
+              <Sidebar open={sidebarOpen} />
               {sidebarOpen && (
                 <Backdrop onClick={() => setSidebarOpen(false)} />
               )}

@@ -7,6 +7,8 @@ import theme from '../../../config/theme'
 import ProfilePic from '../../images/profile.jpeg'
 
 import Container from '../Container'
+import Links from './Links'
+import { MenuIcon } from '../Social'
 
 const Header = ({
   dark,
@@ -47,15 +49,24 @@ const Header = ({
           <div
             css={css`
               flex: 1;
+              display: flex;
+              align-items: center;
             `}
           >
-            <button
-              onClick={() => {
-                setSideBarOpen()
-              }}
-            >
-              Open Sidebar
-            </button>
+            <MediaQuery maxDeviceWidth={450}>
+              <div
+                css={css`
+                  margin-right: 10px;
+                `}
+              >
+                <MenuIcon
+                  color="white"
+                  onClick={() => {
+                    setSideBarOpen()
+                  }}
+                />
+              </div>
+            </MediaQuery>
             <Link to="/" aria-label="go to homepage" activeClassName="active">
               <div
                 css={css`
@@ -82,47 +93,10 @@ const Header = ({
                 </span>
               </div>
             </Link>
+            <MediaQuery minDeviceWidth={450}>
+              <Links />
+            </MediaQuery>
           </div>
-          <Link
-            to="/blog"
-            aria-label="about me"
-            activeClassName="active"
-            css={css`
-              margin: 5px;
-            `}
-          >
-            Blog
-          </Link>
-          <Link
-            to="/about"
-            aria-label="about me"
-            activeClassName="active"
-            css={css`
-              margin: 5px;
-            `}
-          >
-            About
-          </Link>
-          <Link
-            to="/projects"
-            aria-label="about projects"
-            activeClassName="active"
-            css={css`
-              margin: 5px;
-            `}
-          >
-            Projects
-          </Link>
-          <Link
-            to="/talks"
-            aria-label="about me"
-            activeClassName="active"
-            css={css`
-              margin: 5px;
-            `}
-          >
-            Talks
-          </Link>
         </nav>
       </Container>
     </header>
