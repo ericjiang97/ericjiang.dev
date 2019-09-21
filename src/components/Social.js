@@ -164,6 +164,8 @@ export const MenuIcon = ({
     css={css`
       margin-left: 10px;
       color: ${color};
+      display: flex;
+      align-items: center;
       :hover {
         color: ${darken(0.3, color)};
       }

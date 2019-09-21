@@ -56,7 +56,9 @@ const Header = ({
             <div
               css={css`
                 flex: 1;
-                color="white"
+                color: 'white';
+                display: flex;
+                align-items: center;
               `}
             >
               <MediaQuery maxDeviceWidth={450}>
@@ -83,8 +85,8 @@ const Header = ({
                   <img
                     src={ProfilePic}
                     css={css`
-                      max-width: 30px;
-                      max-height: 30px;
+                      max-width: 1.75rem;
+                      max-height: 1.75rem;
                       border-radius: 100%;
                       margin: 0px;
                     `}
@@ -92,7 +94,7 @@ const Header = ({
                   />
                   <span
                     css={css`
-                      margin-left: 5px;
+                      margin-left: 0.75rem;
                       color: 'white';
                       :hover {
                         color: #ccc;

@@ -38,14 +38,22 @@ const FeaturedProject = ({
             }
           `}
         >
-          <img
-            src={img}
+          <div
             css={css`
-              z-index: 2;
-              height: 200px;
+              width: 100%;
+              display: flex;
+              justify-content: center;
             `}
-            alt={`${title}`}
-          />
+          >
+            <img
+              src={img}
+              css={css`
+                z-index: 2;
+                height: 200px;
+              `}
+              alt={`${title}`}
+            />
+          </div>
           <div
             css={css`
               display: flex;

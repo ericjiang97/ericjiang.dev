@@ -12,6 +12,7 @@ import ProjectCard from '../components/Projects/ProjectCard'
 import FeaturedProjectCard from '../components/Projects/FeaturedProjectCard'
 import { projects } from '../data/projects'
 import { lighten } from 'polished'
+import Divider from '../components/Divider'
 
 export default function Index({ data: { site, allMdx } }) {
   return (
@@ -30,7 +31,6 @@ export default function Index({ data: { site, allMdx } }) {
         <div
           css={css`
             padding: 10px 0px;
-            border-bottom: solid 1px ${lighten(0.4, theme.brand.primary)};
           `}
         >
           <h2
@@ -68,10 +68,10 @@ export default function Index({ data: { site, allMdx } }) {
             (while I'm still a student)
           </p>
         </div>
+        <Divider />
         <div
           css={css`
             padding: 15px 0px;
-            border-bottom: solid 1px ${lighten(0.4, theme.brand.primary)};
           `}
         >
           <h2
@@ -99,25 +99,37 @@ export default function Index({ data: { site, allMdx } }) {
             Download Resume
           </a>
         </div>
+        <Divider />
         <div
           css={css`
-            padding: 10px 0px;
+            display: flex;
+
+            flex-direction: column;
+            align-items: center;
           `}
         >
-          <h2
+          <div
             css={css`
-              color: white;
+              width: 100%;
             `}
           >
-            Projects
-          </h2>
-          <h3
-            css={css`
-              color: white;
-            `}
-          >
-            Featured Projects
-          </h3>
+            <h2
+              css={css`
+                color: white;
+                color: ${lighten(0.7, theme.brand.primary)};
+              `}
+            >
+              Projects
+            </h2>
+            <h3
+              css={css`
+                color: white;
+                color: ${lighten(0.5, theme.brand.primary)};
+              `}
+            >
+              Featured Projects
+            </h3>
+          </div>
           <div
             css={css`
               display: flex;
@@ -148,6 +160,7 @@ export default function Index({ data: { site, allMdx } }) {
             css={css`
               display: flex;
               flex-wrap: wrap;
+              justify-content: space-evenly;
             `}
           >
             {projects.other.map(project => (

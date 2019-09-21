@@ -1,7 +1,11 @@
 import React from 'react'
+
 import { css } from '@emotion/core'
 import Container from 'components/Container'
+
 import { rhythm } from '../lib/typography'
+import theme from '../../config/theme'
+import { lighten, darken } from 'polished'
 
 export default function Hero() {
   return (
@@ -25,7 +29,7 @@ export default function Hero() {
           `}
         >
           <div>
-            <h2
+            <p
               css={css`
                 color: white;
                 position: relative;
@@ -34,27 +38,29 @@ export default function Hero() {
                 margin: 0;
                 max-width: ${rhythm(20)};
                 font-weight: 300;
+                color: ${lighten(0.45, theme.brand.primary)};
+                font-size: 0.85rem;
               `}
             >
               <span role="img" aria-label="wave">
                 👋
               </span>
               &nbsp; Hi, I'm
-            </h2>
+            </p>
             <h1
               css={css`
-                color: white;
+                color: ${lighten(0.65, theme.brand.primary)};
                 position: relative;
                 z-index: 5;
                 line-height: 1.5;
                 margin: 0;
                 max-width: ${rhythm(20)};
-                font-weight: 300;
+                font-weight: 500;
               `}
             >
-              Eric Jiang
+              Eric Jiang.
             </h1>
-            <h3
+            <p
               css={css`
                 color: white;
                 position: relative;
@@ -63,10 +69,12 @@ export default function Hero() {
                 margin: 0;
                 max-width: ${rhythm(20)};
                 font-weight: 300;
+                color: ${darken(0.25, '#ffffff')};
+                font-size: 0.85rem;
               `}
             >
               And I make impact by delivering awesome software solutions
-            </h3>
+            </p>
           </div>
         </div>
       </Container>

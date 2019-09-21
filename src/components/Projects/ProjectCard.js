@@ -12,7 +12,7 @@ const ProjectCard = ({ title, projectDescription, githubUrl, url }) => {
       <div
         css={css`
           flex: 1;
-          max-width: 45%;
+          max-width: 33%;
           display: flex;
           min-width: 280px;
         `}
