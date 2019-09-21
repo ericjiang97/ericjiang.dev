@@ -72,7 +72,12 @@ export default function Index({ data: { site } }) {
             padding-bottom: 0;
             color: white;
             flex: 1;
-            margin-left: 100px;
+            @media (min-width: 481px) and (max-width: 1365px) {
+              margin-left: 100px;
+            }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
           `}
         >
           <div
