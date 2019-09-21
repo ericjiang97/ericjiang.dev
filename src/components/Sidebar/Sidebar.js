@@ -1,5 +1,4 @@
 import React from 'react'
-import MediaQuery from 'react-responsive'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { lighten } from 'polished'

@@ -14,7 +14,7 @@ import { projects } from '../data/projects'
 import { lighten } from 'polished'
 import Divider from '../components/Divider'
 
-export default function Index({ data: { site, allMdx } }) {
+export default function Index({ data: { site } }) {
   return (
     <Layout
       site={site}
@@ -184,42 +184,6 @@ export const pageQuery = graphql`
       ...site
       siteMetadata {
         title
-      }
-    }
-    allMdx(
-      limit: 5
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { published: { ne: false } } }
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 150)
-          id
-          fields {
-            title
-            slug
-            date
-          }
-          parent {
-            ... on File {
-              sourceInstanceName
-            }
-          }
-          frontmatter {
-            title
-            date(formatString: "ddd DD MMMM YYYY")
-            banner {
-              childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
-            }
-            slug
-            keywords
-            tags
-          }
-        }
       }
     }
   }
