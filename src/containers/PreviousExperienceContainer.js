@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Remark from 'react-markdown'
 import css from '@emotion/css'
-import { lighten } from 'polished'
 import theme from '../../config/theme'
 import CompanyLabel from './CompanyLabel'
 

@@ -15,6 +15,7 @@ export default function Hero() {
         background-position: 0% 25%;
         padding: 20px 0 30px 0;
         display: flex;
+        height: 60vh;
       `}
     >
       <Container
@@ -56,6 +57,7 @@ export default function Hero() {
                 margin: 0;
                 max-width: ${rhythm(20)};
                 font-weight: 500;
+                font-size: 3rem;
               `}
             >
               Eric Jiang.
@@ -89,17 +91,12 @@ export default function Hero() {
                 font-size: 0.85rem;
               `}
             >
-              And I make impact by delivering awesome software solutions
+              I make impact to everyone by delivering awesome software solutions
+              and I love building the communities around me.
             </p>
           </div>
         </div>
       </Container>
-      <div
-        css={css`
-          height: 150px;
-          overflow: hidden;
-        `}
-      />
     </section>
   )
 }
