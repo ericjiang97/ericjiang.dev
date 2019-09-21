@@ -5,14 +5,17 @@ import { css } from '@emotion/core'
 // Components
 import Layout from '../components/Layout'
 import Container from 'components/Container'
+import Divider from '../components/Divider'
 
 // Config
 import theme from '../../config/theme'
 import ProjectCard from '../components/Projects/ProjectCard'
 import FeaturedProjectCard from '../components/Projects/FeaturedProjectCard'
-import { projects } from '../data/projects'
 import { lighten } from 'polished'
-import Divider from '../components/Divider'
+
+import { projects } from '../data/projects'
+import { talks } from '../data/talks'
+import TechTalkCard from '../components/TechTalkCard'
 
 export default function Index({ data: { site } }) {
   return (
@@ -49,9 +52,9 @@ export default function Index({ data: { site } }) {
               target="_blank"
               rel="noreferrer noopener"
               css={css`
-                color: white;
+                color: ${lighten(0.65, theme.brand.primary)};
                 :hover {
-                  color: ${lighten(0.6, theme.brand.primary)};
+                  color: ${lighten(0.55, theme.brand.primary)};
                 }
               `}
             >
@@ -81,6 +84,7 @@ export default function Index({ data: { site } }) {
           >
             Previous Experience
           </h2>
+
           <a
             href="./downloads/EricResume_Aug2019_Software.pdf"
             css={css`
@@ -172,6 +176,33 @@ export default function Index({ data: { site } }) {
               />
             ))}
           </div>
+        </div>
+
+        <Divider />
+        <h2
+          css={css`
+            color: white;
+            color: ${lighten(0.7, theme.brand.primary)};
+          `}
+        >
+          Tech Talks
+        </h2>
+        <div
+          css={css`
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+          `}
+        >
+          {talks.map(talk => (
+            <TechTalkCard
+              title={talk.title}
+              githubUrl={talk.links.code}
+              url={talk.links.slides}
+              description={talk.description}
+              date={talk.delivery.date}
+            />
+          ))}
         </div>
       </Container>
     </Layout>

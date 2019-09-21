@@ -45,7 +45,7 @@ export default function Hero() {
               <span role="img" aria-label="wave">
                 👋
               </span>
-              &nbsp; Hi, I'm
+              &nbsp; Hi, I am
             </p>
             <h1
               css={css`
@@ -60,6 +60,22 @@ export default function Hero() {
             >
               Eric Jiang.
             </h1>
+            <p
+              css={css`
+                color: white;
+                position: relative;
+                z-index: 5;
+                line-height: 1.5;
+                margin: 0;
+                max-width: ${rhythm(20)};
+                font-weight: 300;
+                color: ${lighten(0.55, theme.brand.primary)};
+                font-size: 1.25rem;
+              `}
+            >
+              I'm a Software Engineer at Monash University.
+            </p>
+
             <p
               css={css`
                 color: white;
