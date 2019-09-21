@@ -1,4 +1,5 @@
 import React from 'react'
+import MediaQuery from 'react-responsive'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 
@@ -17,6 +18,7 @@ import { talks } from '../data/talks'
 import TechTalkCard from '../components/TechTalkCard'
 import PreviousExperienceContainer from '../containers/PreviousExperienceContainer'
 import experience from '../data/experience'
+import { RssFeed, Twitter, GitHub, LinkedIn } from '../components/Social'
 
 export default function Index({ data: { site } }) {
   return (
@@ -82,7 +84,7 @@ export default function Index({ data: { site } }) {
               color: ${lighten(0.7, theme.brand.primary)};
             `}
           >
-            Previous Experience
+            I have worked at...
           </h2>
           <PreviousExperienceContainer experiences={experience} />
           <div>
@@ -130,7 +132,7 @@ export default function Index({ data: { site } }) {
                 color: ${lighten(0.7, theme.brand.primary)};
               `}
             >
-              Projects
+              I have made...
             </h2>
             <h3
               css={css`
@@ -191,7 +193,7 @@ export default function Index({ data: { site } }) {
             color: ${lighten(0.7, theme.brand.primary)};
           `}
         >
-          Tech Talks
+          I also give Tech Talks...
         </h2>
         <div
           css={css`
@@ -210,7 +212,69 @@ export default function Index({ data: { site } }) {
             />
           ))}
         </div>
+        <div>
+          <h3
+            css={css`
+              color: white;
+            `}
+          >
+            Contact
+          </h3>
+          <div>
+            I'm currently not available for contracting or freelancing, But feel
+            free to shoot me an email at{' '}
+            <a
+              href="mailto:hello@ericjiang.dev"
+              target="_blank"
+              rel="noreferrer noopener"
+              css={css`
+                color: ${lighten(0.45, theme.brand.primary)};
+                :hover {
+                  color: ${lighten(0.55, theme.brand.primary)};
+                }
+                :visited {
+                  color: ${lighten(0.45, theme.brand.primary)};
+                }
+              `}
+            >
+              hello@ericjiang.dev
+            </a>
+          </div>
+        </div>
       </Container>
+      <MediaQuery minDeviceWidth={450}>
+        <div
+          css={css`
+            color: white;
+            position: fixed;
+            bottom: 2rem;
+            display: flex;
+          `}
+        >
+          <div>
+            <div
+              css={css`
+                transform: rotate(-90deg);
+              `}
+            >
+              Social
+            </div>
+          </div>
+          <div
+            css={css`
+              display: flex;
+              flex-direction: column;
+              border-left: 1px solid white;
+              padding: 0px 10px;
+            `}
+          >
+            <RssFeed color={theme.colors.white} />
+            <Twitter color={theme.colors.white} />
+            <GitHub color={theme.colors.white} />
+            <LinkedIn color={theme.colors.white} />
+          </div>
+        </div>
+      </MediaQuery>
     </Layout>
   )
 }

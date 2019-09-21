@@ -13,6 +13,8 @@ const PreviousExperienceContainer = ({ experiences = [] }) => {
     <div
       css={css`
         display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
       `}
     >
       <div

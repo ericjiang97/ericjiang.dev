@@ -13,7 +13,8 @@ export const Twitter = ({
     to={url}
     css={css`
       color: ${color};
-      margin-left: 10px;
+      margin-left: 0.25rem;
+      margin-bottom: 0.25rem;
       :hover {
         color: ${darken(0.3, color)};
       }
@@ -42,7 +43,8 @@ export const LinkedIn = ({
   <Link
     to={url}
     css={css`
-      margin-left: 10px;
+      margin-left: 0.25rem;
+      margin-bottom: 0.25rem;
       color: ${color};
       :hover {
         color: ${darken(0.3, color)};
@@ -71,7 +73,8 @@ export const GitHub = ({
   <Link
     to={url}
     css={css`
-      margin-left: 10px;
+      margin-left: 0.25rem;
+      margin-bottom: 0.25rem;
       color: ${color};
       :hover {
         color: ${darken(0.3, color)};
@@ -101,7 +104,8 @@ export const RssFeed = ({
   <Link
     to={url}
     css={css`
-      margin-left: 10px;
+      margin-left: 0.25rem;
+      margin-bottom: 0.25rem;
       color: ${color};
       :hover {
         color: ${darken(0.3, color)};
@@ -132,7 +136,8 @@ export const ExternalLinkIcon = ({
   <Link
     to={url}
     css={css`
-      margin-left: 10px;
+      margin-left: 0.25rem;
+      margin-bottom: 0.25rem;
       color: ${color};
       :hover {
         color: ${darken(0.3, color)};
@@ -162,7 +167,8 @@ export const MenuIcon = ({
   <div
     onClick={onClick}
     css={css`
-      margin-left: 10px;
+      margin-left: 0.25rem;
+      margin-bottom: 0.25rem;
       color: ${color};
       display: flex;
       align-items: center;
