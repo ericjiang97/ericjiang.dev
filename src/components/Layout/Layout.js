@@ -99,6 +99,7 @@ export default ({
                   setSideBarOpen={() => setSidebarOpen(true)}
                 />
                 {showBlogHeader && <BlogHeader />}
+                {showHero && <Hero />}
                 <div
                   css={css`
                     padding-bottom: 0;

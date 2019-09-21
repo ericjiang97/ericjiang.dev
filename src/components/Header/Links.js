@@ -13,6 +13,9 @@ const Links = () => {
         css={css`
           margin: 0.25rem;
           color: white;
+          :hover {
+            color: #ccc;
+          }
         `}
       >
         Blog
@@ -24,6 +27,9 @@ const Links = () => {
         css={css`
           margin: 0.25rem;
           color: white;
+          :hover {
+            color: #ccc;
+          }
         `}
       >
         Talks

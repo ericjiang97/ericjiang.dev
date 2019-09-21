@@ -53,46 +53,57 @@ const Header = ({
               align-items: center;
             `}
           >
-            <MediaQuery maxDeviceWidth={450}>
-              <div
-                css={css`
-                  margin-right: 10px;
-                `}
-              >
-                <MenuIcon
-                  color="white"
-                  onClick={() => {
-                    setSideBarOpen()
-                  }}
-                />
-              </div>
-            </MediaQuery>
-            <Link to="/" aria-label="go to homepage" activeClassName="active">
-              <div
-                css={css`
-                  display: flex;
-                  align-items: center;
-                `}
-              >
-                <img
-                  src={ProfilePic}
+            <div
+              css={css`
+                flex: 1;
+                color="white"
+              `}
+            >
+              <MediaQuery maxDeviceWidth={450}>
+                <div
                   css={css`
-                    max-width: 30px;
-                    max-height: 30px;
-                    border-radius: 100%;
-                    margin: 0px;
-                  `}
-                  alt="Eric"
-                />
-                <span
-                  css={css`
-                    margin-left: 5px;
+                    margin-right: 10px;
                   `}
                 >
-                  {siteTitle}
-                </span>
-              </div>
-            </Link>
+                  <MenuIcon
+                    color="white"
+                    onClick={() => {
+                      setSideBarOpen()
+                    }}
+                  />
+                </div>
+              </MediaQuery>
+              <Link to="/" aria-label="go to homepage" activeClassName="active">
+                <div
+                  css={css`
+                    display: flex;
+                    align-items: center;
+                  `}
+                >
+                  <img
+                    src={ProfilePic}
+                    css={css`
+                      max-width: 30px;
+                      max-height: 30px;
+                      border-radius: 100%;
+                      margin: 0px;
+                    `}
+                    alt="Eric"
+                  />
+                  <span
+                    css={css`
+                      margin-left: 5px;
+                      color: 'white';
+                      :hover {
+                        color: #ccc;
+                      }
+                    `}
+                  >
+                    {siteTitle}
+                  </span>
+                </div>
+              </Link>
+            </div>
             <MediaQuery minDeviceWidth={450}>
               <Links />
             </MediaQuery>
