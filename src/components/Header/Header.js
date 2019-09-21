@@ -27,6 +27,9 @@ const Header = ({
         padding: 15px 0 15px 0;
         background: ${dark ? '#090909' : `${bgColor}` || 'none'};
         position: sticky;
+        top: 0px;
+        z-index: 150;
+        box-shadow: 0px 0px #090909;
       `}
     >
       <Container noVerticalPadding>

@@ -17,6 +17,7 @@ import config from '../../../config/website'
 import Hero from '../Hero'
 import { globalStyles } from './styles'
 import Backdrop from '../Sidebar/Backdrop'
+import { lighten } from 'polished'
 
 export default ({
   site,
@@ -94,7 +95,7 @@ export default ({
               >
                 <Header
                   siteTitle={site.siteMetadata.title}
-                  bgColor={theme.brand.primary}
+                  bgColor={lighten(0.15, theme.brand.primary)}
                   headerColor={theme.colors.white}
                   setSideBarOpen={() => setSidebarOpen(true)}
                 />
