@@ -8,7 +8,7 @@ import { ThemeProvider } from 'emotion-theming'
 // Components
 import mdxComponents from '../mdx'
 import Header from '../Header/Header'
-import BlogHeader from '../BlogHeader'
+import BlogHeader from '../Blog/BlogHeader'
 import Sidebar from '../Sidebar/Sidebar'
 
 // Configurations

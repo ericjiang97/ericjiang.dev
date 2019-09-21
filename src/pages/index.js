@@ -5,7 +5,6 @@ import { css } from '@emotion/core'
 // Components
 import Layout from '../components/Layout'
 import Container from 'components/Container'
-import Divider from '../components/Divider'
 
 // Config
 import theme from '../../config/theme'
@@ -16,6 +15,8 @@ import { lighten } from 'polished'
 import { projects } from '../data/projects'
 import { talks } from '../data/talks'
 import TechTalkCard from '../components/TechTalkCard'
+import PreviousExperienceContainer from '../containers/PreviousExperienceContainer'
+import experience from '../data/experience'
 
 export default function Index({ data: { site } }) {
   return (
@@ -71,7 +72,6 @@ export default function Index({ data: { site } }) {
             (while I'm still a student)
           </p>
         </div>
-        <Divider />
         <div
           css={css`
             padding: 15px 0px;
@@ -84,26 +84,33 @@ export default function Index({ data: { site } }) {
           >
             Previous Experience
           </h2>
-
-          <a
-            href="./downloads/EricResume_Aug2019_Software.pdf"
-            css={css`
-              color: ${lighten(0.8, theme.brand.primary)};
-              padding: 10px 5px;
-              border: solid 1px ${lighten(0.8, theme.brand.primary)};
-              margin-bottom: 10px;
-              margin-top: 10px;
-              border-radius: 5px;
-              :hover {
-                background-color: ${lighten(0.8, theme.brand.primary)};
-                color: ${theme.brand.projectDescription};
-              }
-            `}
-          >
-            Download Resume
-          </a>
+          <PreviousExperienceContainer experiences={experience} />
+          <div>
+            <a
+              href="./downloads/EricResume_Aug2019_Software.pdf"
+              css={css`
+                color: ${theme.colors.green};
+                margin-bottom: 1.25rem;
+                margin-top: 1.25rem;
+                border-radius: 5px;
+              `}
+            >
+              <div
+                css={css`
+                  padding: 5px 10px;
+                  border: solid 1px ${theme.colors.green};
+                  max-width: 250px;
+                  :hover {
+                    background-color: ${theme.colors.green};
+                    color: ${theme.brand.projectDescription};
+                  }
+                `}
+              >
+                Download Resume
+              </div>
+            </a>
+          </div>
         </div>
-        <Divider />
         <div
           css={css`
             display: flex;
@@ -178,7 +185,6 @@ export default function Index({ data: { site } }) {
           </div>
         </div>
 
-        <Divider />
         <h2
           css={css`
             color: white;

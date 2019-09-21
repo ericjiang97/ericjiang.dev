@@ -6,7 +6,7 @@ import { Link, graphql } from 'gatsby'
 // Components
 import Layout from '../components/Layout'
 import Container from '../components/Container'
-import BlogPost from '../components/BlogPost'
+import BlogPost from '../components/Blog/BlogPost'
 
 // Configuration
 import theme from '../../config/theme'

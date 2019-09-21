@@ -1,8 +1,8 @@
 import React from 'react'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
-import theme from '../../config/theme'
-import Container from './Container'
+import theme from '../../../config/theme'
+import Container from '../Container'
 
 const linkStyles = css({
   margin: 10,

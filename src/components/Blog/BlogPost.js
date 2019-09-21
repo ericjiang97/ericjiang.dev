@@ -1,10 +1,10 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
-import { bpMaxSM } from '../lib/breakpoints'
+import { bpMaxSM } from '../../lib/breakpoints'
 
-import Link from './Link'
-import TagLabel from './TagLabel'
+import Link from '../Link'
+import TagLabel from '../TagLabel'
 
 function BlogPost({ post }) {
   return (

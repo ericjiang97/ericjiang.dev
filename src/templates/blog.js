@@ -7,7 +7,7 @@ import Container from 'components/Container'
 import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import Link from '../components/Link'
-import BlogPost from '../components/BlogPost'
+import BlogPost from '../components/Blog/BlogPost'
 
 // Configuration
 import theme from '../../config/theme'
