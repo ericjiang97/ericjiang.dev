@@ -1,0 +1,4 @@
+# These rules will change if you change your site’s custom domains or HTTPS settings
+
+# Redirect domain aliases to primary domain
+https://lorderikir.me/* https://ericjiang.dev/:splat 301!
