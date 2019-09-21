@@ -124,3 +124,64 @@ export const RssFeed = ({
     </svg>
   </Link>
 )
+
+export const ExternalLinkIcon = ({
+  color = `${theme.colors.body_color}`,
+  url = `https://google.com`,
+}) => (
+  <Link
+    to={url}
+    css={css`
+      margin-left: 10px;
+      color: ${color};
+      :hover {
+        color: ${darken(0.3, color)};
+      }
+    `}
+    aria-label="Visit my GitHub"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path
+        fill="currentColor"
+        d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
+      />
+    </svg>
+  </Link>
+)
+
+export const MenuIcon = ({
+  onClick = () => {},
+  color = `${theme.colors.body_color}`,
+}) => (
+  <div
+    onClick={onClick}
+    css={css`
+      margin-left: 10px;
+      color: ${color};
+      display: flex;
+      align-items: center;
+      :hover {
+        color: ${darken(0.3, color)};
+      }
+    `}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path
+        fill="currentColor"
+        d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+      />
+    </svg>
+  </div>
+)

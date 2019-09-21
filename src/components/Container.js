@@ -14,7 +14,7 @@ const Container = props => {
       css={css`
         width: 100%;
         margin: 0 auto;
-        max-width: ${maxWidth + (noHorizontalPadding ? 0 : 80)}px;
+        max-width: ${maxWidth + (noHorizontalPadding ? 0 : 250)}px;
         padding: ${noVerticalPadding ? 0 : '40'}px
           ${noHorizontalPadding ? 0 : '40'}px;
         ${bpMaxSM} {

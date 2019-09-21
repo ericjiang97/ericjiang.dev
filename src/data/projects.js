@@ -1,43 +1,67 @@
 import MonPlanPic from '../images/projects/monplan.png'
 import MarieJSPic from '../images/projects/mariejs.png'
 
-export const projects = [
-  // {
-  //     title: '', //project title
-  //     link: '', // link to project
-  //     dates: {
-  //         from: '', // from (Month Year)
-  //         to: '', // to (Month Year)
+export const projects = {
+  featured: [
+    // {
+    //     title: '', //project title
+    //     link: '', // link to project
+    //     dates: {
+    //         from: '', // from (Month Year)
+    //         to: '', // to (Month Year)
 
-  //     },
-  //    description: ''
-  //     copyright: '', // copyright text
-  // },
-  {
-    title: 'MonPlan', //project title
-    image: MonPlanPic,
-    link: 'https://monplan.apps.monash.edu', // link to project
-    dates: {
-      from: 'Oct 2016', // from (Month Year)
-      to: 'Apr 2019', // to (Month Year)
+    //     },
+    //    description: ''
+    //     copyright: '', // copyright text
+    // },
+    {
+      title: 'MonPlan', //project title
+      image: MonPlanPic,
+      link: 'https://monplan.apps.monash.edu', // link to project
+      dates: {
+        from: 'Oct 2016', // from (Month Year)
+        to: 'Apr 2019', // to (Month Year)
+      },
+      description: `MonPlan is the official Monash University Course Planning Tool.`,
+      copyright: 'Copyright (c) Monash University 2016 - 2019', // copyright text
     },
-    description: `MonPlan is the official Monash University Course Planning Tool. 
-    This project was started off as an Open Sourced Project by Josh Nelsson-Smith and me. \n\nKey 
-    Features include: \n - Preload enrolment data with grades \n- Integration into the university’s Student Management System (SMS)\n- Course Advisors have ability to review student's course plans
-    \n- Course Progression Guide and helper tool to show what students need to do to complete their degree and nominated area of study`,
-    copyright: 'Copyright (c) Monash University 2016 - 2019', // copyright text
-  },
-  {
-    title: 'MARIE.js', //project title
-    image: MarieJSPic,
-    link: 'https://marie.js.org', // link to project
-    dates: {
-      from: 'Mar 2016', // from (Month Year)
-      to: '', // to (Month Year)
+    {
+      title: 'MARIE.js', //project title
+      image: MarieJSPic,
+      link: 'https://marie.js.org', // link to project
+      githubRepo: 'https://github.com/MARIE-js/MARIE.js',
+      dates: {
+        from: 'Mar 2016', // from (Month Year)
+        to: '', // to (Month Year)
+      },
+      description: `MARIE.js is a very simple and intuitive Assembly Language Simulator. It is a web-based version of the MARIE simulator.`,
+      copyright: 'Copyright (c) MARIE.js Team & Monash University 2016 - 2019', // copyright text
     },
-    description: `MARIE.js is a very simple and intuitive Assembly Language Simulator. It is a web-based version of the MARIE simulator.
-    \nThis simulator is used in Monash University – Faculty of Information Technology unit: FIT1047 – Introduction to computer, networks and security. Which is a core unit of all IT courses at Monash University.
-    \nMARIE.js is an open-sourced project.`,
-    copyright: 'Copyright (c) MARIE.js Team & Monash University 2016 - 2019', // copyright text
-  },
-]
+  ],
+  other: [
+    {
+      title: 'Bit by Bit 2019', //project title
+      link: 'https://bitbybit.netlify.com', // link to project
+      githubRepo: 'https://github.com/wiredmonash/bit-by-bit-hackathon-2019',
+      description: `Bit by Bit Hackathon is our hackathon for beginning hackers and is only available to Monash University students.`,
+    },
+    {
+      title: 'geckoDM', //project title
+      link: 'https://geckodm.github.io', // link to project
+      githubRepo: 'https://github.com/GeckoDM/GeckoDownloadManager',
+      description: `Gecko Download Manager (GeckoDM) is a Chrome Extension that improves downloading lectures from the Echo360 System.`,
+    },
+    {
+      title: 'ptv-signage', //project title
+      link: 'https://metrotrains.ericjiang.dev', // link to project
+      githubRepo: 'https://github.com/lorderikir/melbpt',
+      description: `A Rebuild of the Metro Trains PID Website by lorderikir`,
+    },
+    {
+      title: 'fetch-github-profile',
+      link: 'https://www.npmjs.com/package/fetch-github-profile',
+      githubRepo: 'https://github.com/ericjiang97/fetch-github-profile',
+      description: 'Fetching a GitHub Profile Card directly into Your Terminal',
+    },
+  ],
+}

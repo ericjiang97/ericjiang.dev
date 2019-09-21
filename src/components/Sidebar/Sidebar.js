@@ -1,17 +1,17 @@
 import React from 'react'
-import MediaQuery from 'react-responsive'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { lighten } from 'polished'
 
 // Components
-import Footer from '../components/Footer'
+import Footer from '../Footer'
 
 // Config
-import theme from '../../config/theme'
+import theme from '../../../config/theme'
 
 // Images
-import ProfilePic from '../images/profile.png'
+import ProfilePic from '../../images/profile.jpeg'
+import Links from '../Header/Links'
 
 const linkStyles = css({
   margin: 5,
@@ -21,7 +21,8 @@ const linkStyles = css({
   },
 })
 
-export default function Sidebar() {
+export default function Sidebar({ open = false }) {
+  console.log(open)
   return (
     <div
       css={css`
@@ -38,12 +39,14 @@ export default function Sidebar() {
         );
         align-items: center;
         flex-direction: column;
-        min-width: 330px;
+        width: 280px;
         text-align: center;
         display: flex;
-        @media screen and (min-width: 0px) and (max-width: 500px) {
-          display: none;
-        }
+        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+        position: fixed;
+        z-index: 200;
+        transform: ${open ? 'translateX(0px)' : 'translateX(-100%)'};
+        transition: all 0.3s;
       `}
     >
       <div
@@ -51,81 +54,69 @@ export default function Sidebar() {
           flex: 1;
         `}
       >
-        <img
-          src={ProfilePic}
-          css={css`
-            max-width: 150px;
-            border-radius: 100%;
-          `}
-          alt="Eric"
-        />
-        <h2
-          css={css`
-            color: ${theme.colors.white};
-            font-weight: 300;
-          `}
-        >
-          Eric Jiang
-        </h2>
-        <h3
-          css={css`
-            color: ${theme.colors.white};
-            font-weight: 300;
-          `}
-        >
-          Software Engineer, Monash University
-        </h3>
-      </div>
-      <MediaQuery minDeviceWidth={330}>
         <div
           css={css`
             display: flex;
-            flex: 1;
-            flex-direction: column;
+            align-items: center;
           `}
         >
-          <Link
-            to="/"
-            aria-label="home"
-            activeClassName="active"
-            css={linkStyles}
+          <img
+            src={ProfilePic}
+            css={css`
+              max-width: 50px;
+              border-radius: 100%;
+              margin: 0px;
+              margin-right: 0.75rem;
+            `}
+            alt="Eric"
+          />
+          <div
+            css={css`
+              text-align: left;
+            `}
           >
-            Home
-          </Link>
-          <Link
-            to="/blog"
-            aria-label="about me"
-            activeClassName="active"
-            css={linkStyles}
-          >
-            Blog
-          </Link>
-          <Link
-            to="/about"
-            aria-label="about me"
-            activeClassName="active"
-            css={linkStyles}
-          >
-            About
-          </Link>
-          <Link
-            to="/projects"
-            aria-label="about projects"
-            activeClassName="active"
-            css={linkStyles}
-          >
-            Projects
-          </Link>
-          <Link
-            to="/talks"
-            aria-label="about me"
-            activeClassName="active"
-            css={linkStyles}
-          >
-            Talks
-          </Link>
+            <h3
+              css={css`
+                color: ${theme.colors.white};
+                font-weight: 300;
+                margin: 0px;
+                margin-top: 0.25rem;
+                margin-bottom: 0.25rem;
+              `}
+            >
+              Eric Jiang
+            </h3>
+            <h4
+              css={css`
+                color: ${theme.colors.white};
+                font-weight: 300;
+                margin: 0px;
+                margin-top: 0.25rem;
+                margin-bottom: 0.25rem;
+              `}
+            >
+              Software Engineer, Monash University
+            </h4>
+          </div>
         </div>
-      </MediaQuery>
+      </div>
+      <div
+        css={css`
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+        `}
+      >
+        <Link
+          to="/"
+          aria-label="home"
+          activeClassName="active"
+          css={linkStyles}
+        >
+          Home
+        </Link>
+        <Links />
+      </div>
 
       <Footer />
       <div>Copyright &copy; Eric Jiang {new Date().getFullYear()}</div>

@@ -43,7 +43,7 @@ function BlogPost({ post }) {
           >
             <Img
               sizes={post.frontmatter.banner.childImageSharp.fluid}
-              style={{ width: 500 }}
+              style={{ maxWidth: 500 }}
             />
           </Link>
         </div>
