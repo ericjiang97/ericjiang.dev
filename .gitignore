@@ -36,3 +36,6 @@ public
 .env.development
 .env.production
 .env*
+
+/.env
+/.env.development
