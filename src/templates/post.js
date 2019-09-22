@@ -141,7 +141,7 @@ export const pageQuery = graphql`
     mdx(fields: { id: { eq: $id } }) {
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "DD MMMM YYYY")
         author
         tags
         banner {
