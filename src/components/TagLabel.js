@@ -19,6 +19,7 @@ function TagLabel({ children, to }) {
         ':hover,:focus': {
           color: theme.colors.primary_light,
         },
+        textTransform: 'uppercase',
       })}
     >
       {children}

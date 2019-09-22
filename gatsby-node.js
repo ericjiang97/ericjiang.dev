@@ -2,7 +2,7 @@ const path = require('path')
 
 const _ = require('lodash')
 const paginate = require('gatsby-awesome-pagination')
-const PAGINATION_OFFSET = 5
+const PAGINATION_OFFSET = 10
 
 const createPosts = (createPage, createRedirect, edges) => {
   edges.forEach(({ node }, i) => {
