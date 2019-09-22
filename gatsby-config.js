@@ -63,21 +63,6 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-source-wordpress',
-      options: {
-        baseUrl: 'ericjiang97blog.wordpress.com',
-        hostingWPCOM: true, // blog is hosted on wordpress.com
-        useACF: true,
-        auth: {
-          wpcom_app_clientSecret: process.env.WORDPRESS_CLIENT_SECRET,
-          wpcom_app_clientId: '66949',
-          wpcom_user: 'lorderikir',
-          wpcom_pass: process.env.WORDPRESS_PASSWORD,
-        },
-        concurrentRequests: 10,
-      },
-    },
-    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.siteTitle,
@@ -104,7 +89,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `GOOGLE_ID`,
+        trackingId: `UA-120714098-3`,
       },
     },
     {
