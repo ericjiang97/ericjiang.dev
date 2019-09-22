@@ -13,6 +13,7 @@ import TagLabel from '../components/TagLabel'
 import theme from '../../config/theme'
 
 import Share from '../components/Blog/Share'
+import { lighten } from 'polished'
 
 export default function Post({
   data: { site, mdx },
@@ -38,6 +39,22 @@ export default function Post({
         css={css`
           width: 100%;
           display: flex;
+          color: white;
+          a {
+            color: white;
+            text-decoration: underline;
+            :visited {
+              color: white;
+            }
+            :hover {
+              color: ${lighten(0.3, theme.brand.primary)};
+            }
+          }
+          h1,
+          h2,
+          h3 {
+            color: white;
+          }
         `}
       >
         <Container>
@@ -89,7 +106,14 @@ export default function Post({
         </Container>
         {/* <SubscribeForm /> */}
       </article>
-      <Container>
+      <Container
+        css={css`
+          color: white;
+          h2 {
+            color: white;
+          }
+        `}
+      >
         <h2>Tags</h2>
         <div>
           {tags.map((tag, i) => {

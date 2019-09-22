@@ -3,13 +3,14 @@ import { Link } from 'gatsby'
 import { kebabCase } from 'change-case'
 import css from '@emotion/css'
 import theme from '../../config/theme'
+import { lighten } from 'polished'
 
 function TagLabel({ children, to }) {
   return (
     <Link
       to={to || `/tags/${kebabCase(children)}/`}
       css={css({
-        backgroundColor: theme.brand.primary,
+        backgroundColor: lighten(0.2, theme.brand.primary),
         padding: '6px 12px',
         borderRadius: 4,
         color: theme.colors.white,

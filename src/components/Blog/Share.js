@@ -3,6 +3,7 @@ import { css } from '@emotion/core'
 import theme from '../../../config/theme'
 
 import { TwitterShareButton, FacebookShareButton } from 'react-share'
+import { lighten } from 'polished'
 
 const Share = ({ url, title, twitterHandle }) => (
   <div
@@ -10,11 +11,13 @@ const Share = ({ url, title, twitterHandle }) => (
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      color: white;
       div {
         margin-right: 20px;
         cursor: pointer;
+        color: white;
         :hover {
-          color: ${theme.brand.primary};
+          color: ${lighten(0.45, theme.brand.primary)};
         }
       }
       span {
@@ -44,9 +47,6 @@ const Share = ({ url, title, twitterHandle }) => (
       url={url}
       quote={title}
       via={twitterHandle.split('@').join('')}
-      css={css`
-        cursor: pointer;
-      `}
     >
       Facebook
     </FacebookShareButton>
