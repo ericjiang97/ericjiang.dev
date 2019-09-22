@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react'
-import MediaQuery from 'react-responsive'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/tag'
@@ -21,7 +20,6 @@ import Backdrop from '../Sidebar/Backdrop'
 import { lighten } from 'polished'
 import Container from '../Container'
 import { RssFeed, Twitter, GitHub, LinkedIn } from '../Social'
-import Footer from '../Footer'
 
 export default ({
   site,

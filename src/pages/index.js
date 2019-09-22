@@ -1,5 +1,4 @@
 import React from 'react'
-import MediaQuery from 'react-responsive'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 
