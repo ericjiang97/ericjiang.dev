@@ -18,6 +18,8 @@ import Hero from '../Hero'
 import { globalStyles } from './styles'
 import Backdrop from '../Sidebar/Backdrop'
 import { lighten } from 'polished'
+import Container from '../Container'
+import { RssFeed, Twitter, GitHub, LinkedIn } from '../Social'
 
 export default ({
   site,
@@ -107,11 +109,69 @@ export default ({
                     // background-color: #fff;
                     padding: 10px 24px;
                     max-width: 100vw;
+                    @media (min-width: 650px) and (max-width: 1200px) {
+                      margin-left: 100px;
+                    }
                   `}
                 >
                   <MDXProvider components={mdxComponents}>
                     {children}
                   </MDXProvider>
+                </div>
+                <div
+                  css={css`
+                    color: white;
+                    position: fixed;
+                    bottom: 2.5rem;
+                    display: fixed;
+                    width: 100px;
+                    margin-bottom: 3.5rem;
+                    @media (max-width: 650px) {
+                      display: none;
+                    }
+                  `}
+                >
+                  <div>
+                    <div
+                      css={css`
+                        transform: rotate(-90deg);
+                      `}
+                    >
+                      Social
+                    </div>
+                  </div>
+                  <div
+                    css={css`
+                      display: flex;
+                      flex-direction: column;
+                      border-left: 1px solid white;
+                      padding: 0px 10px;
+                    `}
+                  >
+                    <RssFeed color={theme.colors.white} />
+                    <Twitter color={theme.colors.white} />
+                    <GitHub color={theme.colors.white} />
+                    <LinkedIn color={theme.colors.white} />
+                  </div>
+                </div>
+                <div
+                  css={css`
+                    padding: 1.5rem 1.5rem;
+                    color: white;
+                  `}
+                >
+                  <Container>
+                    <div
+                      css={css`
+                        display: flex;
+                        flex-direction: column;
+                      `}
+                    >
+                      <span
+                      >{`Copyright \u00A9  Eric Jiang ${new Date().getFullYear()}`}</span>
+                      <span>Built with Gatsby. Powered by Netlify.</span>
+                    </div>
+                  </Container>
                 </div>
               </div>
             </div>

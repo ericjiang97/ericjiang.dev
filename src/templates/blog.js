@@ -51,9 +51,16 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
           }
         `}
       >
-        {posts.map(({ node: post }) => (
-          <BlogPost post={post} />
-        ))}
+        <div
+          css={css`
+            display: flex;
+            flex-wrap: wrap;
+          `}
+        >
+          {posts.map(({ node: post }) => (
+            <BlogPost post={post} />
+          ))}
+        </div>
         <br />
         <br />
         <div style={{ display: 'flex' }}>
@@ -120,7 +127,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD MMMM YYYY")
             banner {
               childImageSharp {
                 fluid(maxWidth: 600) {

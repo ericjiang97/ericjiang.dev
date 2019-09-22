@@ -10,6 +10,7 @@ import BlogPost from '../components/Blog/BlogPost'
 
 // Configuration
 import theme from '../../config/theme'
+import { lighten } from 'polished'
 
 const Tags = ({ pageContext, data }) => {
   console.log(pageContext, data)
@@ -27,24 +28,17 @@ const Tags = ({ pageContext, data }) => {
       showBlogHeader={true}
       stickyHeader={true}
     >
-      <Container
-        css={css`
-          background-color: #fff;
-        `}
-      >
-        <h1
+      <Container>
+        <h2
           css={css`
             text-align: center;
+            color: ${lighten(0.7, theme.brand.primary)};
           `}
         >
           {tagHeader}
-        </h1>
+        </h2>
       </Container>
-      <Container
-        css={css`
-          background-color: #fff;
-        `}
-      >
+      <Container>
         {edges.map(({ node: post }) => {
           return <BlogPost post={post} />
         })}

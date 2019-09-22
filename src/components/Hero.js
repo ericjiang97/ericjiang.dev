@@ -6,6 +6,7 @@ import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
 import theme from '../../config/theme'
 import { lighten, darken } from 'polished'
+import ProfilePic from '../images/profile.jpeg'
 
 export default function Hero() {
   return (
@@ -29,7 +30,30 @@ export default function Hero() {
             display: flex;
           `}
         >
-          <div>
+          <div
+            css={css`
+              flex: 1;
+            `}
+          >
+            <img
+              src={ProfilePic}
+              css={css`
+                width: 100%;
+                border-radius: 100%;
+                margin: 0px;
+                @media (max-width: 650px) {
+                  display: none;
+                }
+              `}
+              alt="Eric"
+            />
+          </div>
+          <div
+            css={css`
+              flex: 4;
+              margin-left: 2rem;
+            `}
+          >
             <p
               css={css`
                 color: white;
@@ -37,16 +61,13 @@ export default function Hero() {
                 z-index: 5;
                 line-height: 1.5;
                 margin: 0;
-                max-width: ${rhythm(20)};
+                max-width: ${rhythm(50)};
                 font-weight: 300;
                 color: ${lighten(0.45, theme.brand.primary)};
                 font-size: 0.85rem;
               `}
             >
-              <span role="img" aria-label="wave">
-                👋
-              </span>
-              &nbsp; Hi, I am
+              G'day, I am
             </p>
             <h1
               css={css`

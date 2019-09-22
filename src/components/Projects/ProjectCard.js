@@ -22,9 +22,10 @@ const ProjectCard = ({ title, projectDescription, githubUrl, url }) => {
             flex: 1;
             padding: 5px 15px;
             margin: 5px;
-            background-color: ${lighten(0.05, theme.brand.primary)};
+
             opacity: 0.9;
             z-index: 3;
+            background-color: ${lighten(0.05, theme.brand.primary)};
             :hover {
               background-color: ${lighten(0.1, theme.brand.primary)};
             }

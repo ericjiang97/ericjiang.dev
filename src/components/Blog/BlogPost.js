@@ -5,6 +5,9 @@ import { bpMaxSM } from '../../lib/breakpoints'
 
 import Link from '../Link'
 import TagLabel from '../TagLabel'
+import { lighten } from 'polished'
+import theme from '../../../config/theme'
+import CalendarIcon from '../CalendarIcon'
 
 function BlogPost({ post }) {
   return (
@@ -23,83 +26,118 @@ function BlogPost({ post }) {
             margin-top: 20px;
           }
         }
-        .gatsby-image-wrapper {
-        }
         background: white;
         padding: 12px 24px;
         ${bpMaxSM} {
           padding: 20px;
         }
         display: flex;
-        flex-direction: column;
-        border-bottom: solid 1px #eee;
+        flex-direction: row;
+
+        border-radius: 1.25rem;
+
+        background-color: ${lighten(0.05, theme.brand.primary)};
+        :hover {
+          background-color: ${lighten(0.1, theme.brand.primary)};
+        }
+        small {
+          color: #ccc;
+          font-weight: 300;
+        }
+        h2 {
+          color: ${lighten(0.7, theme.brand.primary)};
+          margin-top: 5px;
+          margin-bottom: 10px;
+          font-size: 1em;
+        }
+        p {
+          color: ${lighten(0.8, theme.brand.primary)};
+        }
+        flex: 1;
+        min-width: 280px;
+        width: 30%;
+        margin: 1.25rem;
       `}
     >
       {post.frontmatter.banner && (
-        <div>
+        <div
+          css={css`
+            width: 10rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          `}
+        >
           <Link
             aria-label={`View ${post.frontmatter.title} article`}
             to={`/${post.frontmatter.slug}`}
           >
-            <Img
-              sizes={post.frontmatter.banner.childImageSharp.fluid}
-              style={{ maxWidth: 500 }}
-            />
+            <Img sizes={post.frontmatter.banner.childImageSharp.fluid} />
           </Link>
         </div>
       )}
-      <small
-        css={css`
-          margin-top: 10px;
-          margin-bottom: 2px;
-          font-weight: 300;
-          color: #777;
-        `}
-      >
-        {post.frontmatter.date}
-      </small>
-      <h2
-        css={css`
-          margin-top: 5px;
-          margin-bottom: 10px;
-          font-size: 1em;
-        `}
-      >
-        <Link
-          aria-label={`View ${post.frontmatter.title} article`}
-          to={`/${post.frontmatter.slug}`}
-        >
-          {post.frontmatter.title}
-        </Link>
-      </h2>
       <div
         css={css`
-          display: flex;
-          flex-wrap: wrap;
-          margin-bottom: 5px;
+          margin-left: ${post.frontmatter.banner ? '2rem' : '0px'};
+          flex: 2;
         `}
       >
         <div
           css={css`
-            margin-top: 5px;
             flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
           `}
         >
-          {post.frontmatter.tags.map((tag, index) => (
-            <TagLabel key={index}>{tag}</TagLabel>
-          ))}
+          <div
+            css={css`
+              margin-top: 5px;
+              flex: 1;
+            `}
+          >
+            {post.frontmatter.tags.map((tag, index) => (
+              <TagLabel key={index}>{tag}</TagLabel>
+            ))}
+          </div>
+        </div>
+        <h2
+          css={css`
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-size: 1em;
+          `}
+        >
+          <Link
+            aria-label={`View ${post.frontmatter.title} article`}
+            to={`/${post.frontmatter.slug}`}
+            css={css`
+              :visited {
+                color: ${lighten(0.7, theme.brand.primary)};
+              }
+            `}
+          >
+            {post.frontmatter.title}
+          </Link>
+        </h2>
+        <div
+          css={css`
+            display: flex;
+            align-items: center;
+          `}
+        >
+          <CalendarIcon color={'#ccc'} size={12} />
+          <small
+            css={css`
+              margin-left: 0.25rem;
+              font-size: 12px;
+            `}
+          >
+            {post.frontmatter.date}
+          </small>
         </div>
       </div>
-      {post.excerpt && (
-        <p
-          css={css`
-            margin-top: 10px;
-            font-size: 0.75em;
-          `}
-        >
-          {post.excerpt}
-        </p>
-      )}
     </div>
   )
 }

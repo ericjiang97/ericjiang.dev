@@ -30,3 +30,12 @@ node_modules
 .cache/
 .DS_Store
 public
+
+.env
+.env.development
+.env.development
+.env.production
+.env*
+
+/.env
+/.env.development

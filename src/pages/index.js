@@ -1,5 +1,4 @@
 import React from 'react'
-import MediaQuery from 'react-responsive'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 
@@ -18,7 +17,6 @@ import { talks } from '../data/talks'
 import TechTalkCard from '../components/TechTalkCard'
 import PreviousExperienceContainer from '../containers/PreviousExperienceContainer'
 import experience from '../data/experience'
-import { RssFeed, Twitter, GitHub, LinkedIn } from '../components/Social'
 
 export default function Index({ data: { site } }) {
   return (
@@ -33,40 +31,6 @@ export default function Index({ data: { site } }) {
           display: flex;
         `}
       >
-        <MediaQuery minDeviceWidth={450}>
-          <div
-            css={css`
-              color: white;
-              position: fixed;
-              bottom: 2rem;
-              display: fixed;
-              width: 100px;
-            `}
-          >
-            <div>
-              <div
-                css={css`
-                  transform: rotate(-90deg);
-                `}
-              >
-                Social
-              </div>
-            </div>
-            <div
-              css={css`
-                display: flex;
-                flex-direction: column;
-                border-left: 1px solid white;
-                padding: 0px 10px;
-              `}
-            >
-              <RssFeed color={theme.colors.white} />
-              <Twitter color={theme.colors.white} />
-              <GitHub color={theme.colors.white} />
-              <LinkedIn color={theme.colors.white} />
-            </div>
-          </div>
-        </MediaQuery>
         <Container
           css={css`
             padding-bottom: 0;
@@ -78,20 +42,30 @@ export default function Index({ data: { site } }) {
             display: flex;
             flex-direction: column;
             align-items: center;
+            h2 {
+              color: ${lighten(0.7, theme.brand.primary)};
+            }
+            h3 {
+              color: ${lighten(0.5, theme.brand.primary)};
+            }
           `}
         >
           <div
             css={css`
               padding: 10px 0px;
+
+              a {
+                color: ${lighten(0.65, theme.brand.primary)};
+                :hover {
+                  color: ${lighten(0.55, theme.brand.primary)};
+                }
+                :visited {
+                  color: ${lighten(0.4, theme.brand.primary)};
+                }
+              }
             `}
           >
-            <h2
-              css={css`
-                color: ${lighten(0.7, theme.brand.primary)};
-              `}
-            >
-              A bit about me...
-            </h2>
+            <h2>A bit about me...</h2>
             <p>I love delivering impact to everyone in the community.</p>
             <p>
               I'm currently in my final year (studying part-time) in my Bachelor
@@ -100,24 +74,29 @@ export default function Index({ data: { site } }) {
                 href="https://monash.edu"
                 target="_blank"
                 rel="noreferrer noopener"
-                css={css`
-                  color: ${lighten(0.65, theme.brand.primary)};
-                  :hover {
-                    color: ${lighten(0.55, theme.brand.primary)};
-                  }
-                `}
               >
                 Monash University
               </a>
-              . I'm majoring in Computer networks and security. I still love
-              other sides of the IT field such as Product Management, Software
-              Engineering and Web/Cloud Technologies. And applying knowledge
-              from the Cybersecurity and DevOps into Software Development.
+              , where I am majoring in Computer networks and security.
+            </p>
+            <p>
+              I also love other sides of the IT field such as Product
+              Management, Software Engineering and Web/Cloud Technologies. And
+              applying knowledge from the Cybersecurity and DevOps into Software
+              Development.
             </p>
             <p>
               Something that I'm currently proud of is winning the Rising Star
-              Category of the 2019 itNews Benchmark Awards for delivering
-              MonPlan (while I'm still a student)
+              Category of the 2019 itNews Benchmark Awards for founding and
+              delivering{' '}
+              <a
+                href="https://monplan.apps.monash.edu"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                MonPlan
+              </a>{' '}
+              (while I'm still a student)
             </p>
           </div>
           <div
@@ -125,13 +104,7 @@ export default function Index({ data: { site } }) {
               padding: 15px 0px;
             `}
           >
-            <h2
-              css={css`
-                color: ${lighten(0.7, theme.brand.primary)};
-              `}
-            >
-              I have worked at...
-            </h2>
+            <h2>I have worked at...</h2>
             <PreviousExperienceContainer experiences={experience} />
             <div>
               <a
@@ -172,22 +145,8 @@ export default function Index({ data: { site } }) {
                 width: 100%;
               `}
             >
-              <h2
-                css={css`
-                  color: white;
-                  color: ${lighten(0.7, theme.brand.primary)};
-                `}
-              >
-                I have made...
-              </h2>
-              <h3
-                css={css`
-                  color: white;
-                  color: ${lighten(0.5, theme.brand.primary)};
-                `}
-              >
-                Featured Projects
-              </h3>
+              <h2>I have made...</h2>
+              <h3>Featured Projects</h3>
             </div>
             <div
               css={css`
@@ -208,13 +167,7 @@ export default function Index({ data: { site } }) {
               ))}
             </div>
 
-            <h3
-              css={css`
-                color: white;
-              `}
-            >
-              Other Projects
-            </h3>
+            <h3>Other Projects</h3>
             <div
               css={css`
                 display: flex;
@@ -233,14 +186,7 @@ export default function Index({ data: { site } }) {
             </div>
           </div>
 
-          <h2
-            css={css`
-              color: white;
-              color: ${lighten(0.7, theme.brand.primary)};
-            `}
-          >
-            I also give Tech Talks...
-          </h2>
+          <h2>I also give Tech Talks...</h2>
           <div
             css={css`
               display: flex;
@@ -259,13 +205,7 @@ export default function Index({ data: { site } }) {
             ))}
           </div>
           <div>
-            <h3
-              css={css`
-                color: white;
-              `}
-            >
-              Contact
-            </h3>
+            <h3>Contact</h3>
             <div>
               I'm currently not available for contracting or freelancing, But
               feel free to shoot me an email at{' '}
