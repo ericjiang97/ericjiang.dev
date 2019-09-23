@@ -49,7 +49,10 @@ function BlogPost({ post }) {
         }
         flex: 1;
         min-width: 280px;
-        width: 30%;
+        width: 25%;
+        @media (min-width: 500px) {
+          margin-left: 0.25rem;
+        }
       `}
     >
       <div

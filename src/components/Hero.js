@@ -53,7 +53,6 @@ export default function Hero() {
               flex: 4;
               @media (min-width: 650px) {
                 margin-left: 2rem;
-                display: none;
               }
             `}
           >
