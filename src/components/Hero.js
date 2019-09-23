@@ -33,6 +33,9 @@ export default function Hero() {
           <div
             css={css`
               flex: 1;
+              @media (max-width: 650px) {
+                display: none;
+              }
             `}
           >
             <img
@@ -41,9 +44,6 @@ export default function Hero() {
                 width: 100%;
                 border-radius: 100%;
                 margin: 0px;
-                @media (max-width: 650px) {
-                  display: none;
-                }
               `}
               alt="Eric"
             />
@@ -51,7 +51,10 @@ export default function Hero() {
           <div
             css={css`
               flex: 4;
-              margin-left: 2rem;
+              @media (min-width: 650px) {
+                margin-left: 2rem;
+                display: none;
+              }
             `}
           >
             <p

@@ -27,12 +27,6 @@ function BlogPost({ post }) {
           }
         }
         background: white;
-        padding: 12px 24px;
-        ${bpMaxSM} {
-          padding: 20px;
-        }
-        display: flex;
-        flex-direction: row;
 
         border-radius: 1.25rem;
 
@@ -56,86 +50,93 @@ function BlogPost({ post }) {
         flex: 1;
         min-width: 280px;
         width: 30%;
-        margin: 1.25rem;
       `}
     >
-      {post.frontmatter.banner && (
-        <div
-          css={css`
-            width: 10rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-          `}
-        >
-          <Link
-            aria-label={`View ${post.frontmatter.title} article`}
-            to={`/${post.frontmatter.slug}`}
-          >
-            <Img sizes={post.frontmatter.banner.childImageSharp.fluid} />
-          </Link>
-        </div>
-      )}
       <div
         css={css`
-          margin-left: ${post.frontmatter.banner ? '2rem' : '0px'};
-          flex: 2;
+          padding: 12px 24px;
+          display: flex;
+          flex-direction: row;
         `}
       >
+        {post.frontmatter.banner && (
+          <div
+            css={css`
+              width: 10rem;
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            `}
+          >
+            <Link
+              aria-label={`View ${post.frontmatter.title} article`}
+              to={`/${post.frontmatter.slug}`}
+            >
+              <Img sizes={post.frontmatter.banner.childImageSharp.fluid} />
+            </Link>
+          </div>
+        )}
         <div
           css={css`
-            flex: 1;
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 0.75rem;
+            margin-left: ${post.frontmatter.banner ? '2rem' : '0px'};
+            flex: 2;
           `}
         >
           <div
             css={css`
-              margin-top: 5px;
               flex: 1;
+              display: flex;
+              flex-wrap: wrap;
+              margin-bottom: 0.75rem;
             `}
           >
-            {post.frontmatter.tags.map((tag, index) => (
-              <TagLabel key={index}>{tag}</TagLabel>
-            ))}
+            <div
+              css={css`
+                margin-top: 5px;
+                flex: 1;
+              `}
+            >
+              {post.frontmatter.tags.map((tag, index) => (
+                <TagLabel key={index}>{tag}</TagLabel>
+              ))}
+            </div>
           </div>
-        </div>
-        <h2
-          css={css`
-            margin-top: 5px;
-            margin-bottom: 10px;
-            font-size: 1em;
-          `}
-        >
-          <Link
-            aria-label={`View ${post.frontmatter.title} article`}
-            to={`/${post.frontmatter.slug}`}
+          <h2
             css={css`
-              :visited {
-                color: ${lighten(0.7, theme.brand.primary)};
-              }
+              margin-top: 5px;
+              margin-bottom: 10px;
+              font-size: 1em;
             `}
           >
-            {post.frontmatter.title}
-          </Link>
-        </h2>
-        <div
-          css={css`
-            display: flex;
-            align-items: center;
-          `}
-        >
-          <CalendarIcon color={'#ccc'} size={12} />
-          <small
+            <Link
+              aria-label={`View ${post.frontmatter.title} article`}
+              to={`/${post.frontmatter.slug}`}
+              css={css`
+                :visited {
+                  color: ${lighten(0.7, theme.brand.primary)};
+                }
+              `}
+            >
+              {post.frontmatter.title}
+            </Link>
+          </h2>
+          <div
             css={css`
-              margin-left: 0.25rem;
-              font-size: 12px;
+              display: flex;
+              align-items: center;
             `}
           >
-            {post.frontmatter.date}
-          </small>
+            <CalendarIcon color={'#ccc'} size={12} />
+            <small
+              css={css`
+                margin-left: 0.25rem;
+                font-size: 12px;
+              `}
+            >
+              {post.frontmatter.date}
+            </small>
+          </div>
         </div>
       </div>
     </div>
