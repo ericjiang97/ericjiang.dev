@@ -60,9 +60,7 @@ function BlogHeader({ data }) {
                     activeClassName="active"
                     css={linkStyles}
                   >
-                    {`${fieldValue.charAt(0).toUpperCase()}${fieldValue.slice(
-                      1,
-                    )}`}
+                    {`${fieldValue.toUpperCase()}`}
                   </Link>
                 )
               })}

@@ -39,25 +39,36 @@ const Tags = ({ pageContext, data }) => {
         </h2>
       </Container>
       <Container>
-        {edges.map(({ node: post }) => {
-          return <BlogPost post={post} />
-        })}
-
-        <Link
-          to="/tags"
-          aria-label="Visit blog page"
-          css={css({
-            borderRadius: 4,
-            padding: '12px 12px',
-            background: theme.brand.primary,
-            color: theme.colors.white,
-            ':hover': {
-              color: theme.colors.primary_light,
-            },
-          })}
+        <div
+          css={css`
+            display: flex;
+            flex-wrap: wrap;
+          `}
         >
-          View all tags
-        </Link>
+          {edges.map(({ node: post }) => {
+            return <BlogPost post={post} />
+          })}
+        </div>
+        <div
+          css={css`
+            padding: 12px 24px;
+          `}
+        >
+          <Link
+            to="/tags"
+            aria-label="Visit blog page"
+            css={css({
+              borderRadius: 4,
+              background: theme.brand.primary,
+              color: theme.colors.white,
+              ':hover': {
+                color: theme.colors.primary_light,
+              },
+            })}
+          >
+            View all tags
+          </Link>
+        </div>
       </Container>
     </Layout>
   )
