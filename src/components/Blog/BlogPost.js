@@ -49,6 +49,7 @@ function BlogPost({ post }) {
         }
         flex: 1;
         min-width: 280px;
+        max-width: 25%;
         width: 25%;
         @media (min-width: 500px) {
           margin-left: 0.25rem;
@@ -116,6 +117,8 @@ function BlogPost({ post }) {
               aria-label={`View ${post.frontmatter.title} article`}
               to={`/${post.frontmatter.slug}`}
               css={css`
+                color: ${lighten(0.7, theme.brand.primary)};
+                text-decoration: underline;
                 :visited {
                   color: ${lighten(0.7, theme.brand.primary)};
                 }

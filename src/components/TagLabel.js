@@ -20,6 +20,7 @@ function TagLabel({ children, to }) {
           color: theme.colors.primary_light,
         },
         textTransform: 'uppercase',
+        textDecoration: 'none',
       })}
     >
       {children}

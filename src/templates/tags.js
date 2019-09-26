@@ -59,14 +59,22 @@ const Tags = ({ pageContext, data }) => {
             aria-label="Visit blog page"
             css={css({
               borderRadius: 4,
-              background: theme.brand.primary,
-              color: theme.colors.white,
-              ':hover': {
-                color: theme.colors.primary_light,
-              },
             })}
           >
-            View all tags
+            <div
+              css={css({
+                padding: '10px 24px',
+                background: lighten(0.1, theme.brand.primary),
+                color: theme.colors.white,
+                ':hover': {
+                  background: lighten(0.2, theme.brand.primary),
+                },
+                maxWidth: '9rem',
+                textAlign: 'center',
+              })}
+            >
+              View all tags
+            </div>
           </Link>
         </div>
       </Container>

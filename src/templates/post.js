@@ -1,19 +1,26 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { css } from '@emotion/core'
+import { lighten } from 'polished'
+
+// Components Libraries
 import Img from 'gatsby-image'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-import SEO from 'components/SEO'
-import { css } from '@emotion/core'
-import Container from 'components/Container'
-import Layout from '../components/Layout'
-import { fonts } from '../lib/typography'
-import config from '../../config/website'
-import { bpMaxSM } from '../lib/breakpoints'
-import TagLabel from '../components/TagLabel'
-import theme from '../../config/theme'
 
+// Components
+import SEO from 'components/SEO'
+import Container from '../components/Container'
+import Layout from '../components/Layout'
 import Share from '../components/Blog/Share'
-import { lighten } from 'polished'
+import TagLabel from '../components/TagLabel'
+
+// Libraries
+import { fonts } from '../lib/typography'
+import { bpMaxSM } from '../lib/breakpoints'
+
+// Configuration
+import config from '../../config/website'
+import theme from '../../config/theme'
 
 export default function Post({
   data: { site, mdx },
@@ -57,10 +64,15 @@ export default function Post({
           }
         `}
       >
-        <Container>
+        <Container maxWidth={600}>
+          <div>
+            {tags.map((tag, i) => {
+              return <TagLabel key={i}>{tag}</TagLabel>
+            })}
+          </div>
           <h1
             css={css`
-              text-align: center;
+              text-align: left;
               margin-bottom: 20px;
             `}
           >
@@ -68,23 +80,21 @@ export default function Post({
           </h1>
           <div
             css={css`
-              display: flex;
-              justify-content: center;
               margin-bottom: 20px;
-              h3,
+              h2,
               span {
-                text-align: center;
-                font-size: 15px;
+                text-align: left;
+                font-size: 1rem;
                 opacity: 0.6;
                 font-family: ${fonts.regular}, sans-serif;
                 font-weight: normal;
                 margin: 0 5px;
+                margin-bottom: 0.75rem;
               }
             `}
           >
-            {author && <h3>{author}</h3>}
-            {author && <span>—</span>}
-            {date && <h3>{date}</h3>}
+            {author && <h2>{`Writted by ${author}`}</h2>}
+            {date && <h2>{`Posted on ${date}`}</h2>}
           </div>
           {banner && (
             <div
@@ -106,21 +116,6 @@ export default function Post({
         </Container>
         {/* <SubscribeForm /> */}
       </article>
-      <Container
-        css={css`
-          color: white;
-          h2 {
-            color: white;
-          }
-        `}
-      >
-        <h2>Tags</h2>
-        <div>
-          {tags.map((tag, i) => {
-            return <TagLabel key={i}>{tag}</TagLabel>
-          })}
-        </div>
-      </Container>
       <Container noVerticalPadding>
         <Share
           url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}
