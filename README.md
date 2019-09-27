@@ -1,4 +1,4 @@
-![homepage](./homepage.png)
+![homepage](./screenshots/newhomepage.png)
 
 # lorderikir.me Personal Website
 
