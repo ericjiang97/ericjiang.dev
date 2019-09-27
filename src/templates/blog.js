@@ -8,6 +8,7 @@ import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import Link from '../components/Link'
 import BlogPost from '../components/Blog/BlogPost'
+import FeaturedPost from '../components/Blog/FeaturedPost'
 
 // Configuration
 import theme from '../../config/theme'
@@ -54,12 +55,22 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
         <div
           css={css`
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
           `}
         >
-          {posts.map(({ node: post }) => (
-            <BlogPost post={post} />
+          {posts.slice(0, 1).map(({ node: post }) => (
+            <FeaturedPost post={post} />
           ))}
+          <div
+            css={css`
+              display: flex;
+              flex-wrap: wrap;
+            `}
+          >
+            {posts.slice(1).map(({ node: post }) => (
+              <BlogPost post={post} />
+            ))}
+          </div>
         </div>
         <br />
         <br />
