@@ -120,42 +120,6 @@ export default ({
                 </div>
                 <div
                   css={css`
-                    color: white;
-                    position: fixed;
-                    bottom: 2.5rem;
-                    display: fixed;
-                    width: 100px;
-                    margin-bottom: 3.5rem;
-                    @media (max-width: 650px) {
-                      display: none;
-                    }
-                  `}
-                >
-                  <div>
-                    <div
-                      css={css`
-                        transform: rotate(-90deg);
-                      `}
-                    >
-                      Social
-                    </div>
-                  </div>
-                  <div
-                    css={css`
-                      display: flex;
-                      flex-direction: column;
-                      border-left: 1px solid white;
-                      padding: 0px 10px;
-                    `}
-                  >
-                    <RssFeed color={theme.colors.white} />
-                    <Twitter color={theme.colors.white} />
-                    <GitHub color={theme.colors.white} />
-                    <LinkedIn color={theme.colors.white} />
-                  </div>
-                </div>
-                <div
-                  css={css`
                     padding: 1.5rem 1.5rem;
                     color: white;
                   `}
@@ -164,12 +128,35 @@ export default ({
                     <div
                       css={css`
                         display: flex;
-                        flex-direction: column;
+                        flex-direction: row;
                       `}
                     >
-                      <span
-                      >{`Copyright \u00A9  Eric Jiang ${new Date().getFullYear()}`}</span>
-                      <span>Built with Gatsby. Powered by Netlify.</span>
+                      <div
+                        css={css`
+                          flex: 1;
+                          display: flex;
+                          flex-direction: column;
+                        `}
+                      >
+                        <span
+                        >{`Copyright \u00A9  Eric Jiang ${new Date().getFullYear()}`}</span>
+                        <span>Built with Gatsby. Powered by Netlify.</span>
+                      </div>
+
+                      <div>
+                        <div>Follow me on</div>
+                        <div
+                          css={css`
+                            display: flex;
+                            padding: 0px 0px;
+                          `}
+                        >
+                          <RssFeed color={theme.colors.white} />
+                          <Twitter color={theme.colors.white} />
+                          <GitHub color={theme.colors.white} />
+                          <LinkedIn color={theme.colors.white} />
+                        </div>
+                      </div>
                     </div>
                   </Container>
                 </div>
