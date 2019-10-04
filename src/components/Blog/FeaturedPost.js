@@ -4,7 +4,6 @@ import { css } from '@emotion/core'
 import { bpMaxSM } from '../../lib/breakpoints'
 
 import Link from '../Link'
-import TagLabel from '../TagLabel'
 import { lighten } from 'polished'
 import theme from '../../../config/theme'
 import CalendarIcon from '../CalendarIcon'
