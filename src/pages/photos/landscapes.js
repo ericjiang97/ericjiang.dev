@@ -1,10 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import css from '@emotion/css'
-import Layout from '../components/Layout'
-import theme from '../../config/theme'
 import { lighten } from 'polished'
-import Container from '../components/Container'
+
+import Layout from '../../components/Layout'
+import Container from '../../components/Container'
+import theme from '../../../config/theme'
+
+import LandscapePhotosContainer from '../../containers/LandscapePhotosContainer'
 
 const Photos = ({ data: { site } }) => {
   return (
@@ -21,6 +24,7 @@ const Photos = ({ data: { site } }) => {
       >
         <Container
           css={css`
+            flex: 1;
             padding-bottom: 0;
             color: white;
             @media (min-width: 481px) and (max-width: 1365px) {
@@ -34,10 +38,28 @@ const Photos = ({ data: { site } }) => {
             h2 {
               color: ${lighten(0.6, theme.brand.primary)};
             }
+            a {
+              color: white;
+              border: 1px solid #fff;
+              padding: 0.25rem 0.5rem;
+              display: inline-block;
+              margin-top: 1rem;
+              border-radius: 0.5rem;
+              :hover {
+                color: ${lighten(0.2, theme.brand.primary)};
+                border: ${lighten(0.7, theme.brand.primary)};
+                background-color: ${lighten(0.7, theme.brand.primary)};
+              }
+            }
           `}
         >
-          <h1>Wallpapers</h1>
-          <span>Coming Soon!</span>
+          <h1>Photos - Landscapes</h1>
+          <LandscapePhotosContainer />
+          <div>
+            <a href="https://www.flickr.com/photos/lorderikir/albums/72157711187396608/with/48841351486/">
+              View Collection on Flickr
+            </a>
+          </div>
         </Container>
       </div>
     </Layout>
