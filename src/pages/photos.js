@@ -6,7 +6,7 @@ import theme from '../../config/theme'
 import { lighten } from 'polished'
 import Container from '../components/Container'
 
-const Wallpapers = ({ data: { site } }) => {
+const Photos = ({ data: { site } }) => {
   return (
     <Layout
       site={site}
@@ -44,7 +44,7 @@ const Wallpapers = ({ data: { site } }) => {
   )
 }
 
-export default Wallpapers
+export default Photos
 
 export const pageQuery = graphql`
   query {
