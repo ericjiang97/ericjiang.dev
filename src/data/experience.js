@@ -1,8 +1,14 @@
 const experience = [
   {
+    company: 'Google Taiwan',
+    role: 'Test Engineer',
+    dates: 'Jan 2020 - Present',
+    description: '- My job is to break everything that is built at Google so the bad guys don\'t do it first'
+  },
+  {
     company: 'Monash University',
     role: 'Software Engineer',
-    dates: 'Dec 2016 - Present',
+    dates: 'Dec 2016 - Nov 2019',
     description: `- Successfully delivered MonPlan which is the enterprise course planning application 
       for Monash University, from ideation all the way up to an enterprise production application through 
       the multi-million dollar, high-profile Student First program. The application enhanced the business 
