@@ -20,11 +20,30 @@ const Photos = ({ data: { site } }) => {
         css={css`
           flex: 1;
           display: flex;
+          flex-direction: column;
+          h1 {
+            color: ${lighten(0.7, theme.brand.primary)};
+          }
+          h2 {
+            color: ${lighten(0.6, theme.brand.primary)};
+          }
+          a {
+            color: white;
+            border: 1px solid #fff;
+            padding: 0.25rem 0.5rem;
+            display: inline-block;
+            margin-top: 1rem;
+            border-radius: 0.5rem;
+            :hover {
+              color: ${lighten(0.2, theme.brand.primary)};
+              border: ${lighten(0.7, theme.brand.primary)};
+              background-color: ${lighten(0.7, theme.brand.primary)};
+            }
+          }
         `}
       >
         <Container
           css={css`
-            flex: 1;
             padding-bottom: 0;
             color: white;
             @media (min-width: 481px) and (max-width: 1365px) {
@@ -32,31 +51,15 @@ const Photos = ({ data: { site } }) => {
             }
             display: flex;
             flex-direction: column;
-            h1 {
-              color: ${lighten(0.7, theme.brand.primary)};
-            }
-            h2 {
-              color: ${lighten(0.6, theme.brand.primary)};
-            }
-            a {
-              color: white;
-              border: 1px solid #fff;
-              padding: 0.25rem 0.5rem;
-              display: inline-block;
-              margin-top: 1rem;
-              border-radius: 0.5rem;
-              :hover {
-                color: ${lighten(0.2, theme.brand.primary)};
-                border: ${lighten(0.7, theme.brand.primary)};
-                background-color: ${lighten(0.7, theme.brand.primary)};
-              }
-            }
           `}
         >
-          <h1>Photos - Landscapes</h1>
-          <LandscapePhotosContainer />
+          <h1>Photos - Landscapes Collection</h1>
+        </Container>
+
+        <LandscapePhotosContainer />
+        <Container>
           <div>
-            <a href="https://www.flickr.com/photos/lorderikir/albums/72157711187396608/with/48841351486/">
+            <a href="https://www.flickr.com/photos/lorderikir/albums/72157711187396608/">
               View Collection on Flickr
             </a>
           </div>

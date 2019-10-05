@@ -6,7 +6,7 @@ import { lighten } from 'polished'
 import Layout from '../../components/Layout'
 import Container from '../../components/Container'
 import theme from '../../../config/theme'
-import Link from '../../components/Link'
+import landscapePhotos from '../../containers/LandscapePhotosContainer/photos'
 
 const Photos = ({ data: { site } }) => {
   return (
@@ -48,11 +48,32 @@ const Photos = ({ data: { site } }) => {
           `}
         >
           <h1>Photos</h1>
-          <ul>
-            <li>
-              <Link to="/photos/landscapes">Landscapes</Link>
-            </li>
-          </ul>
+          <div>
+            <a href="/photos/landscapes">
+              <div
+                css={css`
+                  width: 280px;
+                  height: 300px;
+                  background-image: url(${landscapePhotos[0].src});
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  display: flex;
+                  flex-direction: column;
+                  padding: 0.75rem;
+                  :hover {
+                    background-image: url(${landscapePhotos[0].src}),
+                      linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+                  }
+                  h2 {
+                    margin-top: 0.25rem;
+                    color: white;
+                  }
+                `}
+              >
+                <h2>Landscapes Collection</h2>
+              </div>
+            </a>
+          </div>
         </Container>
       </div>
     </Layout>
