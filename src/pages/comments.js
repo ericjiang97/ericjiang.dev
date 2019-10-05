@@ -8,7 +8,6 @@ import Layout from '../components/Layout'
 import theme from '../../config/theme'
 
 // Images
-import LostImage from '../images/lost.svg'
 import Container from '../components/Container'
 import { comments } from '../data/comments'
 

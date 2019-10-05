@@ -18,7 +18,7 @@ const LandscapePhotosContainer = () => {
   }
 
   return (
-    <div>
+    <>
       <Gallery photos={photos} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
@@ -34,7 +34,7 @@ const LandscapePhotosContainer = () => {
           </Modal>
         ) : null}
       </ModalGateway>
-    </div>
+    </>
   )
 }
 
