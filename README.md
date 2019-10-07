@@ -23,7 +23,6 @@ A starter project in [Gatsby.js](https://www.gatsbyjs.org/) with [MDX](https://g
 
    ```bash
    git clone https://github.com/ericjiang97/ericjiang.dev.git
-   git clone https://github.com/lorderikir/lorderikir.me
 
    # or if you are using SSH
 
