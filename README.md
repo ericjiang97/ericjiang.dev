@@ -22,11 +22,12 @@ A starter project in [Gatsby.js](https://www.gatsbyjs.org/) with [MDX](https://g
 1. Clone this repository locally
 
    ```bash
+   git clone https://github.com/ericjiang97/ericjiang.dev.git
    git clone https://github.com/lorderikir/lorderikir.me
 
    # or if you are using SSH
 
-   git clone git@github.com:lorderikir/lorderikir.me.git
+   git clone git@github.com:ericjiang97/ericjiang.dev.git
    ```
 
 2. Go into current directory `cd lorderikir.me`
