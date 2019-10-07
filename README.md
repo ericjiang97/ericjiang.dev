@@ -2,7 +2,7 @@
 
 # lorderikir.me Personal Website
 
-My personal site at [lorderikir.me](https://lorderikir.me) is based off the [Gatsby Starter Egghead Blog](https://github.com/eggheadio/gatsby-starter-egghead-blog)
+My personal site at [ericjiang.dev](https://ericjiang.dev) is based off the [Gatsby Starter Egghead Blog](https://github.com/eggheadio/gatsby-starter-egghead-blog)
 A starter project in [Gatsby.js](https://www.gatsbyjs.org/) with [MDX](https://github.com/mdx-js/mdx).
 
 ### [➞ Visit my website](https://lorderikir.me)
