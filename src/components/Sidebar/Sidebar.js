@@ -116,6 +116,14 @@ export default function Sidebar({ open = false }) {
           Home
         </Link>
         <Links />
+        <Link
+          to="/tags"
+          aria-label="tags"
+          activeClassName="active"
+          css={linkStyles}
+        >
+          All Blog Tags
+        </Link>
       </div>
 
       <Footer />

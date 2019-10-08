@@ -1,9 +1,14 @@
 import React from 'react'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
-import theme from '../../../config/theme'
+import MediaQuery from 'react-responsive'
+
 import Container from '../Container'
+
+import theme from '../../../config/theme'
+
 import ProfilePic from '../../images/profile.jpeg'
+import { MenuIcon } from '../Social'
 
 const linkStyles = css({
   margin: 10,
@@ -13,7 +18,7 @@ const linkStyles = css({
   },
 })
 
-function BlogHeader({ data, setSidebarOpen = () => {} }) {
+function BlogHeader({ data, setSideBarOpen = () => {} }) {
   console.log(data)
   // const allTags = allMarkdownRemark.group.map(tag => {
   //   return {
@@ -70,6 +75,20 @@ function BlogHeader({ data, setSidebarOpen = () => {} }) {
                   align-items: center;
                 `}
               >
+                <MediaQuery maxDeviceWidth={450}>
+                  <div
+                    css={css`
+                      margin-right: 10px;
+                    `}
+                  >
+                    <MenuIcon
+                      color="white"
+                      onClick={() => {
+                        setSideBarOpen()
+                      }}
+                    />
+                  </div>
+                </MediaQuery>
                 <img
                   src={ProfilePic}
                   css={css`
@@ -84,64 +103,66 @@ function BlogHeader({ data, setSidebarOpen = () => {} }) {
                 <h2>Eric Jiang's Blog</h2>
               </div>
             </Container>
-            <Container
-              noVerticalPadding
-              css={css`
-                padding: 5px 20px;
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-              `}
-            >
-              <Link
-                to="/"
-                aria-label="home page"
-                activeClassName="active"
-                css={linkStyles}
-              >
-                HOME
-              </Link>
-              <Link
-                to="/blog"
-                aria-label="blog home"
-                activeClassName="active"
-                css={linkStyles}
-              >
-                BLOG HOME
-              </Link>
-
-              <div
+            <MediaQuery minDeviceWidth={450}>
+              <Container
+                noVerticalPadding
                 css={css`
-                  margin-left: 1.25rem;
-                  margin-right: 1.25rem;
+                  padding: 5px 20px;
                   display: flex;
                   flex-wrap: wrap;
                   align-items: center;
                 `}
               >
-                {data.allMarkdownRemark.group.map(tag => {
-                  const { fieldValue } = tag
-                  return (
-                    <Link
-                      to={`/tags/${fieldValue}`}
-                      aria-label="about me"
-                      activeClassName="active"
-                      css={linkStyles}
-                    >
-                      {`${fieldValue.toUpperCase()}`}
-                    </Link>
-                  )
-                })}
-              </div>
-              <Link
-                to="/tags"
-                aria-label="all tags"
-                activeClassName="active"
-                css={linkStyles}
-              >
-                All tags
-              </Link>
-            </Container>
+                <Link
+                  to="/"
+                  aria-label="home page"
+                  activeClassName="active"
+                  css={linkStyles}
+                >
+                  HOME
+                </Link>
+                <Link
+                  to="/blog"
+                  aria-label="blog home"
+                  activeClassName="active"
+                  css={linkStyles}
+                >
+                  BLOG HOME
+                </Link>
+
+                <div
+                  css={css`
+                    margin-left: 1.25rem;
+                    margin-right: 1.25rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                  `}
+                >
+                  {data.allMarkdownRemark.group.map(tag => {
+                    const { fieldValue } = tag
+                    return (
+                      <Link
+                        to={`/tags/${fieldValue}`}
+                        aria-label="about me"
+                        activeClassName="active"
+                        css={linkStyles}
+                      >
+                        {`${fieldValue.toUpperCase()}`}
+                      </Link>
+                    )
+                  })}
+                </div>
+                <Link
+                  to="/tags"
+                  aria-label="all tags"
+                  activeClassName="active"
+                  css={linkStyles}
+                >
+                  All tags
+                </Link>
+              </Container>
+            </MediaQuery>
           </div>
         )
       }}
