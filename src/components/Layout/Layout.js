@@ -122,7 +122,7 @@ export default ({
                   css={css`
                     padding: 1.5rem 1.5rem;
                     color: white;
-                    background-color: ${theme.brand.primary}
+                    background-color: ${theme.brand.primary};
                   `}
                 >
                   <Container>
@@ -130,6 +130,7 @@ export default ({
                       css={css`
                         display: flex;
                         flex-direction: row;
+                        flex-wrap: wrap;
                       `}
                     >
                       <div
@@ -137,11 +138,32 @@ export default ({
                           flex: 1;
                           display: flex;
                           flex-direction: column;
+                          min-width: 280px;
+                          margin-bottom: 0.5rem;
+                          a {
+                            color: white;
+                            :visited {
+                              color: white;
+                            }
+                            :hover {
+                              color: ${lighten(0.5, theme.brand.primary)};
+                            }
+                          }
                         `}
                       >
                         <span
                         >{`Copyright \u00A9  Eric Jiang ${new Date().getFullYear()}`}</span>
-                        <span>Built with Gatsby. Powered by Netlify.</span>
+                        <span>
+                          Built with{' '}
+                          <a href="https://gatsbyjs.org" target="_blank">
+                            Gatsby
+                          </a>
+                          . Powered by{' '}
+                          <a href="https://netlify.com" target="_blank">
+                            Netlify
+                          </a>
+                          .
+                        </span>
                       </div>
 
                       <div>
