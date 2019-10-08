@@ -8,7 +8,7 @@ import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import Link from '../components/Link'
 import BlogPost from '../components/Blog/BlogPost'
-import FeaturedPost from '../components/Blog/FeaturedPost'
+import FeaturedPost from '../components/Blog/FeaturedPost/FeaturedPost'
 
 // Configuration
 import theme from '../../config/theme'
