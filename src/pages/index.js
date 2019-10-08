@@ -105,7 +105,9 @@ export default function Index({ data: { site } }) {
             `}
           >
             <h2>I have worked at...</h2>
-            <PreviousExperienceContainer experiences={experience} />
+            <PreviousExperienceContainer
+              experiences={experience.filter(experience => experience.public)}
+            />
             <div>
               <a
                 href="./downloads/EricResume_Aug2019_Software.pdf"

@@ -3,6 +3,7 @@ import Remark from 'react-markdown'
 import css from '@emotion/css'
 import theme from '../../config/theme'
 import CompanyLabel from './CompanyLabel'
+import experience from '../data/experience'
 
 const PreviousExperienceContainer = ({ experiences = [] }) => {
   const [openPanel, setOpenPanel] = useState(0)
@@ -47,7 +48,7 @@ const PreviousExperienceContainer = ({ experiences = [] }) => {
             font-size: 0.85rem;
           `}
         >
-          {selectedExperience.company}
+          {`${selectedExperience.company} - ${selectedExperience.location}`}
         </h3>
         <h2
           css={css`
