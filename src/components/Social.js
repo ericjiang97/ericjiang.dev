@@ -19,6 +19,9 @@ export const Twitter = ({
       :hover {
         color: ${darken(0.3, color)};
       }
+      :vistied {
+        color: ${darken(0.3, color)};
+      }
     `}
     aria-label="Visit my Twitter"
     {...other}
@@ -52,6 +55,9 @@ export const LinkedIn = ({
       :hover {
         color: ${darken(0.3, color)};
       }
+      :vistied {
+        color: ${darken(0.3, color)};
+      }
     `}
     aria-label="Visit my LinkedIn"
     {...other}
@@ -82,6 +88,9 @@ export const GitHub = ({
       margin-bottom: 0.25rem;
       color: ${color};
       :hover {
+        color: ${darken(0.3, color)};
+      }
+      :vistied {
         color: ${darken(0.3, color)};
       }
     `}
@@ -117,6 +126,9 @@ export const RssFeed = ({
       :hover {
         color: ${darken(0.3, color)};
       }
+      :vistied {
+        color: ${darken(0.3, color)};
+      }
     `}
     aria-label="Visit my GitHub"
     {...other}
@@ -149,6 +161,9 @@ export const ExternalLinkIcon = ({
       margin-bottom: 0.25rem;
       color: ${color};
       :hover {
+        color: ${darken(0.3, color)};
+      }
+      :vistied {
         color: ${darken(0.3, color)};
       }
     `}
