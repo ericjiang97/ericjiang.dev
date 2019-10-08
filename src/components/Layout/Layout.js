@@ -26,12 +26,9 @@ export default ({
   frontmatter = {},
   children,
   dark = true,
-  headerBg,
-  headerColor,
-  noSubscribeForm,
   showHero = false,
-  stickyHeader = false,
   showBlogHeader = false,
+  isBlog = false,
 }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
@@ -71,6 +68,18 @@ export default ({
             <html lang="en" />
             <noscript>This site runs best with JavaScript enabled.</noscript>
           </Helmet>
+          {process.env.BUILD_ENVIRONMENT === 'staging' && (
+            <div
+              css={css`
+                color: ${theme.brand.primary};
+                padding: 0.25rem 0.75rem;
+                background-color: orange;
+              `}
+            >
+              THIS IS A STAGING BUILD. BUILDS ON THIS BRANCH/ENVIRONMENT MAY BE
+              OUT OF DATE OR UNSTABLE.
+            </div>
+          )}
           <div>
             <div
               css={css`
@@ -95,13 +104,17 @@ export default ({
                   flex-direction: column;
                 `}
               >
-                <Header
-                  siteTitle={site.siteMetadata.title}
-                  bgColor={lighten(0.15, theme.brand.primary)}
-                  headerColor={theme.colors.white}
-                  setSideBarOpen={() => setSidebarOpen(true)}
-                />
-                {showBlogHeader && <BlogHeader />}
+                {!showBlogHeader && (
+                  <Header
+                    siteTitle={site.siteMetadata.title}
+                    bgColor={lighten(0.15, theme.brand.primary)}
+                    headerColor={theme.colors.white}
+                    setSideBarOpen={() => setSidebarOpen(true)}
+                  />
+                )}
+                {showBlogHeader && (
+                  <BlogHeader setSideBarOpen={() => setSidebarOpen(true)} />
+                )}
                 {showHero && <Hero />}
                 <div
                   css={css`
