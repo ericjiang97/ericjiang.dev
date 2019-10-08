@@ -9,6 +9,7 @@ import theme from '../../../config/theme'
 import CalendarIcon from '../CalendarIcon'
 
 function FeaturedPost({ post }) {
+  console.log(post.frontmatter.banner.childImageSharp.fluid.src)
   return (
     <Link
       aria-label={`View ${post.frontmatter.title} article`}
@@ -17,40 +18,20 @@ function FeaturedPost({ post }) {
       <div
         key={post.id}
         css={css`
-          :not(:first-of-type) {
-            margin-top: 20px;
-            ${bpMaxSM} {
-              margin-top: 20px;
-            }
-          }
-          :first-of-type {
-            margin-top: 20px;
-            ${bpMaxSM} {
-              margin-top: 20px;
-            }
-          }
-          background: white;
-
+          color: ${theme.brand.primary};
+          background-image: url(${post.frontmatter.banner.childImageSharp.fluid.src});
+          background-size: cover;
+          background-repeat: no-repeat;
+          flex: 1;
           border-radius: 1.25rem;
-
-          background-color: ${lighten(0.05, theme.brand.primary)};
-          :hover {
-            background-color: ${lighten(0.1, theme.brand.primary)};
-          }
-          small {
-            color: #ccc;
-            font-weight: 300;
-          }
           h2 {
-            color: ${lighten(0.7, theme.brand.primary)};
             margin-top: 5px;
             margin-bottom: 10px;
           }
-          p {
-            color: ${lighten(0.8, theme.brand.primary)};
-          }
           flex: 1;
           min-width: 280px;
+          min-height: 300px;
+          height: 40vh
           max-width: 100%;
 
           @media (min-width: 500px) {
@@ -60,10 +41,10 @@ function FeaturedPost({ post }) {
       >
         <div
           css={css`
-            padding: 48px 0px;
+            padding: 24px 0px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            justify-content: center;
           `}
         >
           <div>
@@ -72,19 +53,20 @@ function FeaturedPost({ post }) {
                 flex: 1;
                 display: flex;
                 flex-wrap: wrap;
-                margin-bottom: 0.75rem;
+                padding: 0.25rem 0.5rem;
+                color: white;
+                background-color: ${lighten(0.2, theme.brand.primary)};
               `}
             >
               <div
                 css={css`
-                  margin-top: 5px;
                   flex: 1;
                 `}
               >
                 {post.frontmatter.tags.map((tag, index) => (
                   <span
                     css={css`
-                      color: #ccc;
+                      color: white;
                       font-size: 0.65rem;
                       text-transform: uppercase;
                     `}
@@ -98,34 +80,37 @@ function FeaturedPost({ post }) {
 
             <div
               css={css`
-                text-align: center;
                 display: flex;
                 flex-direction: column;
               `}
             >
-              <h2
-                css={css`
-                  margin-top: 5px;
-                  margin-bottom: 10px;
-                  font-size: 1.5rem;
-                `}
-              >
-                {post.frontmatter.title}
-              </h2>
               <div
                 css={css`
-                  flex: 1;
-                  display: flex;
-                  justify-content: center;
+                  margin-top: 0.25rem;
+                  margin-bottom: 0.5rem;
+                  padding: 0.25rem 0.5rem;
+                  font-size: 1.5rem;
+                  background-color: ${lighten(0.6, theme.brand.primary)};
+                `}>
+              <h2>
+                {post.frontmatter.title}
+              </h2>
+              </div>
+              <div
+                css={css`
+                  margin-bottom: 0.5rem;
+                  padding: 0.25rem 0.5rem;
+                  background-color: ${lighten(0.6, theme.brand.primary)};
                 `}
               >
                 <div
                   css={css`
                     display: flex;
                     align-items: center;
+                    
                   `}
                 >
-                  <CalendarIcon color={'#ccc'} size={12} />
+                  <CalendarIcon color={theme.brand.primary} size={12} />
                   <small
                     css={css`
                       margin-left: 0.25rem;
@@ -138,19 +123,6 @@ function FeaturedPost({ post }) {
               </div>
             </div>
           </div>
-          {post.frontmatter.banner && (
-            <div
-              css={css`
-                width: 10rem;
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-              `}
-            >
-              <Img sizes={post.frontmatter.banner.childImageSharp.fluid} />
-            </div>
-          )}
         </div>
       </div>
     </Link>

@@ -34,6 +34,7 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
       headerBg={theme.colors.blog_header}
       stickyHeader={true}
       showBlogHeader={true}
+      dark={false}
     >
       <SEO />
       <Container
@@ -65,6 +66,7 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
             css={css`
               display: flex;
               flex-wrap: wrap;
+              flex-direction: column;
             `}
           >
             {posts.slice(1).map(({ node: post }) => (
@@ -72,8 +74,6 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
             ))}
           </div>
         </div>
-        <br />
-        <br />
         <div style={{ display: 'flex' }}>
           <div style={{ flex: 1 }}>
             {nextPagePath && (

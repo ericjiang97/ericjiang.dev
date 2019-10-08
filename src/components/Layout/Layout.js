@@ -25,7 +25,7 @@ export default ({
   site,
   frontmatter = {},
   children,
-  dark,
+  dark = true,
   headerBg,
   headerColor,
   noSubscribeForm,
@@ -58,7 +58,7 @@ export default ({
             flex-direction: column;
             width: 100%;
             min-height: 100vh;
-            background-color: ${theme.brand.primary};
+            background-color: ${dark ? theme.brand.primary : '#efefef'};
           `}
         >
           <Helmet
@@ -122,6 +122,7 @@ export default ({
                   css={css`
                     padding: 1.5rem 1.5rem;
                     color: white;
+                    background-color: ${theme.brand.primary}
                   `}
                 >
                   <Container>
