@@ -21,7 +21,9 @@ function FeaturedPost({ post }) {
         key={post.id}
         css={css`
           color: ${theme.brand.primary};
-          background-image: url(${post.frontmatter.banner.childImageSharp.fluid.src});
+          background-image: url(${
+            post.frontmatter.banner.childImageSharp.fluid.src
+          });
           background-size: cover;
           background-repeat: no-repeat;
           flex: 1;
@@ -53,11 +55,13 @@ function FeaturedPost({ post }) {
           `}
         >
           <div>
-            <FeaturedPostTags tags={post.frontmatter.tags} />
+            <FeaturedPostTags
+              tags={post.frontmatter.tags}
+              padding="0.25rem 0.5rem"
+            />
             <FeatuedPostTitle title={post.frontmatter.title} />
             <FeaturedPostDate date={post.frontmatter.date} />
           </div>
-
         </div>
       </div>
     </Link>

@@ -5,12 +5,14 @@ import { lighten } from 'polished'
 import CalendarIcon from '../../CalendarIcon'
 import theme from '../../../../config/theme'
 
+
 const FeaturedPostDate = ({date = ''}) => {
     return  <div
     css={css`
       margin-bottom: 0.5rem;
       padding: 0.25rem 0.5rem;
-      background-color: ${lighten(0.6, theme.brand.primary)};
+      background-color: ${theme.brand.primary}};
+      color: white;;
     `}
   >
     <div
@@ -20,7 +22,7 @@ const FeaturedPostDate = ({date = ''}) => {
         
       `}
     >
-      <CalendarIcon color={theme.brand.primary} size={12} />
+      <CalendarIcon color={'white'} size={12} />
       <small
         css={css`
           margin-left: 0.25rem;
