@@ -28,14 +28,7 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
     .filter(post => post !== undefined)
 
   return (
-    <Layout
-      site={site}
-      headerColor={theme.colors.white}
-      headerBg={theme.colors.blog_header}
-      stickyHeader={true}
-      showBlogHeader={true}
-      dark={false}
-    >
+    <Layout site={site} showBlogHeader={true} dark={false}>
       <SEO />
       <Container
         noVerticalPadding

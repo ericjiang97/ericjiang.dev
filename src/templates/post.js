@@ -37,6 +37,7 @@ export default function Post({
       site={site}
       frontmatter={mdx.frontmatter}
       stickyHeader={true}
+      dark={false}
       headerColor={theme.colors.white}
       headerBg={theme.colors.blog_header}
       showBlogHeader={true}
@@ -46,12 +47,11 @@ export default function Post({
         css={css`
           width: 100%;
           display: flex;
-          color: white;
           a {
-            color: white;
+            color: ${theme.brand.primary};
             text-decoration: underline;
             :visited {
-              color: white;
+              color: ${theme.brand.primary};
             }
             :hover {
               color: ${lighten(0.3, theme.brand.primary)};
@@ -60,7 +60,7 @@ export default function Post({
           h1,
           h2,
           h3 {
-            color: white;
+            color: ${theme.brand.primary};
           }
         `}
       >
