@@ -3,7 +3,7 @@ module.exports = {
   siteTitle: 'Eric Jiang', // Navigation and Site Title
   siteTitleAlt: 'The ranting of a software engineer', // Alternative Site title for SEO
   siteTitleShort: 'Starter Blog', // short_name for manifest
-  siteUrl: 'https://lorderikir.me', // Domain of your site. No trailing slash!
+  siteUrl: 'https://ericjiang.dev', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: 'images/logo.png', // Used for SEO and manifest, path to your image you placed in the 'static' folder
   siteDescription:
