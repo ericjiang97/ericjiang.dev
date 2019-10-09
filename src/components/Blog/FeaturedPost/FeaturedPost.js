@@ -1,14 +1,12 @@
 import React from 'react'
-import Img from 'gatsby-image'
 import { css } from '@emotion/core'
-import { bpMaxSM } from '../../../lib/breakpoints'
 
 import Link from '../../Link'
-import { lighten } from 'polished'
-import theme from '../../../../config/theme'
 import FeaturedPostTags from './FeatuedPostTags'
 import FeatuedPostTitle from './FeatuedPostTitle'
 import FeaturedPostDate from './FeaturedPostDate'
+
+import theme from '../../../../config/theme'
 
 function FeaturedPost({ post }) {
   console.log(post.frontmatter.banner.childImageSharp.fluid.src)

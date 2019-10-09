@@ -1,10 +1,7 @@
 import React from 'react'
-import Img from 'gatsby-image'
 import { css } from '@emotion/core'
-import { bpMaxSM } from '../../lib/breakpoints'
 
 import Link from '../Link'
-import TagLabel from '../TagLabel'
 import { lighten } from 'polished'
 import theme from '../../../config/theme'
 import CalendarIcon from '../CalendarIcon'
@@ -50,7 +47,10 @@ function BlogPost({ post }) {
               aria-label={`View ${post.frontmatter.title} article`}
               to={`/${post.frontmatter.slug}`}
             >
-              <img src={post.frontmatter.banner.childImageSharp.fluid.src} />
+              <img
+                src={post.frontmatter.banner.childImageSharp.fluid.src}
+                alt={`${post.frontmatter.title} article`}
+              />
             </Link>
           </div>
         )}

@@ -11,11 +11,11 @@ const Share = ({ url, title, twitterHandle }) => (
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      color: white;
+      color: ${theme.brand.primary};
       div {
         margin-right: 20px;
         cursor: pointer;
-        color: white;
+        color: ${theme.brand.primary};
         :hover {
           color: ${lighten(0.45, theme.brand.primary)};
         }

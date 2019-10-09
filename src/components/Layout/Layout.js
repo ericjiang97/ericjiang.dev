@@ -168,11 +168,19 @@ export default ({
                         >{`Copyright \u00A9  Eric Jiang ${new Date().getFullYear()}`}</span>
                         <span>
                           Built with{' '}
-                          <a href="https://gatsbyjs.org" target="_blank">
+                          <a
+                            href="https://gatsbyjs.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             Gatsby
                           </a>
                           . Powered by{' '}
-                          <a href="https://netlify.com" target="_blank">
+                          <a
+                            href="https://netlify.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             Netlify
                           </a>
                           .
