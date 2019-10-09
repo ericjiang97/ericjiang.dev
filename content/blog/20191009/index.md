@@ -1,6 +1,6 @@
 ---
-slug: 20191009-rebrand
-date: 2019-10-09
+slug: 20191101-leaving-monash-and-joining-google
+date: 2019-11-01
 title: 'Announcement: Leaving Monash and Joining Google!'
 description: ''
 published: false
