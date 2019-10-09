@@ -9,7 +9,7 @@ import FeaturedPostDate from './FeaturedPostDate'
 import theme from '../../../../config/theme'
 
 function FeaturedPost({ post }) {
-  console.log(post.frontmatter.banner.childImageSharp.fluid.src)
+  console.log(post)
   return (
     <Link
       aria-label={`View ${post.frontmatter.title} article`}
@@ -19,9 +19,8 @@ function FeaturedPost({ post }) {
         key={post.id}
         css={css`
           color: ${theme.brand.primary};
-          background-image: url(${
-            post.frontmatter.banner.childImageSharp.fluid.src
-          });
+          background-image: ${post.frontmatter.banner &&
+            `url(${post.frontmatter.banner.childImageSharp.fluid.src});`}
           background-size: cover;
           background-repeat: no-repeat;
           flex: 1;

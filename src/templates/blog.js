@@ -27,6 +27,8 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
     )
     .filter(post => post !== undefined)
 
+  console.log(posts)
+
   return (
     <Layout site={site} showBlogHeader={true} dark={false}>
       <SEO />
@@ -52,9 +54,7 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
             flex-direction: column;
           `}
         >
-          {posts.slice(0, 1).map(({ node: post }) => (
-            <FeaturedPost post={post} />
-          ))}
+          <FeaturedPost post={posts[0].node} />
           <div
             css={css`
               display: flex;
