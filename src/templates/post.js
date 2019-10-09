@@ -47,16 +47,6 @@ export default function Post({
         css={css`
           width: 100%;
           display: flex;
-          a {
-            color: ${theme.brand.primary};
-            text-decoration: underline;
-            :visited {
-              color: ${theme.brand.primary};
-            }
-            :hover {
-              color: ${lighten(0.3, theme.brand.primary)};
-            }
-          }
           h1,
           h2,
           h3 {
@@ -112,7 +102,22 @@ export default function Post({
             </div>
           )}
           <br />
-          <MDXRenderer>{mdx.code.body}</MDXRenderer>
+          <div
+            css={css`
+              a {
+                color: ${theme.brand.primary};
+                text-decoration: underline;
+                :visited {
+                  color: ${theme.brand.primary};
+                }
+                :hover {
+                  color: ${lighten(0.3, theme.brand.primary)};
+                }
+              }
+            `}
+          >
+            <MDXRenderer>{mdx.code.body}</MDXRenderer>
+          </div>
         </Container>
         {/* <SubscribeForm /> */}
       </article>

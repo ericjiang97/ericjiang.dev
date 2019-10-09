@@ -16,7 +16,7 @@ function TagLabel({ children, to }) {
         color: theme.colors.white,
         margin: 2,
         fontSize: '0.75em',
-        ':hover,:focus': {
+        ':hover,:focus,:visited': {
           color: theme.colors.primary_light,
         },
         textTransform: 'uppercase',
