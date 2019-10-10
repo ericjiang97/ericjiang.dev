@@ -47,7 +47,7 @@ const PreviousExperienceContainer = ({ experiences = [] }) => {
             font-size: 0.85rem;
           `}
         >
-          {selectedExperience.company}
+          {`${selectedExperience.company} - ${selectedExperience.location}`}
         </h3>
         <h2
           css={css`

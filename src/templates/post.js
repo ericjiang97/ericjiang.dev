@@ -37,6 +37,7 @@ export default function Post({
       site={site}
       frontmatter={mdx.frontmatter}
       stickyHeader={true}
+      dark={false}
       headerColor={theme.colors.white}
       headerBg={theme.colors.blog_header}
       showBlogHeader={true}
@@ -46,21 +47,10 @@ export default function Post({
         css={css`
           width: 100%;
           display: flex;
-          color: white;
-          a {
-            color: white;
-            text-decoration: underline;
-            :visited {
-              color: white;
-            }
-            :hover {
-              color: ${lighten(0.3, theme.brand.primary)};
-            }
-          }
           h1,
           h2,
           h3 {
-            color: white;
+            color: ${theme.brand.primary};
           }
         `}
       >
@@ -112,7 +102,22 @@ export default function Post({
             </div>
           )}
           <br />
-          <MDXRenderer>{mdx.code.body}</MDXRenderer>
+          <div
+            css={css`
+              a {
+                color: ${theme.brand.primary};
+                text-decoration: underline;
+                :visited {
+                  color: ${theme.brand.primary};
+                }
+                :hover {
+                  color: ${lighten(0.3, theme.brand.primary)};
+                }
+              }
+            `}
+          >
+            <MDXRenderer>{mdx.code.body}</MDXRenderer>
+          </div>
         </Container>
         {/* <SubscribeForm /> */}
       </article>

@@ -27,12 +27,13 @@ const Tags = ({ pageContext, data }) => {
       headerBg={theme.colors.blog_header}
       showBlogHeader={true}
       stickyHeader={true}
+      dark={false}
     >
       <Container>
         <h2
           css={css`
             text-align: center;
-            color: ${lighten(0.7, theme.brand.primary)};
+            color: ${lighten(0.3, theme.brand.primary)};
           `}
         >
           {tagHeader}
@@ -43,6 +44,7 @@ const Tags = ({ pageContext, data }) => {
           css={css`
             display: flex;
             flex-wrap: wrap;
+            flex-direction: column;
           `}
         >
           {edges.map(({ node: post }) => {

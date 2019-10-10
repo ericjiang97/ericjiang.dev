@@ -66,12 +66,14 @@ const TechTalkCard = ({ date, title, description, githubUrl, url }) => {
                 <GitHub
                   color={lighten(0.5, theme.brand.primary)}
                   url={githubUrl}
+                  target="_blank"
                 />
               )}
               {url && (
                 <ExternalLinkIcon
                   color={lighten(0.5, theme.brand.primary)}
                   url={url}
+                  target="_blank"
                 />
               )}
             </div>

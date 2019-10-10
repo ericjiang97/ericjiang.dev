@@ -25,13 +25,10 @@ export default ({
   site,
   frontmatter = {},
   children,
-  dark,
-  headerBg,
-  headerColor,
-  noSubscribeForm,
+  dark = true,
   showHero = false,
-  stickyHeader = false,
   showBlogHeader = false,
+  isBlog = false,
 }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
@@ -58,7 +55,7 @@ export default ({
             flex-direction: column;
             width: 100%;
             min-height: 100vh;
-            background-color: ${theme.brand.primary};
+            background-color: ${dark ? theme.brand.primary : '#efefef'};
           `}
         >
           <Helmet
@@ -71,6 +68,18 @@ export default ({
             <html lang="en" />
             <noscript>This site runs best with JavaScript enabled.</noscript>
           </Helmet>
+          {process.env.BUILD_ENVIRONMENT === 'staging' && (
+            <div
+              css={css`
+                color: ${theme.brand.primary};
+                padding: 0.25rem 0.75rem;
+                background-color: orange;
+              `}
+            >
+              THIS IS A STAGING BUILD. BUILDS ON THIS BRANCH/ENVIRONMENT MAY BE
+              OUT OF DATE OR UNSTABLE.
+            </div>
+          )}
           <div>
             <div
               css={css`
@@ -95,13 +104,17 @@ export default ({
                   flex-direction: column;
                 `}
               >
-                <Header
-                  siteTitle={site.siteMetadata.title}
-                  bgColor={lighten(0.15, theme.brand.primary)}
-                  headerColor={theme.colors.white}
-                  setSideBarOpen={() => setSidebarOpen(true)}
-                />
-                {showBlogHeader && <BlogHeader />}
+                {!showBlogHeader && (
+                  <Header
+                    siteTitle={site.siteMetadata.title}
+                    bgColor={lighten(0.15, theme.brand.primary)}
+                    headerColor={theme.colors.white}
+                    setSideBarOpen={() => setSidebarOpen(true)}
+                  />
+                )}
+                {showBlogHeader && (
+                  <BlogHeader setSideBarOpen={() => setSidebarOpen(true)} />
+                )}
                 {showHero && <Hero />}
                 <div
                   css={css`
@@ -122,6 +135,7 @@ export default ({
                   css={css`
                     padding: 1.5rem 1.5rem;
                     color: white;
+                    background-color: ${theme.brand.primary};
                   `}
                 >
                   <Container>
@@ -129,6 +143,7 @@ export default ({
                       css={css`
                         display: flex;
                         flex-direction: row;
+                        flex-wrap: wrap;
                       `}
                     >
                       <div
@@ -136,11 +151,40 @@ export default ({
                           flex: 1;
                           display: flex;
                           flex-direction: column;
+                          min-width: 280px;
+                          margin-bottom: 0.5rem;
+                          a {
+                            color: white;
+                            :visited {
+                              color: white;
+                            }
+                            :hover {
+                              color: ${lighten(0.5, theme.brand.primary)};
+                            }
+                          }
                         `}
                       >
                         <span
                         >{`Copyright \u00A9  Eric Jiang ${new Date().getFullYear()}`}</span>
-                        <span>Built with Gatsby. Powered by Netlify.</span>
+                        <span>
+                          Built with{' '}
+                          <a
+                            href="https://gatsbyjs.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Gatsby
+                          </a>
+                          . Powered by{' '}
+                          <a
+                            href="https://netlify.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Netlify
+                          </a>
+                          .
+                        </span>
                       </div>
 
                       <div>

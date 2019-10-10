@@ -75,10 +75,11 @@ class TagsPage extends React.Component {
         headerColor={theme.colors.white}
         headerBg={theme.brand.primary}
         showBlogHeader={true}
+        dark={false}
       >
         <Container
           css={css`
-            background-color: #fff;
+            min-height: 600px;
           `}
         >
           <h1>Tags</h1>

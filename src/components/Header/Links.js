@@ -12,7 +12,7 @@ const LinkStyles = css`
 `
 const Links = () => {
   return (
-    <div>
+    <>
       <Link
         to="/blog"
         aria-label="about me"
@@ -29,7 +29,7 @@ const Links = () => {
       >
         Photos
       </Link>
-    </div>
+    </>
   )
 }
 

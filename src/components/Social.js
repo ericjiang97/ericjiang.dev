@@ -8,6 +8,7 @@ import { darken } from 'polished'
 export const Twitter = ({
   color = `${theme.colors.body_color}`,
   url = `${config.twitter}`,
+  ...other
 }) => (
   <Link
     to={url}
@@ -18,8 +19,12 @@ export const Twitter = ({
       :hover {
         color: ${darken(0.3, color)};
       }
+      :vistied {
+        color: ${darken(0.3, color)};
+      }
     `}
     aria-label="Visit my Twitter"
+    {...other}
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -39,6 +44,7 @@ export const Twitter = ({
 export const LinkedIn = ({
   color = `${theme.colors.body_color}`,
   url = `${config.linkedin}`,
+  ...other
 }) => (
   <Link
     to={url}
@@ -49,8 +55,12 @@ export const LinkedIn = ({
       :hover {
         color: ${darken(0.3, color)};
       }
+      :vistied {
+        color: ${darken(0.3, color)};
+      }
     `}
     aria-label="Visit my LinkedIn"
+    {...other}
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -69,6 +79,7 @@ export const LinkedIn = ({
 export const GitHub = ({
   color = `${theme.colors.body_color}`,
   url = `${config.github}`,
+  ...other
 }) => (
   <Link
     to={url}
@@ -79,8 +90,12 @@ export const GitHub = ({
       :hover {
         color: ${darken(0.3, color)};
       }
+      :vistied {
+        color: ${darken(0.3, color)};
+      }
     `}
     aria-label="Visit my GitHub"
+    {...other}
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -100,6 +115,7 @@ export const GitHub = ({
 export const RssFeed = ({
   color = `${theme.colors.body_color}`,
   url = `/rss.xml`,
+  ...other
 }) => (
   <Link
     to={url}
@@ -110,8 +126,12 @@ export const RssFeed = ({
       :hover {
         color: ${darken(0.3, color)};
       }
+      :vistied {
+        color: ${darken(0.3, color)};
+      }
     `}
     aria-label="Visit my GitHub"
+    {...other}
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -132,6 +152,7 @@ export const RssFeed = ({
 export const ExternalLinkIcon = ({
   color = `${theme.colors.body_color}`,
   url = `https://google.com`,
+  ...other
 }) => (
   <Link
     to={url}
@@ -142,8 +163,12 @@ export const ExternalLinkIcon = ({
       :hover {
         color: ${darken(0.3, color)};
       }
+      :vistied {
+        color: ${darken(0.3, color)};
+      }
     `}
     aria-label="Visit my GitHub"
+    {...other}
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -163,6 +188,7 @@ export const ExternalLinkIcon = ({
 export const MenuIcon = ({
   onClick = () => {},
   color = `${theme.colors.body_color}`,
+  ...other
 }) => (
   <div
     onClick={onClick}
@@ -176,6 +202,7 @@ export const MenuIcon = ({
         color: ${darken(0.3, color)};
       }
     `}
+    {...other}
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

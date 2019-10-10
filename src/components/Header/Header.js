@@ -98,9 +98,12 @@ const Header = ({
                   <span
                     css={css`
                       margin-left: 0.75rem;
-                      color: 'white';
+                      color: white;
                       :hover {
                         color: #ccc;
+                      }
+                      :visited {
+                        color: white;
                       }
                     `}
                   >

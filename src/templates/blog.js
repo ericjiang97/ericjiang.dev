@@ -8,7 +8,7 @@ import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import Link from '../components/Link'
 import BlogPost from '../components/Blog/BlogPost'
-import FeaturedPost from '../components/Blog/FeaturedPost'
+import FeaturedPost from '../components/Blog/FeaturedPost/FeaturedPost'
 
 // Configuration
 import theme from '../../config/theme'
@@ -27,14 +27,10 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
     )
     .filter(post => post !== undefined)
 
+  console.log(posts)
+
   return (
-    <Layout
-      site={site}
-      headerColor={theme.colors.white}
-      headerBg={theme.colors.blog_header}
-      stickyHeader={true}
-      showBlogHeader={true}
-    >
+    <Layout site={site} showBlogHeader={true} dark={false}>
       <SEO />
       <Container
         noVerticalPadding
@@ -58,13 +54,12 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
             flex-direction: column;
           `}
         >
-          {posts.slice(0, 1).map(({ node: post }) => (
-            <FeaturedPost post={post} />
-          ))}
+          <FeaturedPost post={posts[0].node} />
           <div
             css={css`
               display: flex;
               flex-wrap: wrap;
+              flex-direction: column;
             `}
           >
             {posts.slice(1).map(({ node: post }) => (
@@ -72,8 +67,6 @@ const Blog = ({ data: { site, allMdx }, pageContext: { pagination } }) => {
             ))}
           </div>
         </div>
-        <br />
-        <br />
         <div style={{ display: 'flex' }}>
           <div style={{ flex: 1 }}>
             {nextPagePath && (
