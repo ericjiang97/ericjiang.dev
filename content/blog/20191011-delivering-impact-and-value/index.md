@@ -5,7 +5,6 @@ title: 'Delivering Impact and Value where I see it'
 description: ''
 published: true
 author: 'Eric Jiang'
-banner: './banner.png'
 tags: ['career']
 ---
 
