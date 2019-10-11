@@ -8,7 +8,7 @@ author: 'Eric Jiang'
 tags: ['career']
 ---
 
-I love delivering impact, whether its making impact to whether its the end users, the business and by delivering awesome software solutions. I also love building the communities around me too. For today's blog post I just want to talk about why I want to deliver impact.
+I love delivering impact, whether its making impact to the end users, the business and by delivering awesome software solutions. I also love building the communities around me too. For today's blog post I just want to talk about why I want to deliver impact.
 
 # Mentoring, Teaching and Leading Others
 
