@@ -1,21 +1,25 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
+import { lighten } from 'polished'
 
 // Components
 import Layout from '../components/Layout'
 import Container from 'components/Container'
+import ProjectCard from '../components/Projects/ProjectCard'
+import FeaturedProjectCard from '../components/Projects/FeaturedProjectCard'
+
+// Containers
+import PreviousExperienceContainer from '../containers/PreviousExperienceContainer'
 
 // Config
 import theme from '../../config/theme'
-import ProjectCard from '../components/Projects/ProjectCard'
-import FeaturedProjectCard from '../components/Projects/FeaturedProjectCard'
-import { lighten } from 'polished'
+import { rhythm } from '../lib/typography'
 
+// Data
 import { projects } from '../data/projects'
 import { talks } from '../data/talks'
 import TechTalkCard from '../components/TechTalkCard'
-import PreviousExperienceContainer from '../containers/PreviousExperienceContainer'
 import experience from '../data/experience'
 
 export default function Index({ data: { site } }) {
@@ -43,7 +47,13 @@ export default function Index({ data: { site } }) {
             flex-direction: column;
             align-items: center;
             h2 {
-              color: ${lighten(0.7, theme.brand.primary)};
+              color: ${lighten(0.5, theme.brand.primary)};
+              position: relative;
+              z-index: 5;
+              line-height: 1.5;
+              margin: 0;
+              max-width: ${rhythm(20)};
+              font-weight: 500;
             }
             h3 {
               color: ${lighten(0.5, theme.brand.primary)};
@@ -65,11 +75,10 @@ export default function Index({ data: { site } }) {
               }
             `}
           >
-            <h2>A bit about me...</h2>
-            <p>I love delivering impact to everyone in the community.</p>
+            <h2>I am...</h2>
             <p>
-              I'm currently in my final year (studying part-time) in my Bachelor
-              of Information Technology at{' '}
+              currently in my final year (studying part-time) in my Bachelor of
+              Information Technology at{' '}
               <a
                 href="https://monash.edu"
                 target="_blank"
@@ -77,13 +86,19 @@ export default function Index({ data: { site } }) {
               >
                 Monash University
               </a>
-              , where I am majoring in Computer networks and security.
+              , and majoring in Computer networks and security.
             </p>
             <p>
-              I also love other sides of the IT field such as Product
-              Management, Software Engineering and Web/Cloud Technologies. And
-              applying knowledge from the Cybersecurity and DevOps into Software
-              Development.
+              You can find more about me and why I chose an IT degree at Monash{' '}
+              <a href="https://www.monash.edu/it/future-students/meet-our-students/eric-jiang">
+                here
+              </a>
+            </p>
+            <p>
+              Not only do I love writing awesome software and cybersecurity, I
+              also love incoporating other sides of the tech field such as
+              DevOps, Product Management, Software Engineering and Web/Cloud
+              Technologies into my development practices.
             </p>
             <p>
               Something that I'm currently proud of is winning the Rising Star
@@ -97,6 +112,12 @@ export default function Index({ data: { site } }) {
                 MonPlan
               </a>{' '}
               (while I'm still a student)
+            </p>
+            <p>
+              I also love impacting to everyone in the community, that is why I
+              love mentoring other fellow developers, friends and family, and
+              why I also love participating in many community events such as
+              hackathons, conferences and meetups.
             </p>
           </div>
           <div
@@ -139,7 +160,6 @@ export default function Index({ data: { site } }) {
               display: flex;
 
               flex-direction: column;
-              align-items: center;
             `}
           >
             <div
@@ -188,12 +208,17 @@ export default function Index({ data: { site } }) {
             </div>
           </div>
 
-          <h2>I also give Tech Talks...</h2>
+          <div
+            css={css`
+              margin-top: 1rem;
+            `}
+          >
+            <h2>Some of the talks I have given include...</h2>
+          </div>
           <div
             css={css`
               display: flex;
               flex-wrap: wrap;
-              justify-content: space-evenly;
             `}
           >
             {talks.map(talk => (
@@ -212,7 +237,7 @@ export default function Index({ data: { site } }) {
               I'm currently not available for contracting or freelancing, But
               feel free to shoot me an email at{' '}
               <a
-                href="mailto:hello@ericjiang.dev"
+                href="mailto:freelancing@ericjiang.dev"
                 target="_blank"
                 rel="noreferrer noopener"
                 css={css`
@@ -225,7 +250,7 @@ export default function Index({ data: { site } }) {
                   }
                 `}
               >
-                hello@ericjiang.dev
+                freelancing@ericjiang.dev
               </a>
             </div>
           </div>
