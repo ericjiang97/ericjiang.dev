@@ -34,7 +34,8 @@ export default function Post({
 
   useEffect(() => {
     let script = document.createElement('script')
-    let anchor = document.getElementById('comments')
+    //TODO: use refs instead
+    let anchor = document.getElementById('utterances-comment')
     script.setAttribute('src', 'https://utteranc.es/client.js')
     script.setAttribute('crossorigin', 'anonymous')
     script.setAttribute('async', true)
@@ -134,7 +135,7 @@ export default function Post({
         </Container>
         {/* <SubscribeForm /> */}
       </article>
-      <div id="comments" />
+      <div id="utterances-comment" />
       <Container noVerticalPadding>
         <Share
           url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}
