@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import { lighten } from 'polished'
@@ -31,6 +31,20 @@ export default function Post({
   const title = mdx.frontmatter.title
   const banner = mdx.frontmatter.banner
   const tags = mdx.frontmatter.tags
+
+  useEffect(() => {
+    let script = document.createElement('script')
+    //TODO: use react refs instead
+    let anchor = document.getElementById('utterances-comment')
+    script.setAttribute('src', 'https://utteranc.es/client.js')
+    script.setAttribute('crossorigin', 'anonymous')
+    script.setAttribute('async', true)
+    script.setAttribute('repo', 'ericjiang97/ericjiang.dev')
+    script.setAttribute('issue-term', 'pathname')
+    script.setAttribute('theme', 'github-light')
+    script.setAttribute('label', 'blog-comment')
+    anchor.appendChild(script)
+  }, [])
 
   return (
     <Layout
@@ -121,6 +135,7 @@ export default function Post({
         </Container>
         {/* <SubscribeForm /> */}
       </article>
+      <div id="utterances-comment" />
       <Container noVerticalPadding>
         <Share
           url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}

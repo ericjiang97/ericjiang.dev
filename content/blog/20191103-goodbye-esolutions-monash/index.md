@@ -41,7 +41,7 @@ I also picked up a new hobby which is photography, so outside of work hours I sp
 
 ## Lesson 3: Believing in yourself
 
-<iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/b60xOKjrmPE?rel=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/b60xOKjrmPE?rel=0" frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 Always believe in yourself, this is connected to the ties first and second lesson(s) really well. This has actually happened to me many times throughout my time here at Monash.
 
@@ -68,5 +68,6 @@ That's all from me, once again thank you!
 P.S. Do let me know if you are around and willing to grab a coffee (or bubble tea) - my emails and social DMs are always open.
 
 ![eric done agile kanban](eric-done-column-kanban.jpeg)
+
 
 \*Note: I'm in the 'done' column here on our Kanban wall... see?
