@@ -12,7 +12,7 @@ const experience = [
     company: 'Monash University',
     location: 'Melbourne, Victoria, Australia',
     role: 'Software Engineer',
-    dates: 'Dec 2016 - Present',
+    dates: 'Dec 2016 - Nov 2019',
     public: true,
     description: `- Successfully delivered MonPlan which is the enterprise course planning application 
       for Monash University, from ideation all the way up to an enterprise production application through 
