@@ -98,7 +98,7 @@ export default function Hero() {
                 font-size: 1.25rem;
               `}
             >
-              I'm a Software Engineer at Monash University.
+              I'm a Software Engineer.
             </p>
 
             <p

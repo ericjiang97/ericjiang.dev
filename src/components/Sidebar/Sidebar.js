@@ -95,7 +95,7 @@ export default function Sidebar({ open = false }) {
                 margin-bottom: 0.25rem;
               `}
             >
-              Software Engineer, Monash University
+              Software Engineer
             </h4>
           </div>
         </div>
