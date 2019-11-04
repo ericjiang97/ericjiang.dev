@@ -34,7 +34,7 @@ export default function Post({
 
   useEffect(() => {
     let script = document.createElement('script')
-    //TODO: use refs instead
+    //TODO: use react refs instead
     let anchor = document.getElementById('utterances-comment')
     script.setAttribute('src', 'https://utteranc.es/client.js')
     script.setAttribute('crossorigin', 'anonymous')
