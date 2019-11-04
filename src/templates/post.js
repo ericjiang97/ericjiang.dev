@@ -41,6 +41,7 @@ export default function Post({
     script.setAttribute('repo', 'ericjiang97/ericjiang.dev')
     script.setAttribute('issue-term', 'pathname')
     script.setAttribute('theme', 'github-light')
+    script.setAttribute('label', 'blog-comment')
     anchor.appendChild(script)
   }, [])
 
