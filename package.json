@@ -1,9 +1,19 @@
 {
-  "name": "gatsby-starter-egghead-blog",
+  "name": "eric-jiang-site",
   "description": "This is a starter for egghead content creator blogs",
-  "version": "1.0.0",
-  "author": "egghead.io <support@egghead.io> (https://egghead.io)",
-  "repository": "https://github.com/eggheadio/gatsby-starter-egghead-blog",
+  "authors": [
+    {
+      "name": "Eric Jiang",
+      "email": "eric@ericjiang.dev",
+      "url": "https://ericjiang.dev"
+    },
+    {
+      "name": "egghead.io",
+      "email": "support@egghead.io",
+      "url": "https://egghead.io"
+    }
+  ],
+  "repository": "https://github.com/ericjiang97/ericjiang.dev",
   "dependencies": {
     "@emotion/core": "^10.0.5",
     "@emotion/styled": "^10.0.5",

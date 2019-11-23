@@ -84,10 +84,10 @@ export default ({
             <div
               css={css`
                 display: flex;
-                flex-direction: 'column';
+                flex-direction: column;
                 flex-wrap: wrap;
                 @media (min-width: 1224px) {
-                  flex-direction: 'row';
+                  flex-direction: row;
                 }
               `}
             >
@@ -99,7 +99,6 @@ export default ({
                 css={css`
                   flex: 3;
                   overflow-x: hidden;
-                  max-height: 100vh;
                   display: flex;
                   flex-direction: column;
                 `}
@@ -119,12 +118,8 @@ export default ({
                 <div
                   css={css`
                     padding-bottom: 0;
-                    // background-color: #fff;
                     padding: 10px 24px;
                     max-width: 100vw;
-                    @media (min-width: 650px) and (max-width: 1200px) {
-                      margin-left: 100px;
-                    }
                   `}
                 >
                   <MDXProvider components={mdxComponents}>
