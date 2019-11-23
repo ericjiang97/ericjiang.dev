@@ -84,10 +84,10 @@ export default ({
             <div
               css={css`
                 display: flex;
-                flex-direction: 'column';
+                flex-direction: column;
                 flex-wrap: wrap;
                 @media (min-width: 1224px) {
-                  flex-direction: 'row';
+                  flex-direction: row;
                 }
               `}
             >
