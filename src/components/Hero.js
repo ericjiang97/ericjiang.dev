@@ -14,15 +14,15 @@ export default function Hero() {
       css={css`
         width: 100%;
         background-position: 0% 25%;
-        padding: 20px 0 30px 0;
+        padding: 20px 40px 20px 40px;
         display: flex;
-        height: 60vh;
       `}
     >
       <Container
         css={css`
           display: flex;
           flex-direction: column;
+          padding: 20px 0 15px 0;
         `}
       >
         <div

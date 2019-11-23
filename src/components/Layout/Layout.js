@@ -118,12 +118,8 @@ export default ({
                 <div
                   css={css`
                     padding-bottom: 0;
-                    // background-color: #fff;
                     padding: 10px 24px;
                     max-width: 100vw;
-                    @media (min-width: 650px) and (max-width: 1200px) {
-                      margin-left: 100px;
-                    }
                   `}
                 >
                   <MDXProvider components={mdxComponents}>
