@@ -99,7 +99,6 @@ export default ({
                 css={css`
                   flex: 3;
                   overflow-x: hidden;
-                  max-height: 100vh;
                   display: flex;
                   flex-direction: column;
                 `}
